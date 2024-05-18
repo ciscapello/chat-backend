@@ -21,6 +21,8 @@ type Server struct {
 func New(cfg *config.Config, handlers *handlers.Handlers, logger *zap.Logger) *Server {
 	router := mux.NewRouter()
 
+	router.Use(LoggingMiddleware(logger))
+
 	router.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
 	router.MethodNotAllowedHandler = http.HandlerFunc(handlers.MethodNotAllowedHandler)
 

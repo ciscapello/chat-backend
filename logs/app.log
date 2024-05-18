@@ -5,3 +5,7 @@
 2024/05/17 21:52:06.066	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
 2024/05/17 21:52:24.525	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
 2024/05/18 22:30:22.853	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:37:13.474	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:37:17.179	[34mINFO[0m	HTTP Request	{"method": "GET", "url": "/users", "status": 200, "duration": "35.875µs"}
+2024/05/18 22:39:51.972	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:39:53.958	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "61.5µs"}
