@@ -1,0 +1,7 @@
+2024/17/05 21:48:34.647	[33mWARN[0m	chat-backend/main.go:23	Asdasd
+2024/05/17 21:50:26.218	[33mWARN[0m	chat-backend/main.go:23	Asdasd
+2024/05/17 21:50:50.203	[33mWARN[0m	chat-backend/main.go:23	Asdasd{asd 11 1  <nil>} {asd 15 0 asd <nil>}
+2024/05/17 21:51:16.368	[33mWARN[0m	chat-backend/main.go:23	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/17 21:52:06.066	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/17 21:52:24.525	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/18 22:30:22.853	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}

@@ -12,20 +12,30 @@ import (
 
 	"github.com/ciscapello/chat-backend/internal/application/config"
 	"github.com/ciscapello/chat-backend/internal/application/db"
+	"github.com/ciscapello/chat-backend/internal/common/logger"
+	userservice "github.com/ciscapello/chat-backend/internal/domain/service/userService"
 	"github.com/ciscapello/chat-backend/internal/presentation/handlers"
 	httpServer "github.com/ciscapello/chat-backend/internal/presentation/http"
 )
 
 func main() {
+	run()
+}
 
+func run() {
 	config := config.New()
+
+	logger := logger.GetLogger(config)
+	defer logger.Sync()
 
 	db := db.New()
 	database := db.Start(config)
 
-	handlers := handlers.New()
+	userService := userservice.New()
 
-	server := httpServer.New(config, handlers)
+	handlers := handlers.New(userService)
+
+	server := httpServer.New(config, handlers, logger)
 
 	go func() {
 		if err := server.Run(); !errors.Is(err, http.ErrServerClosed) {

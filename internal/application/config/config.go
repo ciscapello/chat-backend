@@ -26,6 +26,7 @@ type Config struct {
 	DbName     string
 	DbUser     string
 	HttpPort   string
+	LogPath    string
 }
 
 func New() *Config {
@@ -41,6 +42,11 @@ func New() *Config {
 	dbUser := os.Getenv(DB_USER)
 	httpPort := os.Getenv(HTTP_PORT)
 
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	return &Config{
 		DbPassword: dbPassword,
 		DbHost:     dbHost,
@@ -48,5 +54,6 @@ func New() *Config {
 		DbName:     dbName,
 		DbUser:     dbUser,
 		HttpPort:   httpPort,
+		LogPath:    path + "/logs",
 	}
 }

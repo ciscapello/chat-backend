@@ -10,3 +10,9 @@ func New() *UserService {
 func (us *UserService) Login() {}
 
 func (us *UserService) Registration() {}
+
+func (us *UserService) GetUser() {}
+
+func (us *UserService) GetAllUsers() {}
+
+func (us *UserService) UpdateUser() {}
