@@ -17,12 +17,14 @@ type UserService struct {
 type UserRepo interface {
 	GetUserById(id uuid.UUID) (user.User, error)
 	CreateUser(user user.User) error
-	CheckUserIfExists(username string) bool
+	CheckUserIfExistsByUsername(username string) bool
+	CheckUserIfExistsByEmail(email string) bool
 }
 
 var (
-	ErrCannotCreateUser  = errors.New("cannot create user")
-	ErrUserAlreadyExists = errors.New("user already exists")
+	ErrCannotCreateUser           = errors.New("cannot create user")
+	ErrUserWithThisUsernameExists = errors.New("user with this username already exists")
+	ErrUserWithThisEmailExists    = errors.New("user with this email already exists")
 )
 
 func New(userRepo UserRepo, logger *zap.Logger) *UserService {
@@ -35,8 +37,11 @@ func New(userRepo UserRepo, logger *zap.Logger) *UserService {
 func (us *UserService) Login() {}
 
 func (us *UserService) Registration(username, email string) error {
-	if isExists := us.userRepo.CheckUserIfExists(username); isExists {
-		return ErrUserAlreadyExists
+	if isExists := us.userRepo.CheckUserIfExistsByUsername(username); isExists {
+		return ErrUserWithThisUsernameExists
+	}
+	if isExists := us.userRepo.CheckUserIfExistsByEmail(email); isExists {
+		return ErrUserWithThisEmailExists
 	}
 
 	code, err := utils.GenerateOneTimeCode(6)

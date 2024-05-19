@@ -9,7 +9,9 @@ import (
 	"go.uber.org/zap"
 )
 
-var ErrUserNotFound = errors.New("user not found")
+var (
+	ErrUserNotFound = errors.New("user not found")
+)
 
 type UserRepository struct {
 	logger *zap.Logger
@@ -26,7 +28,20 @@ func NewUserRepository(
 	}
 }
 
-func (ur *UserRepository) CheckUserIfExists(username string) bool {
+func (ur *UserRepository) CheckUserIfExistsByEmail(email string) bool {
+	var user user.User
+	query := "SELECT * FROM users WHERE email = $1"
+	row := ur.db.QueryRow(query, email)
+	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
+	if err == sql.ErrNoRows {
+		return false
+	} else if err != nil {
+		return true
+	}
+	return true
+}
+
+func (ur *UserRepository) CheckUserIfExistsByUsername(username string) bool {
 	var user user.User
 	query := "SELECT * FROM users WHERE username = $1"
 	row := ur.db.QueryRow(query, username)
