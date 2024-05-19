@@ -38,3 +38,5 @@
 2024/05/19 13:40:28.037	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/19 13:40:30.618	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
 2024/05/19 13:40:30.618	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "174.916µs"}
+2024/05/19 15:23:56.117	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:23:59.702	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "1.584µs"}

@@ -30,7 +30,7 @@ func (ur *UserRepository) GetUserById(id uuid.UUID) (user.User, error) {
 	var user user.User
 	query := "SELECT * FROM users WHERE id = $1"
 	row := ur.db.QueryRow(query, id)
-	err := row.Scan(&user.ID, &user.Username, &user.Password, &user.Role, &user.Enabled)
+	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
 	if err == sql.ErrNoRows {
 		ur.logger.Error("User not found", zap.String("id", id.String()))
 		return user, ErrUserNotFound

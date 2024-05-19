@@ -9,19 +9,23 @@ const (
 
 type Role int
 
+func (r Role) String() string {
+	return [...]string{"admin", "regular"}[r]
+}
+
 type User struct {
 	ID       uuid.UUID
 	Username string
-	Password string
+	Code     string
 	Role     Role
 	Enabled  bool
 }
 
-func NewUser(username, password string, role Role) *User {
+func NewUser(username, code string, role Role) *User {
 	return &User{
 		ID:       uuid.New(),
 		Username: username,
-		Password: password,
+		Code:     code,
 		Role:     role,
 		Enabled:  true,
 	}
