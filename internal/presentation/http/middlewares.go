@@ -12,7 +12,7 @@ func LoggingMiddleware(logger *zap.Logger) func(http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			start := time.Now()
 
-			rw := &responseWriter{w, http.StatusOK}
+			rw := &responseWriter{ResponseWriter: w, status: http.StatusOK}
 			next.ServeHTTP(rw, r)
 
 			duration := time.Since(start)
@@ -31,7 +31,10 @@ type responseWriter struct {
 	status int
 }
 
-func (rw *responseWriter) WriteHeader(code int) {
-	rw.status = code
-	rw.ResponseWriter.WriteHeader(code)
-}
+// func (rw *responseWriter) WriteHeader(code int) {
+// 	if !rw.wroteHeader {
+// 		rw.status = code
+// 		rw.ResponseWriter.WriteHeader(code)
+// 		rw.wroteHeader = true
+// 	}
+// }
