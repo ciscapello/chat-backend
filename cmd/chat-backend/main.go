@@ -41,8 +41,8 @@ func run() {
 	defaulthandler := defaulthandler.New(logger)
 
 	httpServer := httpServer.New(config, &httpServer.Handlers{
-		Userhandler:    userHandler,
-		Defaulthandler: defaulthandler,
+		UserHandler:    userHandler,
+		DefaultHandler: defaulthandler,
 	}, logger)
 
 	go func() {

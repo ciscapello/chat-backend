@@ -10,3 +10,8 @@
 2024/05/18 22:39:51.972	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/18 22:39:53.958	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "61.5µs"}
 2024/05/19 12:55:10.006	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:28:08.329	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:28:15.506	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:28:15.506	[31mERROR[0m	Unable to parse request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:28:15.547	[31mERROR[0m	pq: relation "users" does not exist	{"id": "00000000-0000-0000-0000-000000000000"}
+2024/05/19 13:28:15.548	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 400, "duration": "41.743167ms"}

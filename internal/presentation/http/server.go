@@ -15,8 +15,8 @@ import (
 )
 
 type Handlers struct {
-	Userhandler    *userhandler.UserHandler
-	Defaulthandler *defaulthandler.DefaultHandler
+	UserHandler    *userhandler.UserHandler
+	DefaultHandler *defaulthandler.DefaultHandler
 }
 
 type Server struct {
@@ -30,11 +30,11 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 
 	router.Use(LoggingMiddleware(logger))
 
-	router.NotFoundHandler = http.HandlerFunc(handlers.defaulthandler.NotFoundHandler)
-	router.MethodNotAllowedHandler = http.HandlerFunc(handlers.defaulthandler.MethodNotAllowedHandler)
+	router.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)
+	router.MethodNotAllowedHandler = http.HandlerFunc(handlers.DefaultHandler.MethodNotAllowedHandler)
 
 	userRouter := router.PathPrefix("/users").Subrouter()
-	ConfigureUserRoutes(userRouter, handlers.userhandler)
+	ConfigureUserRoutes(userRouter, handlers.UserHandler)
 
 	router.Handle("", userRouter)
 
