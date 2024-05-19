@@ -11,18 +11,18 @@ type Role int
 
 type User struct {
 	ID       uuid.UUID
-	username string
-	password string
-	role     Role
-	enabled  bool
+	Username string
+	Password string
+	Role     Role
+	Enabled  bool
 }
 
 func NewUser(username, password string, role Role) *User {
 	return &User{
 		ID:       uuid.New(),
-		username: username,
-		password: password,
-		role:     role,
-		enabled:  true,
+		Username: username,
+		Password: password,
+		Role:     role,
+		Enabled:  true,
 	}
 }

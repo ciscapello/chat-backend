@@ -14,7 +14,9 @@ import (
 	"github.com/ciscapello/chat-backend/internal/application/db"
 	"github.com/ciscapello/chat-backend/internal/common/logger"
 	userservice "github.com/ciscapello/chat-backend/internal/domain/service/userService"
-	"github.com/ciscapello/chat-backend/internal/presentation/handlers"
+	"github.com/ciscapello/chat-backend/internal/infrastructure/repository"
+	defaulthandler "github.com/ciscapello/chat-backend/internal/presentation/handlers/defaultHandler"
+	userhandler "github.com/ciscapello/chat-backend/internal/presentation/handlers/userHandler"
 	httpServer "github.com/ciscapello/chat-backend/internal/presentation/http"
 )
 
@@ -31,14 +33,20 @@ func run() {
 	db := db.New()
 	database := db.Start(config)
 
-	userService := userservice.New()
+	userRepository := repository.NewUserRepository(database, logger)
 
-	handlers := handlers.New(userService)
+	userService := userservice.New(userRepository)
 
-	server := httpServer.New(config, handlers, logger)
+	userHandler := userhandler.New(userService, logger)
+	defaulthandler := defaulthandler.New(logger)
+
+	httpServer := httpServer.New(config, &httpServer.Handlers{
+		Userhandler:    userHandler,
+		Defaulthandler: defaulthandler,
+	}, logger)
 
 	go func() {
-		if err := server.Run(); !errors.Is(err, http.ErrServerClosed) {
+		if err := httpServer.Run(); !errors.Is(err, http.ErrServerClosed) {
 			fmt.Printf("error occurred while running http server: %s\n", err.Error())
 		}
 	}()
@@ -56,7 +64,7 @@ func run() {
 	ctx, shutdown := context.WithTimeout(context.Background(), timeout)
 	defer shutdown()
 
-	if err := server.Stop(ctx); err != nil {
+	if err := httpServer.Stop(ctx); err != nil {
 		fmt.Printf("failed to stop server: %v", err)
 	}
 
