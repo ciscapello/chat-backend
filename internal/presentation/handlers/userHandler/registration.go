@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+
+	"github.com/ciscapello/chat-backend/internal/presentation/response"
 )
 
 type requestBody struct {
@@ -11,29 +13,34 @@ type requestBody struct {
 	Email    string
 }
 
+type resp struct {
+	ID string `json:"id"`
+}
+
 func (uh *UserHandler) Registration(w http.ResponseWriter, r *http.Request) {
 
 	var rb requestBody
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
-		http.Error(w, "Unable to read request body", http.StatusBadRequest)
+		response.SendError(w, http.StatusBadRequest, "Unable to read request body")
 		uh.logErrorInRequest(r, "Unable to read request body")
 		return
 	}
 
 	if err := json.Unmarshal(body, &rb); err != nil {
-		http.Error(w, "Unable to unmarshal request body", http.StatusBadRequest)
+		response.SendError(w, http.StatusBadRequest, "Unable to unmarshal request body")
 		uh.logErrorInRequest(r, "Unable to unmarshal request body")
 		return
 	}
 
-	err = uh.userService.Registration(rb.Username, rb.Email)
+	uid, err := uh.userService.Registration(rb.Username, rb.Email)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		response.SendError(w, http.StatusBadRequest, err.Error())
 		uh.logErrorInRequest(r, err.Error())
 		return
 	}
 
-	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("user created"))
+	response.SendSuccess(w, http.StatusOK, resp{
+		ID: uid.String(),
+	})
 }

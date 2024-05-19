@@ -3,7 +3,6 @@ package repository
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 
 	"github.com/ciscapello/chat-backend/internal/domain/entity/user"
 	"github.com/google/uuid"
@@ -56,18 +55,25 @@ func (ur *UserRepository) CheckUserIfExistsByUsername(username string) bool {
 }
 
 func (ur *UserRepository) GetUserById(id uuid.UUID) (user.User, error) {
-	var user user.User
+	var us user.User
 	query := "SELECT * FROM users WHERE id = $1"
 	row := ur.db.QueryRow(query, id)
-	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
+
+	var createdAt string
+	var updatedAt string
+	var roleString string
+
+	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+	us.Role = user.ParseRole(roleString)
+
 	if err == sql.ErrNoRows {
 		ur.logger.Error("User not found", zap.String("id", id.String()))
-		return user, ErrUserNotFound
+		return us, ErrUserNotFound
 	} else if err != nil {
 		ur.logger.Error(err.Error(), zap.String("id", id.String()))
-		return user, err
+		return us, err
 	}
-	return user, nil
+	return us, nil
 }
 
 func (ur *UserRepository) CreateUser(u user.User) error {
@@ -89,7 +95,6 @@ func (ur *UserRepository) CreateUser(u user.User) error {
 }
 
 func (ur *UserRepository) GetAllUsers() ([]user.User, error) {
-	fmt.Println("hrere")
 	query := "SELECT * FROM users"
 
 	rows, err := ur.db.Query(query)

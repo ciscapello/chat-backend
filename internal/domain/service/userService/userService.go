@@ -37,31 +37,40 @@ func New(userRepo UserRepo, logger *zap.Logger) *UserService {
 
 func (us *UserService) Login() {}
 
-func (us *UserService) Registration(username, email string) error {
+func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 	if isExists := us.userRepo.CheckUserIfExistsByUsername(username); isExists {
-		return ErrUserWithThisUsernameExists
+		return uuid.UUID{}, ErrUserWithThisUsernameExists
 	}
 	if isExists := us.userRepo.CheckUserIfExistsByEmail(email); isExists {
-		return ErrUserWithThisEmailExists
+		return uuid.UUID{}, ErrUserWithThisEmailExists
 	}
 
 	code, err := utils.GenerateOneTimeCode(6)
 	if err != nil {
 		us.logger.Error("failed to generate code", zap.Error(err))
-		return ErrCannotCreateUser
+		return uuid.UUID{}, ErrCannotCreateUser
 	}
 	user := user.NewUser(username, email, code)
 
 	err = us.userRepo.CreateUser(*user)
 	if err != nil {
 		us.logger.Error("failed to create user", zap.Error(err))
-		return ErrCannotCreateUser
+		return uuid.UUID{}, ErrCannotCreateUser
 	}
-	return nil
+	return user.ID, nil
 }
 
-func (us *UserService) GetUser(uuid uuid.UUID) {
-	us.userRepo.GetUserById(uuid)
+func (us *UserService) GetUser(uuid uuid.UUID) (user.PublicUser, error) {
+	u, err := us.userRepo.GetUserById(uuid)
+	if err != nil {
+		return user.PublicUser{}, err
+	}
+
+	return user.PublicUser{
+		ID:       u.ID,
+		Username: u.Username,
+		Email:    u.Email,
+	}, nil
 }
 
 func (us *UserService) GetAllUsers() ([]user.PublicUser, error) {

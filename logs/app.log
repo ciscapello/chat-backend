@@ -88,3 +88,37 @@
 2024/05/19 20:55:48.644	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "25.965333ms"}
 2024/05/19 21:04:01.288	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/19 21:04:03.026	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "13.740584ms"}
+2024/05/19 21:08:51.435	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:09:49.358	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "31.688458ms"}
+2024/05/19 21:11:24.131	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:11:28.104	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:11:28.104	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.808542ms"}
+2024/05/19 21:11:32.711	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "9.220083ms"}
+2024/05/19 21:14:37.256	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:14:39.502	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:14:39.503	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "10.322875ms"}
+2024/05/19 21:14:43.983	[31mERROR[0m	user with this email already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:14:43.983	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.198417ms"}
+2024/05/19 21:14:46.548	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "7.311625ms"}
+2024/05/19 21:15:14.424	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:15:20.176	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "19.898708ms"}
+2024/05/19 21:18:39.884	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:18:42.604	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "16.545542ms"}
+2024/05/19 21:19:19.325	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:19:25.353	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.576667ms"}
+2024/05/19 21:22:30.502	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:22:35.269	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "27.724958ms"}
+2024/05/19 21:23:01.805	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:23:06.034	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "34.693167ms"}
+2024/05/19 21:24:46.333	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:24:48.931	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:24:48.931	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "17.481833ms"}
+2024/05/19 21:24:53.660	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "8.166208ms"}
+2024/05/19 21:26:42.001	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:27:12.005	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "27.117125ms"}
+2024/05/19 21:27:19.405	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "method": "GET"}
+2024/05/19 21:27:19.406	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "1.14525ms"}
+2024/05/19 21:31:50.419	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:36:53.659	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:36:57.344	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "26.585792ms"}
+2024/05/19 21:37:04.003	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "2.710458ms"}
