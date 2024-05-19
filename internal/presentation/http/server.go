@@ -73,7 +73,7 @@ func (s *Server) Stop(ctx context.Context) error {
 }
 
 func ConfigureUserRoutes(subrouter *mux.Router, handlers *userhandler.UserHandler) {
-	// subrouter.HandleFunc("", handlers.GetAllUsers).Methods(http.MethodGet)
+	subrouter.HandleFunc("", handlers.GetAllUsers).Methods(http.MethodGet)
 	subrouter.HandleFunc("/{id}", handlers.GetUser).Methods(http.MethodGet)
 	subrouter.HandleFunc("", handlers.UpdateUser).Methods(http.MethodPut)
 	subrouter.HandleFunc("/registration", handlers.Registration).Methods(http.MethodPost)

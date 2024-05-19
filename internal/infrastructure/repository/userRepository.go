@@ -3,6 +3,7 @@ package repository
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 
 	"github.com/ciscapello/chat-backend/internal/domain/entity/user"
 	"github.com/google/uuid"
@@ -87,7 +88,42 @@ func (ur *UserRepository) CreateUser(u user.User) error {
 	return nil
 }
 
-func (ur *UserRepository) GetAllUsers() {}
+func (ur *UserRepository) GetAllUsers() ([]user.User, error) {
+	fmt.Println("hrere")
+	query := "SELECT * FROM users"
+
+	rows, err := ur.db.Query(query)
+	if err != nil {
+		ur.logger.Error(err.Error())
+		return nil, err
+	}
+	defer rows.Close()
+
+	var users []user.User
+
+	var createdAt string
+	var updatedAt string
+	var roleString string
+
+	for rows.Next() {
+		var us user.User
+		err := rows.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+		if err != nil {
+			ur.logger.Error(err.Error())
+			return nil, err
+		}
+		us.Role = user.ParseRole(roleString)
+
+		users = append(users, us)
+	}
+
+	if err = rows.Err(); err != nil {
+		ur.logger.Error(err.Error())
+		return nil, err
+	}
+
+	return users, nil
+}
 
 func (ur *UserRepository) UpdateUser() {}
 

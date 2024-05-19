@@ -19,6 +19,7 @@ type UserRepo interface {
 	CreateUser(user user.User) error
 	CheckUserIfExistsByUsername(username string) bool
 	CheckUserIfExistsByEmail(email string) bool
+	GetAllUsers() ([]user.User, error)
 }
 
 var (
@@ -63,6 +64,22 @@ func (us *UserService) GetUser(uuid uuid.UUID) {
 	us.userRepo.GetUserById(uuid)
 }
 
-func (us *UserService) GetAllUsers() {}
+func (us *UserService) GetAllUsers() ([]user.PublicUser, error) {
+	users, err := us.userRepo.GetAllUsers()
+	if err != nil {
+		return nil, err
+	}
+	var publicUsers []user.PublicUser
+
+	for _, us := range users {
+		publicUsers = append(publicUsers, user.PublicUser{
+			ID:       us.ID,
+			Username: us.Username,
+			Email:    us.Email,
+		})
+	}
+	return publicUsers, nil
+
+}
 
 func (us *UserService) UpdateUser() {}
