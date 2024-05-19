@@ -40,3 +40,26 @@
 2024/05/19 13:40:30.618	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "174.916µs"}
 2024/05/19 15:23:56.117	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/19 15:23:59.702	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "1.584µs"}
+2024/05/19 15:54:22.692	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:54:26.615	[31mERROR[0m	pq: invalid input syntax for type boolean: "asdsad@asdas.asd"
+2024/05/19 15:54:26.615	[31mERROR[0m	failed to create user	{"error": "pq: invalid input syntax for type boolean: \"asdsad@asdas.asd\""}
+2024/05/19 15:54:26.615	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.961625ms"}
+2024/05/19 15:58:14.104	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:58:16.555	[31mERROR[0m	pq: date/time field value out of range: "354537"
+2024/05/19 15:58:16.555	[31mERROR[0m	failed to create user	{"error": "pq: date/time field value out of range: \"354537\""}
+2024/05/19 15:58:16.555	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "15.367708ms"}
+2024/05/19 16:00:56.696	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:00:59.810	[31mERROR[0m	pq: could not determine data type of parameter $5
+2024/05/19 16:00:59.810	[31mERROR[0m	failed to create user	{"error": "pq: could not determine data type of parameter $5"}
+2024/05/19 16:00:59.810	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.061417ms"}
+2024/05/19 16:01:25.225	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:01:27.428	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "15.955333ms"}
+2024/05/19 16:06:56.824	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:06:58.804	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"
+2024/05/19 16:06:58.805	[31mERROR[0m	failed to create user	{"error": "pq: duplicate key value violates unique constraint \"users_username_key\""}
+2024/05/19 16:06:58.805	[31mERROR[0m	cannot create user	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:06:58.805	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "14.163375ms"}
+2024/05/19 16:14:07.854	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:14:09.735	[31mERROR[0m	user already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:14:09.735	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "22.080125ms"}
+2024/05/19 16:14:13.411	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.653334ms"}

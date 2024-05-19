@@ -16,17 +16,19 @@ func (r Role) String() string {
 type User struct {
 	ID       uuid.UUID
 	Username string
+	Email    string
 	Code     string
 	Role     Role
 	Enabled  bool
 }
 
-func NewUser(username, code string, role Role) *User {
+func NewUser(username, email, code string) *User {
 	return &User{
 		ID:       uuid.New(),
 		Username: username,
+		Email:    email,
 		Code:     code,
-		Role:     role,
+		Role:     Regular,
 		Enabled:  true,
 	}
 }

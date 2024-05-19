@@ -35,7 +35,7 @@ func run() {
 
 	userRepository := repository.NewUserRepository(database, logger)
 
-	userService := userservice.New(userRepository)
+	userService := userservice.New(userRepository, logger)
 
 	userHandler := userhandler.New(userService, logger)
 	defaulthandler := defaulthandler.New(logger)
