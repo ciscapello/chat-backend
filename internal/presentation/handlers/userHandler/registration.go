@@ -33,6 +33,12 @@ func (uh *UserHandler) Registration(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if !uh.isValidEmail(rb.Email) {
+		response.SendError(w, http.StatusBadRequest, "Invalid email")
+		uh.logErrorInRequest(r, "Invalid email")
+		return
+	}
+
 	uid, err := uh.userService.Registration(rb.Username, rb.Email)
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, err.Error())

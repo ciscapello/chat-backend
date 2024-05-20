@@ -41,6 +41,12 @@ func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if requestBody.Email != nil && !uh.isValidEmail(*requestBody.Email) {
+		response.SendError(w, http.StatusBadRequest, "Invalid email")
+		uh.logErrorInRequest(r, "Invalid email")
+		return
+	}
+
 	us, err := uh.userService.UpdateUser(uid, requestBody)
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, err.Error())

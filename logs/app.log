@@ -141,3 +141,20 @@
 2024/05/20 18:49:01.738	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/20 18:49:08.150	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "48.449875ms"}
 2024/05/20 18:49:11.155	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "2.922292ms"}
+2024/05/20 18:57:13.234	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:57:15.974	[31mERROR[0m	Invalid email	{"url": "/users/registration", "method": "POST"}
+2024/05/20 18:57:15.974	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "529.542µs"}
+2024/05/20 18:57:23.491	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/20 18:57:23.492	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "30.177417ms"}
+2024/05/20 18:57:28.306	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "9.432417ms"}
+2024/05/20 18:57:33.035	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "2.243834ms"}
+2024/05/20 18:59:42.989	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.649125ms"}
+2024/05/20 18:59:57.186	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "6.34375ms"}
+2024/05/20 19:00:06.077	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 19:00:11.739	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "34.914417ms"}
+2024/05/20 19:00:24.242	[31mERROR[0m	Invalid email	{"url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "method": "PUT"}
+2024/05/20 19:00:24.242	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "997.625µs"}
+2024/05/20 19:00:28.304	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"
+2024/05/20 19:00:28.304	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"	{"url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "method": "PUT"}
+2024/05/20 19:00:28.304	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "7.638667ms"}
+2024/05/20 19:00:46.954	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "10.027875ms"}
