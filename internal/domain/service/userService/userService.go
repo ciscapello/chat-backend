@@ -20,6 +20,7 @@ type UserRepo interface {
 	CheckUserIfExistsByUsername(username string) bool
 	CheckUserIfExistsByEmail(email string) bool
 	GetAllUsers() ([]user.User, error)
+	UpdateUser(u user.User) error
 }
 
 var (
@@ -91,4 +92,20 @@ func (us *UserService) GetAllUsers() ([]user.PublicUser, error) {
 
 }
 
-func (us *UserService) UpdateUser() {}
+func (us *UserService) UpdateUser(uuid uuid.UUID, fields user.UpdateUserRequest) (user.PublicUser, error) {
+	u, err := us.userRepo.GetUserById(uuid)
+	if err != nil {
+		return user.PublicUser{}, err
+	}
+
+	u.Update(fields)
+
+	err = us.userRepo.UpdateUser(u)
+	if err != nil {
+		return user.PublicUser{}, err
+	}
+
+	publicUser := user.NewPublicUser(u)
+
+	return publicUser, nil
+}

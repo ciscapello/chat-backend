@@ -3,6 +3,8 @@ package repository
 import (
 	"database/sql"
 	"errors"
+	"fmt"
+	"time"
 
 	"github.com/ciscapello/chat-backend/internal/domain/entity/user"
 	"github.com/google/uuid"
@@ -130,7 +132,25 @@ func (ur *UserRepository) GetAllUsers() ([]user.User, error) {
 	return users, nil
 }
 
-func (ur *UserRepository) UpdateUser() {}
+func (ur *UserRepository) UpdateUser(u user.User) error {
+	query := "UPDATE users SET username = $1, email = $2, enabled = $3, role = $4, code = $5, updated_at = $6 WHERE id = $7"
+	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), u.ID)
+	fmt.Println("here?")
+	if err != nil {
+		ur.logger.Error(err.Error())
+		return err
+	}
+	count, err := res.RowsAffected()
+	if err != nil {
+		ur.logger.Error(err.Error())
+		return err
+	}
+
+	if count == 0 {
+		return ErrUserNotFound
+	}
+	return nil
+}
 
 func (ur *UserRepository) Registration() {}
 

@@ -1,7 +1,6 @@
 package userhandler
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/ciscapello/chat-backend/internal/presentation/response"
@@ -34,11 +33,4 @@ func (uh *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	response.SendSuccess(w, http.StatusOK, user)
-}
-
-func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("update user")
-	w.Write([]byte("hello from update user"))
-
-	uh.userService.UpdateUser()
 }

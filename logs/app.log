@@ -122,3 +122,22 @@
 2024/05/19 21:36:53.659	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/19 21:36:57.344	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "26.585792ms"}
 2024/05/19 21:37:04.003	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "2.710458ms"}
+2024/05/20 18:34:39.940	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:34:53.239	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "52.307583ms"}
+2024/05/20 18:36:49.753	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:37:12.187	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "41.048042ms"}
+2024/05/20 18:37:17.931	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.283166ms"}
+2024/05/20 18:37:36.475	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.743208ms"}
+2024/05/20 18:37:39.107	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "3.520792ms"}
+2024/05/20 18:37:45.979	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "2.041666ms"}
+2024/05/20 18:37:53.384	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.901125ms"}
+2024/05/20 18:40:27.998	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:40:32.517	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "31.186917ms"}
+2024/05/20 18:40:37.492	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "1.747375ms"}
+2024/05/20 18:41:18.092	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:41:23.134	[31mERROR[0m	pq: column "enabled" is of type boolean but expression is of type text
+2024/05/20 18:41:23.134	[31mERROR[0m	pq: column "enabled" is of type boolean but expression is of type text	{"url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "method": "PUT"}
+2024/05/20 18:41:23.134	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "46.242125ms"}
+2024/05/20 18:49:01.738	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:49:08.150	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "48.449875ms"}
+2024/05/20 18:49:11.155	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "2.922292ms"}

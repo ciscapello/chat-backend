@@ -41,6 +41,14 @@ type PublicUser struct {
 	Email    string    `json:"email"`
 }
 
+type UpdateUserRequest struct {
+	Username *string `json:"username,omitempty"`
+	Email    *string `json:"email,omitempty"`
+	Code     *string `json:"code,omitempty"`
+	Role     *Role   `json:"role,omitempty"`
+	Enabled  *bool   `json:"enabled,omitempty"`
+}
+
 func NewUser(username, email, code string) *User {
 	return &User{
 		ID:       uuid.New(),
@@ -49,5 +57,31 @@ func NewUser(username, email, code string) *User {
 		Code:     code,
 		Role:     Regular,
 		Enabled:  true,
+	}
+}
+
+func NewPublicUser(u User) PublicUser {
+	return PublicUser{
+		ID:       u.ID,
+		Username: u.Username,
+		Email:    u.Email,
+	}
+}
+
+func (u *User) Update(params UpdateUserRequest) {
+	if params.Username != nil {
+		u.Username = *params.Username
+	}
+	if params.Email != nil {
+		u.Email = *params.Email
+	}
+	if params.Code != nil {
+		u.Code = *params.Code
+	}
+	if params.Role != nil {
+		u.Role = *params.Role
+	}
+	if params.Enabled != nil {
+		u.Enabled = *params.Enabled
 	}
 }
