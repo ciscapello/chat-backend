@@ -14,6 +14,7 @@ import (
 	"github.com/ciscapello/api-gateway/internal/application/db"
 	"github.com/ciscapello/api-gateway/internal/common/logger"
 	userservice "github.com/ciscapello/api-gateway/internal/domain/service/userService"
+	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/defaultHandler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/userHandler"
@@ -36,6 +37,15 @@ func run() {
 	userRepository := repository.NewUserRepository(database, logger)
 
 	userService := userservice.New(userRepository, logger)
+
+	rabbitmq.Init(config)
+
+	go func() {
+		for {
+			rabbitmq.Publish(rabbitmq.UserCreatedTopic, "hello from somewhere")
+			time.Sleep(time.Second * 5)
+		}
+	}()
 
 	userHandler := userhandler.New(userService, logger)
 	defaulthandler := defaulthandler.New(logger)

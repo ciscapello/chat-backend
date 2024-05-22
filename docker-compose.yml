@@ -11,36 +11,11 @@ services:
     ports:
       - "5432:5432"
 
-  kafka:
-    hostname: kafka
-    image: bitnami/kafka:latest
-    restart: always
-    env_file:
-      - kafka/kafka-variables.env
-    depends_on:
-      - zookeeper
-    expose:
-      - "9092"
-      - "8082"
-      - "8083"
+  rabbitmq:
+    image: rabbitmq:3-management
     ports:
-      - "9092:9092"
-      - "8082:8082"
-      - "8083:8083"
-
-  zookeeper:
-    hostname: zookeeper
-    image: bitnami/zookeeper:latest
-    restart: always
-    ports:
-      - "2181:2181"
+      - "5672:5672" # AMQP port
+      - "15672:15672" # Management UI port
     environment:
-      ALLOW_ANONYMOUS_LOGIN: yes
-
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    restart: always
-    ports:
-      - "8080:8080"
-    depends_on:
-      - kafka
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest

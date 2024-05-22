@@ -27,6 +27,7 @@ type Config struct {
 	DbUser     string
 	HttpPort   string
 	LogPath    string
+	RmqConnStr string
 }
 
 func New() *Config {
@@ -42,6 +43,11 @@ func New() *Config {
 	dbUser := os.Getenv(DB_USER)
 	httpPort := os.Getenv(HTTP_PORT)
 
+	rmqHost := os.Getenv("RMQ_HOST")
+	rmqPost := os.Getenv("RMQ_PORT")
+
+	rmqConnStr := "amqp://" + "guest" + ":" + "guest" + "@" + rmqHost + ":" + rmqPost + "/"
+
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
@@ -55,5 +61,6 @@ func New() *Config {
 		DbUser:     dbUser,
 		HttpPort:   httpPort,
 		LogPath:    path + "/logs",
+		RmqConnStr: rmqConnStr,
 	}
 }

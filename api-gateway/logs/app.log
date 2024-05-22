@@ -161,3 +161,6 @@
 2024/05/20 20:22:33.890	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/20 20:22:37.477	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "29.292958ms"}
 2024/05/22 20:00:25.737	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/22 22:26:02.525	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/22 22:27:07.819	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/22 22:33:00.930	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
