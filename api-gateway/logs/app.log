@@ -1,0 +1,163 @@
+2024/17/05 21:48:34.647	[33mWARN[0m	chat-backend/main.go:23	Asdasd
+2024/05/17 21:50:26.218	[33mWARN[0m	chat-backend/main.go:23	Asdasd
+2024/05/17 21:50:50.203	[33mWARN[0m	chat-backend/main.go:23	Asdasd{asd 11 1  <nil>} {asd 15 0 asd <nil>}
+2024/05/17 21:51:16.368	[33mWARN[0m	chat-backend/main.go:23	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/17 21:52:06.066	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/17 21:52:24.525	[33mWARN[0m	Asdasd{hello int 11 1  <nil>} {buy string 15 0 asd <nil>}
+2024/05/18 22:30:22.853	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:37:13.474	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:37:17.179	[34mINFO[0m	HTTP Request	{"method": "GET", "url": "/users", "status": 200, "duration": "35.875µs"}
+2024/05/18 22:39:51.972	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/18 22:39:53.958	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "61.5µs"}
+2024/05/19 12:55:10.006	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:28:08.329	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:28:15.506	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:28:15.506	[31mERROR[0m	Unable to parse request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:28:15.547	[31mERROR[0m	pq: relation "users" does not exist	{"id": "00000000-0000-0000-0000-000000000000"}
+2024/05/19 13:28:15.548	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 400, "duration": "41.743167ms"}
+2024/05/19 13:32:05.425	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:32:08.097	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "duration": "167ns"}
+2024/05/19 13:37:28.797	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:37:31.661	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:37:31.661	[31mERROR[0m	Unable to parse request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:37:31.681	[31mERROR[0m	pq: relation "users" does not exist	{"id": "00000000-0000-0000-0000-000000000000"}
+2024/05/19 13:37:31.681	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 400, "duration": "20.861791ms"}
+2024/05/19 13:38:35.929	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:38:38.212	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:38:38.212	[31mERROR[0m	Unable to parse request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:38:38.234	[31mERROR[0m	pq: relation "users" does not exist	{"id": "00000000-0000-0000-0000-000000000000"}
+2024/05/19 13:38:38.235	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "23.042375ms"}
+2024/05/19 13:38:46.133	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:38:48.280	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:38:48.280	[31mERROR[0m	Unable to parse request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:38:48.300	[31mERROR[0m	pq: relation "users" does not exist	{"id": "00000000-0000-0000-0000-000000000000"}
+2024/05/19 13:38:48.300	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "20.379209ms"}
+2024/05/19 13:39:59.797	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:40:02.907	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:40:02.907	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "345.959µs"}
+2024/05/19 13:40:28.037	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 13:40:30.618	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/1", "method": "GET"}
+2024/05/19 13:40:30.618	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/1", "status": 200, "duration": "174.916µs"}
+2024/05/19 15:23:56.117	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:23:59.702	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "1.584µs"}
+2024/05/19 15:54:22.692	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:54:26.615	[31mERROR[0m	pq: invalid input syntax for type boolean: "asdsad@asdas.asd"
+2024/05/19 15:54:26.615	[31mERROR[0m	failed to create user	{"error": "pq: invalid input syntax for type boolean: \"asdsad@asdas.asd\""}
+2024/05/19 15:54:26.615	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.961625ms"}
+2024/05/19 15:58:14.104	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 15:58:16.555	[31mERROR[0m	pq: date/time field value out of range: "354537"
+2024/05/19 15:58:16.555	[31mERROR[0m	failed to create user	{"error": "pq: date/time field value out of range: \"354537\""}
+2024/05/19 15:58:16.555	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "15.367708ms"}
+2024/05/19 16:00:56.696	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:00:59.810	[31mERROR[0m	pq: could not determine data type of parameter $5
+2024/05/19 16:00:59.810	[31mERROR[0m	failed to create user	{"error": "pq: could not determine data type of parameter $5"}
+2024/05/19 16:00:59.810	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.061417ms"}
+2024/05/19 16:01:25.225	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:01:27.428	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "15.955333ms"}
+2024/05/19 16:06:56.824	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:06:58.804	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"
+2024/05/19 16:06:58.805	[31mERROR[0m	failed to create user	{"error": "pq: duplicate key value violates unique constraint \"users_username_key\""}
+2024/05/19 16:06:58.805	[31mERROR[0m	cannot create user	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:06:58.805	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "14.163375ms"}
+2024/05/19 16:14:07.854	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:14:09.735	[31mERROR[0m	user already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:14:09.735	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "22.080125ms"}
+2024/05/19 16:14:13.411	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.653334ms"}
+2024/05/19 16:26:50.153	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 16:26:52.111	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:26:52.111	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "27.248416ms"}
+2024/05/19 16:26:55.976	[31mERROR[0m	user with this email already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 16:26:55.977	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "2.760375ms"}
+2024/05/19 16:26:58.168	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "5.771417ms"}
+2024/05/19 20:23:03.170	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:23:52.902	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:24:19.135	[31mERROR[0m	sql: expected 8 destination arguments in Scan, not 5
+2024/05/19 20:24:19.136	[31mERROR[0m	sql: expected 8 destination arguments in Scan, not 5	{"url": "/users", "method": "GET"}
+2024/05/19 20:24:19.136	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "23.454208ms"}
+2024/05/19 20:25:01.572	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:25:05.619	[31mERROR[0m	sql: expected 8 destination arguments in Scan, not 5
+2024/05/19 20:25:05.619	[31mERROR[0m	sql: expected 8 destination arguments in Scan, not 5	{"url": "/users", "method": "GET"}
+2024/05/19 20:25:05.619	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "11.029416ms"}
+2024/05/19 20:30:46.081	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:30:48.141	[31mERROR[0m	sql: Scan error on column index 3, name "role": converting driver.Value type []uint8 ("regular") to a int: invalid syntax
+2024/05/19 20:30:48.141	[31mERROR[0m	sql: Scan error on column index 3, name "role": converting driver.Value type []uint8 ("regular") to a int: invalid syntax	{"url": "/users", "method": "GET"}
+2024/05/19 20:30:48.141	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "13.239208ms"}
+2024/05/19 20:36:06.641	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:36:11.844	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "27.157833ms"}
+2024/05/19 20:55:47.308	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 20:55:48.644	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "25.965333ms"}
+2024/05/19 21:04:01.288	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:04:03.026	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "13.740584ms"}
+2024/05/19 21:08:51.435	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:09:49.358	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "31.688458ms"}
+2024/05/19 21:11:24.131	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:11:28.104	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:11:28.104	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.808542ms"}
+2024/05/19 21:11:32.711	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "9.220083ms"}
+2024/05/19 21:14:37.256	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:14:39.502	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:14:39.503	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "10.322875ms"}
+2024/05/19 21:14:43.983	[31mERROR[0m	user with this email already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:14:43.983	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.198417ms"}
+2024/05/19 21:14:46.548	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "7.311625ms"}
+2024/05/19 21:15:14.424	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:15:20.176	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "19.898708ms"}
+2024/05/19 21:18:39.884	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:18:42.604	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "16.545542ms"}
+2024/05/19 21:19:19.325	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:19:25.353	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "23.576667ms"}
+2024/05/19 21:22:30.502	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:22:35.269	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "27.724958ms"}
+2024/05/19 21:23:01.805	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:23:06.034	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "34.693167ms"}
+2024/05/19 21:24:46.333	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:24:48.931	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/19 21:24:48.931	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "17.481833ms"}
+2024/05/19 21:24:53.660	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "8.166208ms"}
+2024/05/19 21:26:42.001	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:27:12.005	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "27.117125ms"}
+2024/05/19 21:27:19.405	[31mERROR[0m	Unable to unmarshal request body	{"url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "method": "GET"}
+2024/05/19 21:27:19.406	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "1.14525ms"}
+2024/05/19 21:31:50.419	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:36:53.659	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/19 21:36:57.344	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "26.585792ms"}
+2024/05/19 21:37:04.003	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "2.710458ms"}
+2024/05/20 18:34:39.940	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:34:53.239	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "52.307583ms"}
+2024/05/20 18:36:49.753	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:37:12.187	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "41.048042ms"}
+2024/05/20 18:37:17.931	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.283166ms"}
+2024/05/20 18:37:36.475	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.743208ms"}
+2024/05/20 18:37:39.107	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "3.520792ms"}
+2024/05/20 18:37:45.979	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "2.041666ms"}
+2024/05/20 18:37:53.384	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.901125ms"}
+2024/05/20 18:40:27.998	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:40:32.517	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "31.186917ms"}
+2024/05/20 18:40:37.492	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "1.747375ms"}
+2024/05/20 18:41:18.092	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:41:23.134	[31mERROR[0m	pq: column "enabled" is of type boolean but expression is of type text
+2024/05/20 18:41:23.134	[31mERROR[0m	pq: column "enabled" is of type boolean but expression is of type text	{"url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "method": "PUT"}
+2024/05/20 18:41:23.134	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "46.242125ms"}
+2024/05/20 18:49:01.738	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:49:08.150	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/8c3ef0a0-791d-48f6-8bf4-b575ec9db6a4", "status": 200, "duration": "48.449875ms"}
+2024/05/20 18:49:11.155	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "2.922292ms"}
+2024/05/20 18:57:13.234	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 18:57:15.974	[31mERROR[0m	Invalid email	{"url": "/users/registration", "method": "POST"}
+2024/05/20 18:57:15.974	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "529.542µs"}
+2024/05/20 18:57:23.491	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/20 18:57:23.492	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "30.177417ms"}
+2024/05/20 18:57:28.306	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "9.432417ms"}
+2024/05/20 18:57:33.035	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "2.243834ms"}
+2024/05/20 18:59:42.989	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "1.649125ms"}
+2024/05/20 18:59:57.186	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "6.34375ms"}
+2024/05/20 19:00:06.077	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 19:00:11.739	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "34.914417ms"}
+2024/05/20 19:00:24.242	[31mERROR[0m	Invalid email	{"url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "method": "PUT"}
+2024/05/20 19:00:24.242	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "997.625µs"}
+2024/05/20 19:00:28.304	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"
+2024/05/20 19:00:28.304	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"	{"url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "method": "PUT"}
+2024/05/20 19:00:28.304	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "7.638667ms"}
+2024/05/20 19:00:46.954	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "10.027875ms"}
+2024/05/20 20:22:33.890	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/20 20:22:37.477	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/7d984f72-8b1a-4480-be1f-03674227fb04", "status": 200, "duration": "29.292958ms"}
+2024/05/22 20:00:25.737	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
