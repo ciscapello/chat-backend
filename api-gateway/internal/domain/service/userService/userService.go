@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/ciscapello/api-gateway/internal/common/utils"
-	"github.com/ciscapello/api-gateway/internal/domain/entity/user"
+	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -21,12 +21,12 @@ type MessageBroker interface {
 }
 
 type UserRepo interface {
-	GetUserById(id uuid.UUID) (user.User, error)
-	CreateUser(user user.User) error
+	GetUserById(id uuid.UUID) (userEntity.User, error)
+	CreateUser(user userEntity.User) error
 	CheckUserIfExistsByUsername(username string) bool
 	CheckUserIfExistsByEmail(email string) bool
-	GetAllUsers() ([]user.User, error)
-	UpdateUser(u user.User) error
+	GetAllUsers() ([]userEntity.User, error)
+	UpdateUser(u userEntity.User) error
 }
 
 var (
@@ -58,7 +58,7 @@ func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 		us.logger.Error("failed to generate code", zap.Error(err))
 		return uuid.UUID{}, ErrCannotCreateUser
 	}
-	user := user.NewUser(username, email, code)
+	user := userEntity.NewUser(username, email, code)
 
 	err = us.userRepo.CreateUser(*user)
 	if err != nil {
@@ -75,28 +75,28 @@ func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 	return user.ID, nil
 }
 
-func (us *UserService) GetUser(uuid uuid.UUID) (user.PublicUser, error) {
+func (us *UserService) GetUser(uuid uuid.UUID) (userEntity.PublicUser, error) {
 	u, err := us.userRepo.GetUserById(uuid)
 	if err != nil {
-		return user.PublicUser{}, err
+		return userEntity.PublicUser{}, err
 	}
 
-	return user.PublicUser{
+	return userEntity.PublicUser{
 		ID:       u.ID,
 		Username: u.Username,
 		Email:    u.Email,
 	}, nil
 }
 
-func (us *UserService) GetAllUsers() ([]user.PublicUser, error) {
+func (us *UserService) GetAllUsers() ([]userEntity.PublicUser, error) {
 	users, err := us.userRepo.GetAllUsers()
 	if err != nil {
 		return nil, err
 	}
-	var publicUsers []user.PublicUser
+	var publicUsers []userEntity.PublicUser
 
 	for _, us := range users {
-		publicUsers = append(publicUsers, user.PublicUser{
+		publicUsers = append(publicUsers, userEntity.PublicUser{
 			ID:       us.ID,
 			Username: us.Username,
 			Email:    us.Email,
@@ -106,20 +106,20 @@ func (us *UserService) GetAllUsers() ([]user.PublicUser, error) {
 
 }
 
-func (us *UserService) UpdateUser(uuid uuid.UUID, fields user.UpdateUserRequest) (user.PublicUser, error) {
+func (us *UserService) UpdateUser(uuid uuid.UUID, fields userEntity.UpdateUserRequest) (userEntity.PublicUser, error) {
 	u, err := us.userRepo.GetUserById(uuid)
 	if err != nil {
-		return user.PublicUser{}, err
+		return userEntity.PublicUser{}, err
 	}
 
 	u.Update(fields)
 
 	err = us.userRepo.UpdateUser(u)
 	if err != nil {
-		return user.PublicUser{}, err
+		return userEntity.PublicUser{}, err
 	}
 
-	publicUser := user.NewPublicUser(u)
+	publicUser := userEntity.NewPublicUser(u)
 
 	return publicUser, nil
 }

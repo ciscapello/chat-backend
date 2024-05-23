@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ciscapello/api-gateway/internal/domain/entity/user"
+	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
@@ -33,7 +33,7 @@ func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		uh.logErrorInRequest(r, "Unable to read request body")
 		return
 	}
-	var requestBody user.UpdateUserRequest
+	var requestBody userEntity.UpdateUserRequest
 
 	if err := json.Unmarshal(body, &requestBody); err != nil {
 		response.SendError(w, http.StatusBadRequest, "Unable to unmarshal request body")

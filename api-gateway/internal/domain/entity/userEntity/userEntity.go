@@ -1,4 +1,4 @@
-package user
+package userEntity
 
 import (
 	"github.com/google/uuid"
