@@ -2,15 +2,23 @@ package main
 
 import (
 	"fmt"
-	"time"
 
+	"github.com/ciscapello/notification-service/application/config"
 	"github.com/ciscapello/notification-service/internal/infrastructure/rabbitmq"
+	"go.uber.org/zap"
 )
 
 func main() {
 	fmt.Println("hello from not service")
 
-	rabbitmq.Init()
+	conf := config.New()
+	cons := rabbitmq.NewConsumer(conf, zap.NewNop())
 
-	time.Sleep(time.Hour)
+	done := make(chan bool, 1)
+
+	go func() {
+		cons.Consume(rabbitmq.UserCreatedTopic, done)
+	}()
+
+	<-done
 }

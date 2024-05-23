@@ -164,3 +164,34 @@
 2024/05/22 22:26:02.525	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/22 22:27:07.819	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/05/22 22:33:00.930	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 18:41:20.688	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:10:53.633	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:12:32.004	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:13:18.395	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:13:18.395	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "58.180834ms"}
+2024/05/23 19:13:28.123	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:13:28.123	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "2.161375ms"}
+2024/05/23 19:14:45.365	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:14:47.882	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:14:47.882	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.772292ms"}
+2024/05/23 19:15:05.672	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:15:05.673	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "1.567625ms"}
+2024/05/23 19:15:22.000	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:15:27.149	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:15:27.149	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "38.596ms"}
+2024/05/23 19:15:32.153	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:15:32.153	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "1.32175ms"}
+2024/05/23 19:16:22.999	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:16:25.297	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:16:25.297	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.613ms"}
+2024/05/23 19:18:00.014	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:18:02.095	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "37.635625ms"}
+2024/05/23 19:28:03.293	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 19:28:06.411	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:28:06.411	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "32.152584ms"}
+2024/05/23 19:28:11.974	[31mERROR[0m	user with this email already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:28:11.974	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "5.680708ms"}
+2024/05/23 19:28:15.026	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.173834ms"}
+2024/05/23 19:28:50.694	[31mERROR[0m	user with this username already exists	{"url": "/users/registration", "method": "POST"}
+2024/05/23 19:28:50.694	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.326667ms"}
+2024/05/23 19:28:56.959	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "10.8095ms"}

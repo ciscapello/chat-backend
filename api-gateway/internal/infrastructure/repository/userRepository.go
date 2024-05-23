@@ -44,13 +44,18 @@ func (ur *UserRepository) CheckUserIfExistsByEmail(email string) bool {
 }
 
 func (ur *UserRepository) CheckUserIfExistsByUsername(username string) bool {
+	fmt.Println(username)
 	var user user.User
 	query := "SELECT * FROM users WHERE username = $1"
 	row := ur.db.QueryRow(query, username)
 	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
+	fmt.Println(row)
+	fmt.Println(user)
 	if err == sql.ErrNoRows {
+		fmt.Println(err)
 		return false
 	} else if err != nil {
+		fmt.Println(err)
 		return true
 	}
 	return true

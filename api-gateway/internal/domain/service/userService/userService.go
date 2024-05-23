@@ -5,13 +5,19 @@ import (
 
 	"github.com/ciscapello/api-gateway/internal/common/utils"
 	"github.com/ciscapello/api-gateway/internal/domain/entity/user"
+	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )
 
 type UserService struct {
-	userRepo UserRepo
-	logger   *zap.Logger
+	userRepo      UserRepo
+	logger        *zap.Logger
+	messageBroker MessageBroker
+}
+
+type MessageBroker interface {
+	Publish(topic string, msg interface{}) error
 }
 
 type UserRepo interface {
@@ -29,10 +35,11 @@ var (
 	ErrUserWithThisEmailExists    = errors.New("user with this email already exists")
 )
 
-func New(userRepo UserRepo, logger *zap.Logger) *UserService {
+func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker) *UserService {
 	return &UserService{
-		userRepo: userRepo,
-		logger:   logger,
+		userRepo:      userRepo,
+		logger:        logger,
+		messageBroker: messageBroker,
 	}
 }
 
@@ -58,6 +65,13 @@ func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 		us.logger.Error("failed to create user", zap.Error(err))
 		return uuid.UUID{}, ErrCannotCreateUser
 	}
+
+	us.messageBroker.Publish(rabbitmq.UserCreatedTopic, rabbitmq.UserCreatedMessage{
+		Username: user.Username,
+		Email:    user.Email,
+		Code:     user.Code,
+	})
+
 	return user.ID, nil
 }
 

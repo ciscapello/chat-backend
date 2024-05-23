@@ -34,18 +34,12 @@ func run() {
 	db := db.New()
 	database := db.Start(config)
 
+	producer := rabbitmq.NewProducer(config, logger)
+	defer producer.Close()
+
 	userRepository := repository.NewUserRepository(database, logger)
 
-	userService := userservice.New(userRepository, logger)
-
-	rabbitmq.Init(config)
-
-	go func() {
-		for {
-			rabbitmq.Publish(rabbitmq.UserCreatedTopic, "hello from somewhere")
-			time.Sleep(time.Second * 5)
-		}
-	}()
+	userService := userservice.New(userRepository, logger, producer)
 
 	userHandler := userhandler.New(userService, logger)
 	defaulthandler := defaulthandler.New(logger)

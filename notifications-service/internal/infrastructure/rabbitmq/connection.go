@@ -3,70 +3,43 @@ package rabbitmq
 import (
 	"log"
 
+	"github.com/ciscapello/notification-service/application/config"
 	amqp "github.com/rabbitmq/amqp091-go"
+	"go.uber.org/zap"
 )
 
-var conn *amqp.Connection
-var ch *amqp.Channel
+type Consumer struct {
+	Channel    *amqp.Channel
+	Connection *amqp.Connection
+	logger     *zap.Logger
+}
 
-const (
-	UserCreatedTopic = "user.created"
-)
+func NewConsumer(config *config.Config, logger *zap.Logger) *Consumer {
+	conn, err := amqp.Dial(config.RmqConnStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	ch, err := conn.Channel()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return &Consumer{
+		Channel:    ch,
+		Connection: conn,
+		logger:     logger,
+	}
+}
 
 func Init() {
-	var err error
-	conn, err = amqp.Dial("amqp://guest:guest@localhost:5672/")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	ch, err = conn.Channel()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	q, err := ch.QueueDeclare(
-		UserCreatedTopic, // name
-		false,            // durable
-		false,            // delete when unused
-		false,            // exclusive
-		false,            // no-wait
-		nil,              // arguments
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	msgs, err := ch.Consume(
-		q.Name, // queue
-		"",     // consumer
-		true,   // auto-ack
-		false,  // exclusive
-		false,  // no-local
-		false,  // no-wait
-		nil,    // args
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	go func() {
-		for d := range msgs {
-			log.Printf("Received a message: %s", d.Body)
-		}
-	}()
-
 }
 
-func Close() {
-	if ch != nil {
-		ch.Close()
+func (c *Consumer) Close() {
+	if c.Channel != nil {
+		c.Channel.Close()
 	}
-	if conn != nil {
-		conn.Close()
+	if c.Connection != nil {
+		c.Connection.Close()
 	}
-}
-
-func GetChannel() *amqp.Channel {
-	return ch
 }
