@@ -196,3 +196,11 @@
 2024/05/23 19:28:50.694	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "3.326667ms"}
 2024/05/23 19:28:56.959	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "10.8095ms"}
 2024/05/23 19:34:07.192	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 22:22:28.995	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/23 22:22:35.783	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "33.476458ms"}
+2024/05/25 16:55:03.820	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/25 16:55:34.862	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "67.59925ms"}
+2024/05/25 17:16:44.958	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "8.897208ms"}
+2024/05/25 17:32:36.138	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "16.513291ms"}
+2024/05/25 17:36:14.418	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "18.221917ms"}
+2024/05/25 17:40:01.815	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "18.798708ms"}

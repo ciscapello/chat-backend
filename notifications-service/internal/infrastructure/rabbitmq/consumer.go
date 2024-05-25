@@ -42,6 +42,7 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 				log.Fatal(err)
 			}
 			fmt.Println(userCreatedMsg)
+			c.emailservice.SendCodeToUser(userCreatedMsg.Code, userCreatedMsg.Email)
 		}
 		doneCh <- true
 	}()

@@ -1,0 +1,8 @@
+2024/05/23 22:22:35.784	[34mINFO[0m	Sending email
+2024/05/25 16:55:34.864	[34mINFO[0m	Sending email
+2024/05/25 17:16:44.959	[34mINFO[0m	Sending email
+2024/05/25 17:32:36.141	[34mINFO[0m	Sending email
+2024/05/25 17:32:36.142	[31mERROR[0m	failed to parse html body	{"error": "open code.html: no such file or directory"}
+2024/05/25 17:36:14.419	[34mINFO[0m	Sending email
+2024/05/25 17:36:14.420	[31mERROR[0m	failed to execute html template	{"error": "template: code.html:10:10: executing \"code.html\" at <.Code>: can't evaluate field Code in type string"}
+2024/05/25 17:40:01.816	[34mINFO[0m	Sending email

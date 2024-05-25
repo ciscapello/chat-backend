@@ -1,24 +1,26 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/ciscapello/notification-service/application/config"
+	"github.com/ciscapello/notification-service/common/logger"
+	emailservice "github.com/ciscapello/notification-service/internal/domain/service/emailService"
 	"github.com/ciscapello/notification-service/internal/infrastructure/rabbitmq"
-	"go.uber.org/zap"
 )
 
 func main() {
-	fmt.Println("hello from not service")
 
 	conf := config.New()
-	cons := rabbitmq.NewConsumer(conf, zap.NewNop())
 
-	done := make(chan bool, 1)
+	logger := logger.GetLogger(conf)
+
+	es := emailservice.New(*conf, logger)
+	cons := rabbitmq.NewConsumer(conf, logger, es)
+
+	never := make(chan bool, 1)
 
 	go func() {
-		cons.Consume(rabbitmq.UserCreatedTopic, done)
+		cons.Consume(rabbitmq.UserCreatedTopic, never)
 	}()
 
-	<-done
+	<-never
 }

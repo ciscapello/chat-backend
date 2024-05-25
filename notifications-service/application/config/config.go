@@ -20,14 +20,16 @@ const (
 var ErrNoEnvs = errors.New("there's no environment variables")
 
 type Config struct {
-	DbPassword string
-	DbHost     string
-	DbPort     string
-	DbName     string
-	DbUser     string
-	HttpPort   string
-	LogPath    string
-	RmqConnStr string
+	DbPassword    string
+	DbHost        string
+	DbPort        string
+	DbName        string
+	DbUser        string
+	HttpPort      string
+	LogPath       string
+	RmqConnStr    string
+	EmailAddress  string
+	EmailPassword string
 }
 
 func New() *Config {
@@ -46,6 +48,9 @@ func New() *Config {
 	rmqHost := os.Getenv("RMQ_HOST")
 	rmqPost := os.Getenv("RMQ_PORT")
 
+	emailAddr := os.Getenv("EMAIL_ADDRESS")
+	emailPass := os.Getenv("EMAIL_PASSWORD")
+
 	rmqConnStr := "amqp://" + "guest" + ":" + "guest" + "@" + rmqHost + ":" + rmqPost + "/"
 
 	path, err := os.Getwd()
@@ -54,13 +59,15 @@ func New() *Config {
 	}
 
 	return &Config{
-		DbPassword: dbPassword,
-		DbHost:     dbHost,
-		DbPort:     dbPort,
-		DbName:     dbName,
-		DbUser:     dbUser,
-		HttpPort:   httpPort,
-		LogPath:    path + "/logs",
-		RmqConnStr: rmqConnStr,
+		DbPassword:    dbPassword,
+		DbHost:        dbHost,
+		DbPort:        dbPort,
+		DbName:        dbName,
+		DbUser:        dbUser,
+		HttpPort:      httpPort,
+		LogPath:       path + "/logs",
+		RmqConnStr:    rmqConnStr,
+		EmailAddress:  emailAddr,
+		EmailPassword: emailPass,
 	}
 }
