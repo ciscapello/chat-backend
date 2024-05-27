@@ -12,6 +12,7 @@ import (
 
 	"github.com/ciscapello/api-gateway/internal/application/config"
 	"github.com/ciscapello/api-gateway/internal/application/db"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/logger"
 	userservice "github.com/ciscapello/api-gateway/internal/domain/service/userService"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
@@ -39,7 +40,9 @@ func run() {
 
 	userRepository := repository.NewUserRepository(database, logger)
 
-	userService := userservice.New(userRepository, logger, producer)
+	jwtMan := jwtmanager.NewJwtManager(config, logger)
+
+	userService := userservice.New(userRepository, logger, producer, jwtMan)
 
 	userHandler := userhandler.New(userService, logger)
 	defaulthandler := defaulthandler.New(logger)

@@ -51,5 +51,12 @@ func (uh *UserHandler) CheckCode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response.SendSuccess(w, http.StatusOK, "Code is valid")
+	tokens, err := uh.userService.GetTokens(id)
+	if err != nil {
+		response.SendError(w, http.StatusBadRequest, err.Error())
+		uh.logErrorInRequest(r, err.Error())
+		return
+	}
+
+	response.SendSuccess(w, http.StatusOK, tokens)
 }

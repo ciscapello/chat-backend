@@ -217,3 +217,20 @@
 2024/05/27 19:51:08.748	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "16.921916ms"}
 2024/05/27 19:51:18.186	[31mERROR[0m	Invalid code	{"url": "/users/check-code", "method": "POST"}
 2024/05/27 19:51:18.187	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.677458ms"}
+2024/05/27 21:48:17.713	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:48:29.492	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "36.096959ms"}
+2024/05/27 21:48:54.781	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "6.874917ms"}
+2024/05/27 21:50:21.843	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:50:24.927	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "18.163292ms"}
+2024/05/27 21:51:16.601	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:51:31.677	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:51:57.110	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:52:12.975	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:52:24.007	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:52:45.226	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:52:56.412	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:53:04.014	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "24.812917ms"}
+2024/05/27 21:54:30.896	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 21:54:41.519	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "36.160792ms"}
+2024/05/27 21:54:54.485	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.525833ms"}
+2024/05/27 21:54:56.667	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.866667ms"}

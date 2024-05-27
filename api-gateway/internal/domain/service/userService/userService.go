@@ -3,6 +3,7 @@ package userservice
 import (
 	"errors"
 
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/utils"
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
@@ -14,6 +15,7 @@ type UserService struct {
 	userRepo      UserRepo
 	logger        *zap.Logger
 	messageBroker MessageBroker
+	jwtManager    *jwtmanager.JwtManager
 }
 
 type MessageBroker interface {
@@ -35,11 +37,12 @@ var (
 	ErrUserWithThisEmailExists    = errors.New("user with this email already exists")
 )
 
-func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker) *UserService {
+func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker, jwtmanager *jwtmanager.JwtManager) *UserService {
 	return &UserService{
 		userRepo:      userRepo,
 		logger:        logger,
 		messageBroker: messageBroker,
+		jwtManager:    jwtmanager,
 	}
 }
 
@@ -130,4 +133,13 @@ func (us *UserService) CheckCode(uuid uuid.UUID, code string) (bool, error) {
 	}
 
 	return code == usr.Code, nil
+}
+
+func (us *UserService) GetTokens(id uuid.UUID) (jwtmanager.ReturnTokenType, error) {
+	tokens, err := us.jwtManager.Generate(id)
+	if err != nil {
+		us.logger.Error("failed to generate tokens", zap.Error(err))
+		return jwtmanager.ReturnTokenType{}, err
+	}
+	return tokens, nil
 }
