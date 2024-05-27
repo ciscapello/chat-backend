@@ -6,3 +6,6 @@
 2024/05/25 17:36:14.419	[34mINFO[0m	Sending email
 2024/05/25 17:36:14.420	[31mERROR[0m	failed to execute html template	{"error": "template: code.html:10:10: executing \"code.html\" at <.Code>: can't evaluate field Code in type string"}
 2024/05/25 17:40:01.816	[34mINFO[0m	Sending email
+2024/05/27 18:22:39.220	[34mINFO[0m	Sending email
+2024/05/27 19:37:29.507	[34mINFO[0m	Sending email
+2024/05/27 19:51:08.749	[34mINFO[0m	Sending email

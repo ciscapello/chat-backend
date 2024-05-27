@@ -43,8 +43,6 @@ func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker) *Us
 	}
 }
 
-func (us *UserService) Login() {}
-
 func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 	if isExists := us.userRepo.CheckUserIfExistsByUsername(username); isExists {
 		return uuid.UUID{}, ErrUserWithThisUsernameExists
@@ -122,4 +120,14 @@ func (us *UserService) UpdateUser(uuid uuid.UUID, fields userEntity.UpdateUserRe
 	publicUser := userEntity.NewPublicUser(u)
 
 	return publicUser, nil
+}
+
+func (us *UserService) CheckCode(uuid uuid.UUID, code string) (bool, error) {
+	usr, err := us.userRepo.GetUserById(uuid)
+	if err != nil {
+		us.logger.Error("failed to get user", zap.Error(err))
+		return false, err
+	}
+
+	return code == usr.Code, nil
 }

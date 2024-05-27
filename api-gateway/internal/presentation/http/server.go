@@ -77,5 +77,5 @@ func ConfigureUserRoutes(subrouter *mux.Router, handlers *userhandler.UserHandle
 	subrouter.HandleFunc("/{id}", handlers.GetUser).Methods(http.MethodGet)
 	subrouter.HandleFunc("/{id}", handlers.UpdateUser).Methods(http.MethodPut)
 	subrouter.HandleFunc("/registration", handlers.Registration).Methods(http.MethodPost)
-	// subrouter.HandleFunc("/login", handlers.Login).Methods(http.MethodPost)
+	subrouter.HandleFunc("/check-code", handlers.CheckCode).Methods(http.MethodPost)
 }
