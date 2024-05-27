@@ -1,6 +1,7 @@
 package jwtmanager
 
 import (
+	"errors"
 	"fmt"
 	"time"
 
@@ -83,15 +84,29 @@ func (j *JwtManager) genRefreshToken(uid string) (string, error) {
 	return refreshToken, nil
 }
 
+func (j *JwtManager) Verify(tokenStr string) (string, error) {
+	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+		}
+		return []byte(j.accsTokenSecret), nil
+	})
+	if err != nil {
+		return "", err
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		return claims["id"].(string), nil
+	}
+
+	return "", errors.New("invalid token")
+}
+
 func (j *JwtManager) Parse() (string, error) {
 	return "", nil
 }
 
 func (j *JwtManager) Refresh() (string, error) {
-	return "", nil
-}
-
-func (j *JwtManager) Verify() (string, error) {
 	return "", nil
 }
 
