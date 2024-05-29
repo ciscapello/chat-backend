@@ -1,4 +1,3 @@
-basePath: /
 definitions:
   jwtmanager.ReturnTokenType:
     properties:
@@ -64,16 +63,8 @@ definitions:
       id:
         type: string
     type: object
-host: localhost:3000
 info:
-  contact:
-    email: 9gUOv@example.com
-    name: API Support
-    url: http://www.swagger.io/support
-  description: API Gateway for chat app
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  contact: {}
   title: API Gateway
   version: "1.0"
 paths:
@@ -183,6 +174,42 @@ paths:
       summary: Update user
       tags:
       - users
+  /users/auth:
+    post:
+      consumes:
+      - application/json
+      description: Authentication by username and email
+      parameters:
+      - description: Request body containing username and email
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/userhandler.requestBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/userhandler.resp'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: Authentication
+      tags:
+      - users
   /users/check-code:
     post:
       consumes:
@@ -219,42 +246,4 @@ paths:
       summary: Check code
       tags:
       - users
-  /users/registration:
-    post:
-      consumes:
-      - application/json
-      description: Registration
-      parameters:
-      - description: Request body containing username and email
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/userhandler.requestBody'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            allOf:
-            - $ref: '#/definitions/response.Response'
-            - properties:
-                data:
-                  $ref: '#/definitions/userhandler.resp'
-              type: object
-        "400":
-          description: Bad Request
-          schema:
-            allOf:
-            - $ref: '#/definitions/response.Response'
-            - properties:
-                error:
-                  type: string
-              type: object
-      summary: Registration
-      tags:
-      - users
-schemes:
-- http
 swagger: "2.0"

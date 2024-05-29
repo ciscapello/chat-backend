@@ -408,3 +408,63 @@
 2024/05/29 20:42:59.135	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.307875ms"}
 2024/05/29 20:44:06.499	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "8.5085ms"}
 2024/05/29 20:44:39.351	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "6.934375ms"}
+2024/05/29 21:26:19.802	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:26:23.990	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "690.167µs"}
+2024/05/29 21:26:24.009	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "529.375µs"}
+2024/05/29 21:26:24.020	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "11.032125ms"}
+2024/05/29 21:26:24.037	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "26.370083ms"}
+2024/05/29 21:26:24.125	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "406.541µs"}
+2024/05/29 21:26:24.135	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "126.708µs"}
+2024/05/29 21:26:34.873	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "322.583µs"}
+2024/05/29 21:27:39.220	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:27:41.223	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "836.625µs"}
+2024/05/29 21:27:41.233	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "244.75µs"}
+2024/05/29 21:27:41.241	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "7.200292ms"}
+2024/05/29 21:27:41.242	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "1.787458ms"}
+2024/05/29 21:27:41.324	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "1.206959ms"}
+2024/05/29 21:27:41.333	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "96.75µs"}
+2024/05/29 21:27:42.475	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "377.708µs"}
+2024/05/29 21:27:42.486	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "17µs"}
+2024/05/29 21:27:42.487	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "6.084µs"}
+2024/05/29 21:27:42.489	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "12.792µs"}
+2024/05/29 21:27:42.530	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "359.25µs"}
+2024/05/29 21:27:42.535	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "31.625µs"}
+2024/05/29 21:27:43.014	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "210.084µs"}
+2024/05/29 21:27:43.024	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "31.209µs"}
+2024/05/29 21:27:43.024	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "10.041µs"}
+2024/05/29 21:27:43.027	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "20.75µs"}
+2024/05/29 21:27:43.064	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "947.375µs"}
+2024/05/29 21:27:43.070	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "30.958µs"}
+2024/05/29 21:27:46.742	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "188.041µs"}
+2024/05/29 21:27:46.750	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "31.5µs"}
+2024/05/29 21:27:46.752	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "19.666µs"}
+2024/05/29 21:27:46.752	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "15.292µs"}
+2024/05/29 21:27:46.781	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "915.125µs"}
+2024/05/29 21:27:46.782	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "24.667µs"}
+2024/05/29 21:29:11.537	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:29:16.787	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "455.25µs"}
+2024/05/29 21:29:16.803	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "709.292µs"}
+2024/05/29 21:29:16.815	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "5.653542ms"}
+2024/05/29 21:29:16.818	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "10.46125ms"}
+2024/05/29 21:29:16.903	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "806.958µs"}
+2024/05/29 21:29:16.908	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "242.875µs"}
+2024/05/29 21:29:58.708	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:30:09.362	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "2.267291ms"}
+2024/05/29 21:30:09.373	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "292.916µs"}
+2024/05/29 21:30:09.377	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "370.791µs"}
+2024/05/29 21:30:09.380	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "4.131625ms"}
+2024/05/29 21:30:09.430	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "1.619916ms"}
+2024/05/29 21:30:09.431	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "266.417µs"}
+2024/05/29 21:30:12.314	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "268.5µs"}
+2024/05/29 21:30:12.324	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "31.958µs"}
+2024/05/29 21:30:12.325	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "12µs"}
+2024/05/29 21:30:12.325	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "21.833µs"}
+2024/05/29 21:30:12.366	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "187.75µs"}
+2024/05/29 21:30:12.372	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "61µs"}
+2024/05/29 21:30:18.756	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:30:21.287	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "608.083µs"}
+2024/05/29 21:30:21.296	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "358.958µs"}
+2024/05/29 21:30:21.299	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "577.875µs"}
+2024/05/29 21:30:21.300	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "3.39725ms"}
+2024/05/29 21:30:21.343	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "932µs"}
+2024/05/29 21:30:21.344	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "34.5µs"}

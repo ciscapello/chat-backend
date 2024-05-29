@@ -17,16 +17,16 @@ type resp struct {
 	ID string `json:"id"`
 }
 
-// @Summary Registration
-// @Description Registration
+// @Summary Authentication
+// @Description Authentication by username and email
 // @Tags users
 // @Accept json
 // @Produce json
 // @Param request body requestBody true "Request body containing username and email"
 // @Success 200 {object} response.Response{data=resp}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/registration [post]
-func (uh *UserHandler) Registration(w http.ResponseWriter, r *http.Request) {
+// @Router /users/auth [post]
+func (uh *UserHandler) Auth(w http.ResponseWriter, r *http.Request) {
 
 	var rb requestBody
 	body, err := io.ReadAll(r.Body)
