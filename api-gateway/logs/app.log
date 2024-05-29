@@ -469,3 +469,43 @@
 2024/05/29 21:30:21.343	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "932µs"}
 2024/05/29 21:30:21.344	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "34.5µs"}
 2024/05/29 21:51:27.803	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:58:13.853	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 21:58:30.177	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "451.583µs"}
+2024/05/29 21:58:30.188	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "4.9065ms"}
+2024/05/29 21:58:30.189	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "143.875µs"}
+2024/05/29 21:58:30.192	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "3.8545ms"}
+2024/05/29 21:58:30.295	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "853.417µs"}
+2024/05/29 21:58:30.588	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "47.916µs"}
+2024/05/29 21:58:31.948	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "310.084µs"}
+2024/05/29 21:58:31.956	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "31.416µs"}
+2024/05/29 21:58:31.956	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "17.041µs"}
+2024/05/29 21:58:31.957	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "15.833µs"}
+2024/05/29 21:58:32.009	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "1.291ms"}
+2024/05/29 21:58:32.019	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "13.830458ms"}
+2024/05/29 21:58:52.960	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/05/29 21:58:52.960	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "556.541µs"}
+2024/05/29 21:59:03.393	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "16.181625ms"}
+2024/05/29 22:00:43.094	[31mERROR[0m	user with this username already exists	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:00:43.094	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.197542ms"}
+2024/05/29 22:00:47.971	[31mERROR[0m	user with this email already exists	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:00:47.972	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "4.21975ms"}
+2024/05/29 22:00:57.153	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "12.594834ms"}
+2024/05/29 22:01:15.032	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.422167ms"}
+2024/05/29 22:01:54.688	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 22:01:59.964	[31mERROR[0m	Invalid username	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:01:59.964	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "568µs"}
+2024/05/29 22:02:09.590	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "20.730084ms"}
+2024/05/29 22:04:50.834	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 22:05:01.436	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "799.416µs"}
+2024/05/29 22:05:01.449	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "220.875µs"}
+2024/05/29 22:05:01.452	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "734.75µs"}
+2024/05/29 22:05:01.456	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "4.983625ms"}
+2024/05/29 22:05:01.550	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "513.542µs"}
+2024/05/29 22:05:01.555	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "40µs"}
+2024/05/29 22:05:18.534	[31mERROR[0m	Invalid username	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:05:18.534	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "393.667µs"}
+2024/05/29 22:05:24.381	[31mERROR[0m	Invalid username	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:05:24.381	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "151.834µs"}
+2024/05/29 22:05:28.722	[31mERROR[0m	Invalid username	{"url": "/users/auth", "method": "POST"}
+2024/05/29 22:05:28.723	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "143.834µs"}
+2024/05/29 22:05:33.961	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "13.672166ms"}

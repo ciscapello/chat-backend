@@ -42,6 +42,12 @@ func (uh *UserHandler) Auth(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if !uh.isValidUsername(rb.Username) {
+		response.SendError(w, http.StatusBadRequest, "Invalid username")
+		uh.logErrorInRequest(r, "Invalid username")
+		return
+	}
+
 	if !uh.isValidEmail(rb.Email) {
 		response.SendError(w, http.StatusBadRequest, "Invalid email")
 		uh.logErrorInRequest(r, "Invalid email")
