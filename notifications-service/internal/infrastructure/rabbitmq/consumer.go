@@ -43,6 +43,7 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 			}
 			fmt.Println(userCreatedMsg)
 			c.emailservice.SendCodeToUser(userCreatedMsg.Code, userCreatedMsg.Email)
+			c.telegramManager.SendMessage(fmt.Sprintf("code %s", userCreatedMsg.Code))
 		}
 		doneCh <- true
 	}()

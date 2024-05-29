@@ -30,6 +30,8 @@ type Config struct {
 	RmqConnStr    string
 	EmailAddress  string
 	EmailPassword string
+	BotToken      string
+	ChatId        string
 }
 
 func New() *Config {
@@ -51,6 +53,9 @@ func New() *Config {
 	emailAddr := os.Getenv("EMAIL_ADDRESS")
 	emailPass := os.Getenv("EMAIL_PASSWORD")
 
+	botToken := os.Getenv("BOT_TOKEN")
+	chatId := os.Getenv("CHAT_ID")
+
 	rmqConnStr := "amqp://" + "guest" + ":" + "guest" + "@" + rmqHost + ":" + rmqPost + "/"
 
 	path, err := os.Getwd()
@@ -69,5 +74,7 @@ func New() *Config {
 		RmqConnStr:    rmqConnStr,
 		EmailAddress:  emailAddr,
 		EmailPassword: emailPass,
+		BotToken:      botToken,
+		ChatId:        chatId,
 	}
 }

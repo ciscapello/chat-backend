@@ -397,3 +397,14 @@
 2024/05/29 20:14:22.154	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "15.565208ms"}
 2024/05/29 20:14:22.190	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "724.667µs"}
 2024/05/29 20:14:22.191	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "40.625µs"}
+2024/05/29 20:35:54.016	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 20:36:05.808	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "48.292792ms"}
+2024/05/29 20:37:22.859	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/29 20:37:33.009	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "45.241542ms"}
+2024/05/29 20:38:16.033	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "19.736625ms"}
+2024/05/29 20:39:07.550	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.367125ms"}
+2024/05/29 20:40:06.226	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "16.910625ms"}
+2024/05/29 20:40:29.937	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "11.732167ms"}
+2024/05/29 20:42:59.135	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "20.307875ms"}
+2024/05/29 20:44:06.499	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/registration", "status": 200, "duration": "8.5085ms"}
+2024/05/29 20:44:39.351	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "6.934375ms"}

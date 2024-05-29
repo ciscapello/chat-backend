@@ -5,6 +5,7 @@ import (
 	"github.com/ciscapello/notification-service/common/logger"
 	emailservice "github.com/ciscapello/notification-service/internal/domain/service/emailService"
 	"github.com/ciscapello/notification-service/internal/infrastructure/rabbitmq"
+	"github.com/ciscapello/notification-service/internal/infrastructure/telegram"
 )
 
 func main() {
@@ -14,7 +15,8 @@ func main() {
 	logger := logger.GetLogger(conf)
 
 	es := emailservice.New(*conf, logger)
-	cons := rabbitmq.NewConsumer(conf, logger, es)
+	telegramManager := telegram.New(logger, *conf)
+	cons := rabbitmq.NewConsumer(conf, logger, es, telegramManager)
 
 	never := make(chan bool, 1)
 
