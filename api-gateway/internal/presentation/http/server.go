@@ -28,6 +28,11 @@ type Server struct {
 func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	router := mux.NewRouter()
 
+	// wd, err := os.Getwd()
+	// if err != nil {
+	// logger.Fatal("Error getting current working directory", zap.Error(err))
+	// }
+
 	router.Use(LoggingMiddleware(logger))
 
 	router.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)

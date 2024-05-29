@@ -17,6 +17,25 @@ type resp struct {
 	ID string `json:"id"`
 }
 
+// @title Swagger Example API
+// @version 1.0
+// @description This is a sample server Petstore server.
+// @termsOfService http://swagger.io/terms/
+
+// @contact.name API Support
+// @contact.url http://www.swagger.io/support
+// @contact.email 9gUOv@example.com
+
+// Registration godoc
+// @Summary      Registration
+// @Description  Create new user
+// @Tags         User
+// @Accept       json
+// @Produce      json
+// @Param        request body requestBody true "request body"
+// @Success      200  {object}  resp
+// @Failure      400  {object}  response.Error
+
 func (uh *UserHandler) Registration(w http.ResponseWriter, r *http.Request) {
 
 	var rb requestBody

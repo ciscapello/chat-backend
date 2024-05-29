@@ -234,3 +234,7 @@
 2024/05/27 21:54:41.519	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "36.160792ms"}
 2024/05/27 21:54:54.485	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.525833ms"}
 2024/05/27 21:54:56.667	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.866667ms"}
+2024/05/27 22:34:49.028	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 22:47:51.161	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 22:49:22.454	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/27 22:49:40.342	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
