@@ -9,33 +9,23 @@ import (
 )
 
 type requestBody struct {
-	Username string
-	Email    string
+	Username string `json:"username"`
+	Email    string `json:"email"`
 }
 
 type resp struct {
 	ID string `json:"id"`
 }
 
-// @title Swagger Example API
-// @version 1.0
-// @description This is a sample server Petstore server.
-// @termsOfService http://swagger.io/terms/
-
-// @contact.name API Support
-// @contact.url http://www.swagger.io/support
-// @contact.email 9gUOv@example.com
-
-// Registration godoc
-// @Summary      Registration
-// @Description  Create new user
-// @Tags         User
-// @Accept       json
-// @Produce      json
-// @Param        request body requestBody true "request body"
-// @Success      200  {object}  resp
-// @Failure      400  {object}  response.Error
-
+// @Summary Registration
+// @Description Registration
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param request body requestBody true "Request body containing username and email"
+// @Success 200 {object} response.Response{data=resp}
+// @Failure 400 {object} response.Response{error=string}
+// @Router /users/registration [post]
 func (uh *UserHandler) Registration(w http.ResponseWriter, r *http.Request) {
 
 	var rb requestBody

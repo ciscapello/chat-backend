@@ -11,6 +11,7 @@ import (
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/defaultHandler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/userHandler"
 	"github.com/gorilla/mux"
+	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
 )
 
@@ -55,6 +56,8 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	router.PathPrefix("/docs/").Handler(httpSwagger.WrapHandler)
 
 	return &Server{
 		httpServer: &http.Server{

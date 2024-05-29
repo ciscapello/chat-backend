@@ -8,6 +8,15 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// @Summary Get user
+// @Description Get user by id
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param id path string true "User ID"
+// @Success 200 {object} response.Response{data=userEntity.PublicUser}
+// @Failure 400 {object} response.Response{error=string}
+// @Router /users/{id} [get]
 func (uh *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)

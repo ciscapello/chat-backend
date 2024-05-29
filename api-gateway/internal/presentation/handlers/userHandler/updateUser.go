@@ -11,6 +11,16 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// @Summary Update user
+// @Description Update user
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param id path string true "User ID"
+// @Param request body userEntity.UpdateUserRequest true "User with optional fields"
+// @Success 200 {object} response.Response{data=userEntity.PublicUser}
+// @Failure 400 {object} response.Response{error=string}
+// @Router /users/{id} [put]
 func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, ok := vars["id"]

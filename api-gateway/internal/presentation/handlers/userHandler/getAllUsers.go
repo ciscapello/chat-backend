@@ -7,6 +7,14 @@ import (
 	"go.uber.org/zap"
 )
 
+// @Summary Get all users
+// @Description Get all users
+// @Tags users
+// @Accept json
+// @Produce json
+// @Success 200 {object} response.Response{data=[]userEntity.PublicUser}
+// @Failure 400 {object} response.Response{error=string}
+// @Router /users [get]
 func (uh *UserHandler) GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	users, err := uh.userService.GetAllUsers()
 	if err != nil {

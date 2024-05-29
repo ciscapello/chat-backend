@@ -14,6 +14,15 @@ type checkCodeReq struct {
 	Code string `json:"code"`
 }
 
+// @Summary Check code
+// @Description Check code with id and code
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param request body checkCodeReq true "Request body containing ID and Code"
+// @Success 200 {object} response.Response{data=jwtmanager.ReturnTokenType}
+// @Failure 400 {object} response.Response{error=string}
+// @Router /users/check-code [post]
 func (uh *UserHandler) CheckCode(w http.ResponseWriter, r *http.Request) {
 
 	var body checkCodeReq
