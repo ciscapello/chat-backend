@@ -4,16 +4,18 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+
+	"github.com/ciscapello/lib/contracts"
 )
 
 func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 	q, err := c.Channel.QueueDeclare(
-		UserCreatedTopic, // name
-		false,            // durable
-		false,            // delete when unused
-		false,            // exclusive
-		false,            // no-wait
-		nil,              // arguments
+		queueName, // name
+		false,     // durable
+		false,     // delete when unused
+		false,     // exclusive
+		false,     // no-wait
+		nil,       // arguments
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -35,8 +37,8 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 	go func() {
 		for d := range msgs {
 
-			var userCreatedMsg UserCreatedMessage
-			log.Printf("Received in %s a message: %s", UserCreatedTopic, d.Body)
+			var userCreatedMsg contracts.UserCreatedMessage
+			log.Printf("Received in %s a message: %s", queueName, d.Body)
 			err := json.Unmarshal(d.Body, &userCreatedMsg)
 			if err != nil {
 				log.Fatal(err)

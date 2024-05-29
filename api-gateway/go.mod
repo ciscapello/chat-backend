@@ -39,4 +39,7 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
+  github.com/ciscapello/lib v0.0.0
 )
+
+replace github.com/ciscapello/lib => ../lib

@@ -6,7 +6,7 @@ import (
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/utils"
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
-	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
+	"github.com/ciscapello/lib/contracts"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )
@@ -67,7 +67,7 @@ func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
 		return uuid.UUID{}, ErrCannotCreateUser
 	}
 
-	us.messageBroker.Publish(rabbitmq.UserCreatedTopic, rabbitmq.UserCreatedMessage{
+	us.messageBroker.Publish(contracts.UserCreatedTopic, contracts.UserCreatedMessage{
 		Username: user.Username,
 		Email:    user.Email,
 		Code:     user.Code,

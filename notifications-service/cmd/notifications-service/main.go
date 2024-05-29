@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/ciscapello/lib/contracts"
 	"github.com/ciscapello/notification-service/application/config"
 	"github.com/ciscapello/notification-service/common/logger"
 	emailservice "github.com/ciscapello/notification-service/internal/domain/service/emailService"
@@ -21,7 +22,7 @@ func main() {
 	never := make(chan bool, 1)
 
 	go func() {
-		cons.Consume(rabbitmq.UserCreatedTopic, never)
+		cons.Consume(contracts.UserCreatedTopic, never)
 	}()
 
 	<-never

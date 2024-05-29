@@ -1,4 +1,4 @@
-package rabbitmq
+package contracts
 
 type UserCreatedMessage struct {
 	Email    string
