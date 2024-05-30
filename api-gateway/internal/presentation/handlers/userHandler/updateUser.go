@@ -2,6 +2,7 @@ package userhandler
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 
@@ -22,6 +23,9 @@ import (
 // @Failure 400 {object} response.Response{error=string}
 // @Router /users/{id} [put]
 func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Println(r.Context().Value("userId"))
+
 	vars := mux.Vars(r)
 	id, ok := vars["id"]
 	if !ok {

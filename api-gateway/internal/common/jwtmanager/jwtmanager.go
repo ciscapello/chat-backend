@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/ciscapello/api-gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -58,8 +59,9 @@ func (j *JwtManager) genAccessToken(uid string) (string, error) {
 	fmt.Println(time.Now().Add(j.accsTokenExpires).Unix())
 
 	claims := jwt.MapClaims{
-		"id":  uid,
-		"exp": time.Now().Add(j.accsTokenExpires).Unix(),
+		"id":   uid,
+		"exp":  time.Now().Add(j.accsTokenExpires).Unix(),
+		"role": userEntity.Regular.String(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
@@ -102,18 +104,41 @@ func (j *JwtManager) Verify(tokenStr string) (string, error) {
 	return "", errors.New("invalid token")
 }
 
-func (j *JwtManager) Parse() (string, error) {
-	return "", nil
-}
+func (j *JwtManager) verifyToken(tokenStr string) (tokenClaims, error) {
+	fmt.Println("here1")
+	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+		}
+		return []byte(j.accsTokenSecret), nil
+	})
+	if err != nil {
+		return tokenClaims{}, err
+	}
 
-func (j *JwtManager) Refresh() (string, error) {
-	return "", nil
-}
+	fmt.Println("here2")
 
-func (j *JwtManager) Revoke() (string, error) {
-	return "", nil
-}
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		uidStr, ok := claims["id"].(string)
+		if !ok {
+			return tokenClaims{}, errors.New("invalid token")
+		}
+		id, err := uuid.Parse(uidStr)
+		if err != nil {
+			return tokenClaims{}, err
+		}
+		roleStr, ok := claims["role"].(string)
+		if !ok {
+			return tokenClaims{}, errors.New("invalid token")
+		}
+		role := userEntity.ParseRole(roleStr)
+		return tokenClaims{
+			id:   id,
+			role: role,
+		}, nil
+	}
 
-func (j *JwtManager) Validate() (string, error) {
-	return "", nil
+	fmt.Println("here3")
+
+	return tokenClaims{}, errors.New("invalid token")
 }

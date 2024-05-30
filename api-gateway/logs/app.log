@@ -509,3 +509,24 @@
 2024/05/29 22:05:28.722	[31mERROR[0m	Invalid username	{"url": "/users/auth", "method": "POST"}
 2024/05/29 22:05:28.723	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "143.834µs"}
 2024/05/29 22:05:33.961	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "13.672166ms"}
+2024/05/30 19:37:24.797	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:37:29.923	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "993.25µs"}
+2024/05/30 19:37:29.932	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "360.375µs"}
+2024/05/30 19:37:29.944	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "11.687209ms"}
+2024/05/30 19:37:29.944	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "4.42475ms"}
+2024/05/30 19:37:30.065	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "13.709625ms"}
+2024/05/30 19:37:43.233	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "42.962792ms"}
+2024/05/30 19:38:00.923	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.690958ms"}
+2024/05/30 19:38:03.304	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "5.449333ms"}
+2024/05/30 19:40:30.657	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:42:07.471	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:43:15.947	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:46:09.630	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:46:11.131	[31mERROR[0m	Invalid token	{"error": "invalid token"}
+2024/05/30 19:46:11.131	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "405.666µs"}
+2024/05/30 19:46:22.742	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "30.538834ms"}
+2024/05/30 19:46:35.731	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "9.344791ms"}
+2024/05/30 19:46:39.788	[31mERROR[0m	Invalid token	{"error": "token is malformed: could not JSON decode header: invalid character '\\x1d' in string literal"}
+2024/05/30 19:46:39.788	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "233.5µs"}
+2024/05/30 19:46:42.244	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "6.01125ms"}
+2024/05/30 19:46:49.209	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "12.059167ms"}

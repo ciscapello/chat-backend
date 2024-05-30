@@ -8,6 +8,8 @@ import (
 	"time"
 
 	"github.com/ciscapello/api-gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/defaultHandler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/userHandler"
 	"github.com/gorilla/mux"
@@ -34,13 +36,18 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	// logger.Fatal("Error getting current working directory", zap.Error(err))
 	// }
 
+	jwtm := jwtmanager.NewJwtManager(cfg, logger)
+
+	guardAdmin := jwtmanager.NewAuthMiddleware(userEntity.Admin, logger, jwtm)
+	jwtMiddleware := jwtmanager.NewAuthMiddleware(userEntity.Regular, logger, jwtm)
+
 	router.Use(LoggingMiddleware(logger))
 
 	router.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)
 	router.MethodNotAllowedHandler = http.HandlerFunc(handlers.DefaultHandler.MethodNotAllowedHandler)
 
 	userRouter := router.PathPrefix("/users").Subrouter()
-	ConfigureUserRoutes(userRouter, handlers.UserHandler)
+	ConfigureUserRoutes(userRouter, handlers.UserHandler, guardAdmin.Middleware, jwtMiddleware.Middleware)
 
 	router.Handle("", userRouter)
 
@@ -80,10 +87,14 @@ func (s *Server) Stop(ctx context.Context) error {
 	return s.httpServer.Shutdown(ctx)
 }
 
-func ConfigureUserRoutes(subrouter *mux.Router, handlers *userhandler.UserHandler) {
+func ConfigureUserRoutes(subrouter *mux.Router,
+	handlers *userhandler.UserHandler,
+	adminMiddleware mux.MiddlewareFunc,
+	jwtMiddleware mux.MiddlewareFunc) {
+
 	subrouter.HandleFunc("", handlers.GetAllUsers).Methods(http.MethodGet)
 	subrouter.HandleFunc("/{id}", handlers.GetUser).Methods(http.MethodGet)
-	subrouter.HandleFunc("/{id}", handlers.UpdateUser).Methods(http.MethodPut)
+	subrouter.Handle("/{id}", jwtMiddleware.Middleware(http.HandlerFunc(handlers.UpdateUser))).Methods(http.MethodPut)
 	subrouter.HandleFunc("/auth", handlers.Auth).Methods(http.MethodPost)
 	subrouter.HandleFunc("/check-code", handlers.CheckCode).Methods(http.MethodPost)
 }
