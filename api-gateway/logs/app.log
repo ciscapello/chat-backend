@@ -530,3 +530,23 @@
 2024/05/30 19:46:39.788	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "233.5µs"}
 2024/05/30 19:46:42.244	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "6.01125ms"}
 2024/05/30 19:46:49.209	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "12.059167ms"}
+2024/05/30 19:53:53.390	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:54:04.118	[31mERROR[0m	Authorization header missing
+2024/05/30 19:54:04.118	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "114.583µs"}
+2024/05/30 19:54:17.220	[31mERROR[0m	Authorization header missing
+2024/05/30 19:54:17.220	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "172.417µs"}
+2024/05/30 19:54:20.790	[31mERROR[0m	Authorization header missing
+2024/05/30 19:54:20.790	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "120.125µs"}
+2024/05/30 19:54:23.420	[31mERROR[0m	Invalid token	{"error": "token is malformed: token contains an invalid number of segments"}
+2024/05/30 19:54:23.421	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "1.202209ms"}
+2024/05/30 19:54:25.664	[31mERROR[0m	Authorization header missing
+2024/05/30 19:54:25.664	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "88.084µs"}
+2024/05/30 19:54:29.830	[31mERROR[0m	Invalid token	{"error": "token is malformed: could not JSON decode header: unexpected end of JSON input"}
+2024/05/30 19:54:29.830	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users/41f67411-afd5-4808-b6f7-785999ca2fd4", "status": 200, "duration": "180.542µs"}
+2024/05/30 19:55:57.482	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/30 19:55:58.020	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "524.459µs"}
+2024/05/30 19:55:58.029	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "228.25µs"}
+2024/05/30 19:55:58.031	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "362.5µs"}
+2024/05/30 19:55:58.032	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "2.676291ms"}
+2024/05/30 19:55:58.130	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "2.349833ms"}
+2024/05/30 19:55:58.133	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "41.292µs"}

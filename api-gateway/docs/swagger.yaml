@@ -171,6 +171,8 @@ paths:
                 error:
                   type: string
               type: object
+      security:
+      - BearerAuth: []
       summary: Update user
       tags:
       - users
@@ -246,4 +248,9 @@ paths:
       summary: Check code
       tags:
       - users
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

@@ -27,6 +27,10 @@ import (
 
 // @title API Gateway
 // @version 1.0
+
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
 func main() {
 	run()
 }

@@ -15,6 +15,7 @@ import (
 // @Summary Update user
 // @Description Update user
 // @Tags users
+// @Security BearerAuth
 // @Accept json
 // @Produce json
 // @Param id path string true "User ID"
