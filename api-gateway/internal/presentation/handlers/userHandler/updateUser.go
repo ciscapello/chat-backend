@@ -2,14 +2,13 @@ package userhandler
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
-	"github.com/gorilla/mux"
 )
 
 // @Summary Update user
@@ -18,20 +17,16 @@ import (
 // @Security BearerAuth
 // @Accept json
 // @Produce json
-// @Param id path string true "User ID"
 // @Param request body userEntity.UpdateUserRequest true "User with optional fields"
 // @Success 200 {object} response.Response{data=userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/{id} [put]
+// @Router /users [put]
 func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Println(r.Context().Value("userId"))
-
-	vars := mux.Vars(r)
-	id, ok := vars["id"]
-	if !ok {
-		response.SendError(w, http.StatusBadRequest, "Missing user ID parameter")
-		uh.logErrorInRequest(r, "Missing user ID parameter")
+	id, err := jwtmanager.GetUserId(r.Context())
+	if err != nil {
+		response.SendError(w, http.StatusBadRequest, "invalid token")
+		uh.logErrorInRequest(r, "invalid token")
 		return
 	}
 

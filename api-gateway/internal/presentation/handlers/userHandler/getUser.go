@@ -3,6 +3,7 @@ package userhandler
 import (
 	"net/http"
 
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
@@ -13,17 +14,24 @@ import (
 // @Tags users
 // @Accept json
 // @Produce json
+// @Security BearerAuth
 // @Param id path string true "User ID"
 // @Success 200 {object} response.Response{data=userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
 // @Router /users/{id} [get]
 func (uh *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 
+	id, err := jwtmanager.GetUserId(r.Context())
+	if err != nil {
+		response.SendError(w, http.StatusBadRequest, "invalid token")
+		uh.logErrorInRequest(r, "invalid token")
+		return
+	}
+
 	vars := mux.Vars(r)
-	id, ok := vars["id"]
-	if !ok {
-		response.SendError(w, http.StatusBadRequest, "Missing user ID parameter")
-		uh.logErrorInRequest(r, "Missing user ID parameter")
+	if id != vars["id"] {
+		response.SendError(w, http.StatusNotFound, "cannot found user with this id")
+		uh.logErrorInRequest(r, "invalid token")
 		return
 	}
 

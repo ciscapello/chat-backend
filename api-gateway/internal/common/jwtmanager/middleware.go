@@ -3,6 +3,7 @@ package jwtmanager
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/http"
 
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
@@ -35,6 +36,8 @@ func NewAuthMiddleware(requiredRole userEntity.Role, logger *zap.Logger, j *JwtM
 func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		authHeader := r.Header.Get(authorizationHeader)
+		fmt.Println(authHeader)
+
 		if authHeader == "" {
 			am.logger.Error("Authorization header missing")
 			http.Error(w, "Authorization header missing", http.StatusUnauthorized)

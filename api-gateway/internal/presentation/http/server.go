@@ -93,8 +93,8 @@ func ConfigureUserRoutes(subrouter *mux.Router,
 	jwtMiddleware mux.MiddlewareFunc) {
 
 	subrouter.HandleFunc("", handlers.GetAllUsers).Methods(http.MethodGet)
-	subrouter.HandleFunc("/{id}", handlers.GetUser).Methods(http.MethodGet)
-	subrouter.Handle("/{id}", jwtMiddleware.Middleware(http.HandlerFunc(handlers.UpdateUser))).Methods(http.MethodPut)
+	subrouter.Handle("/{id}", jwtMiddleware.Middleware(http.HandlerFunc(handlers.GetUser))).Methods(http.MethodGet)
+	subrouter.Handle("", jwtMiddleware.Middleware(http.HandlerFunc(handlers.UpdateUser))).Methods(http.MethodPut)
 	subrouter.HandleFunc("/auth", handlers.Auth).Methods(http.MethodPost)
 	subrouter.HandleFunc("/check-code", handlers.CheckCode).Methods(http.MethodPost)
 }
