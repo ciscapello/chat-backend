@@ -51,6 +51,12 @@ definitions:
       id:
         type: string
     type: object
+  userhandler.refreshRequest:
+    properties:
+      refreshToken:
+        example: your_refresh_token_here
+        type: string
+    type: object
   userhandler.requestBody:
     properties:
       email:
@@ -243,6 +249,42 @@ paths:
                   type: string
               type: object
       summary: Check code
+      tags:
+      - users
+  /users/refresh:
+    post:
+      consumes:
+      - application/json
+      description: Refresh token
+      parameters:
+      - description: Request body containing refresh token
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/userhandler.refreshRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/jwtmanager.ReturnTokenType'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: Refresh
       tags:
       - users
 securityDefinitions:

@@ -689,3 +689,25 @@
 2024/05/31 22:17:26.974	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "34.958µs"}
 2024/05/31 22:17:27.066	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "2.036625ms"}
 2024/05/31 22:17:27.073	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "15.208µs"}
+2024/05/31 22:28:46.027	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/31 22:28:46.290	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "2.359959ms"}
+2024/05/31 22:28:46.309	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "171.125µs"}
+2024/05/31 22:28:46.318	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "9.153416ms"}
+2024/05/31 22:28:46.322	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "13.025625ms"}
+2024/05/31 22:28:46.413	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "536.791µs"}
+2024/05/31 22:28:46.418	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "74.083µs"}
+2024/05/31 22:37:42.714	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/05/31 22:37:43.042	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "1.680458ms"}
+2024/05/31 22:37:43.060	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "6.3355ms"}
+2024/05/31 22:37:43.061	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "595.25µs"}
+2024/05/31 22:37:43.063	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "1.616167ms"}
+2024/05/31 22:37:43.163	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "399.375µs"}
+2024/05/31 22:37:43.228	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "75.083µs"}
+2024/05/31 22:38:10.299	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "29.014042ms"}
+2024/05/31 22:38:56.745	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.168042ms"}
+2024/05/31 22:39:18.832	[31mERROR[0m	Invalid code	{"url": "/users/check-code", "method": "POST"}
+2024/05/31 22:39:18.833	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "3.770334ms"}
+2024/05/31 22:39:33.435	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.619333ms"}
+2024/05/31 22:39:57.518	[31mERROR[0m	invalid refresh token	{"url": "/users/refresh", "method": "POST"}
+2024/05/31 22:39:57.518	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/refresh", "status": 200, "duration": "916.833µs"}
+2024/05/31 22:40:07.063	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/refresh", "status": 200, "duration": "570.167µs"}

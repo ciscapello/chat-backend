@@ -35,3 +35,6 @@
 2024/05/31 22:14:03.864	[34mINFO[0m	Sending email
 2024/05/31 22:15:28.570	[34mINFO[0m	Sending email
 2024/05/31 22:15:42.285	[34mINFO[0m	Sending email
+2024/05/31 22:38:10.300	[34mINFO[0m	Sending email
+2024/05/31 22:38:30.309	[31mERROR[0m	Get "https://api.telegram.org/bot7338324481:AAEJS7-7kDQRrnn0NBSeCwJPaiJT7SyBlEs/sendMessage?chat_id=-1002161138641&disable_notification=false&parse_mode=HTML&text=code+402247": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024/05/31 22:38:56.751	[34mINFO[0m	Sending email

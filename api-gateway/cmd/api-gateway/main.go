@@ -53,7 +53,7 @@ func run() {
 
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
 
-	userHandler := userhandler.New(userService, logger)
+	userHandler := userhandler.New(userService, logger, jwtMan)
 	defaulthandler := defaulthandler.New(logger)
 
 	httpServer := httpServer.New(config, &httpServer.Handlers{
