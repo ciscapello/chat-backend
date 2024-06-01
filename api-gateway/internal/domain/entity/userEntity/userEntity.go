@@ -1,6 +1,8 @@
 package userEntity
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 )
 
@@ -27,12 +29,13 @@ func ParseRole(s string) Role {
 }
 
 type User struct {
-	ID       uuid.UUID
-	Username string
-	Email    string
-	Code     string
-	Role     Role
-	Enabled  bool
+	ID             uuid.UUID
+	Username       string
+	Email          string
+	Code           string
+	Role           Role
+	Enabled        bool
+	LastCodeUpdate time.Time
 }
 
 type PublicUser struct {
@@ -51,12 +54,13 @@ type UpdateUserRequest struct {
 
 func NewUser(username, email, code string) *User {
 	return &User{
-		ID:       uuid.New(),
-		Username: username,
-		Email:    email,
-		Code:     code,
-		Role:     Regular,
-		Enabled:  true,
+		ID:             uuid.New(),
+		Username:       username,
+		Email:          email,
+		Code:           code,
+		Role:           Regular,
+		Enabled:        true,
+		LastCodeUpdate: time.Now(),
 	}
 }
 

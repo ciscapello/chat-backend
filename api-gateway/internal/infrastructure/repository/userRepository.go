@@ -92,7 +92,7 @@ func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) 
 	var updatedAt string
 	var roleString string
 
-	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 	if err == sql.ErrNoRows {
 		ur.logger.Error("User not found", zap.String("email", email))
 		return us, ErrUserNotFound
@@ -106,9 +106,9 @@ func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) 
 }
 
 func (ur *UserRepository) CreateUser(u userEntity.User) error {
-	query := "INSERT INTO users (id, username, enabled, role, code, email) VALUES ($1, $2, $3, $4, $5, $6)"
+	query := "INSERT INTO users (id, username, enabled, role, code, email, last_code_update) VALUES ($1, $2, $3, $4, $5, $6, $7)"
 
-	res, err := ur.db.Exec(query, u.ID, u.Username, u.Enabled, u.Role.String(), u.Code, u.Email)
+	res, err := ur.db.Exec(query, u.ID, u.Username, u.Enabled, u.Role.String(), u.Code, u.Email, time.Now().UTC())
 	if err != nil {
 		ur.logger.Error(err.Error())
 		return err
@@ -161,7 +161,7 @@ func (ur *UserRepository) GetAllUsers() ([]userEntity.User, error) {
 
 func (ur *UserRepository) UpdateUser(u userEntity.User) error {
 	query := "UPDATE users SET username = $1, email = $2, enabled = $3, role = $4, code = $5, updated_at = $6 WHERE id = $7"
-	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), u.ID)
+	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), nil, u.ID)
 	if err != nil {
 		ur.logger.Error(err.Error())
 		return err
@@ -172,6 +172,24 @@ func (ur *UserRepository) UpdateUser(u userEntity.User) error {
 		return err
 	}
 
+	if count == 0 {
+		return ErrUserNotFound
+	}
+	return nil
+}
+
+func (ur *UserRepository) UpdateCode(id uuid.UUID, code string) error {
+	query := "UPDATE users SET code = $1, last_code_update = $2 WHERE id = $3"
+	res, err := ur.db.Exec(query, code, time.Now().UTC(), id)
+	if err != nil {
+		ur.logger.Error(err.Error())
+		return err
+	}
+	count, err := res.RowsAffected()
+	if err != nil {
+		ur.logger.Error(err.Error())
+		return err
+	}
 	if count == 0 {
 		return ErrUserNotFound
 	}

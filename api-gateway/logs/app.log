@@ -755,3 +755,93 @@
 2024/06/01 09:32:44.079	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "20.093208ms"}
 2024/06/01 09:33:05.962	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.516583ms"}
 2024/06/01 09:33:11.761	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "15.454209ms"}
+2024/06/01 09:41:27.264	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:41:29.670	[31mERROR[0m	pq: column "last_code_update" of relation "users" does not exist
+2024/06/01 09:41:29.671	[31mERROR[0m	failed to update code	{"error": "pq: column \"last_code_update\" of relation \"users\" does not exist"}
+2024/06/01 09:41:29.671	[31mERROR[0m	pq: column "last_code_update" of relation "users" does not exist	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:41:29.671	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.492792ms"}
+2024/06/01 09:41:36.239	[31mERROR[0m	pq: column "last_code_update" of relation "users" does not exist
+2024/06/01 09:41:36.239	[31mERROR[0m	failed to update code	{"error": "pq: column \"last_code_update\" of relation \"users\" does not exist"}
+2024/06/01 09:41:36.239	[31mERROR[0m	pq: column "last_code_update" of relation "users" does not exist	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:41:36.239	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.770291ms"}
+2024/06/01 09:41:43.815	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:41:46.517	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"email": "asd@asdasd.sd"}
+2024/06/01 09:41:46.517	[31mERROR[0m	failed to get user	{"error": "sql: expected 9 destination arguments in Scan, not 8"}
+2024/06/01 09:41:46.517	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:41:46.517	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "13.152875ms"}
+2024/06/01 09:44:17.928	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"email": "asd@asdasd.sd"}
+2024/06/01 09:44:17.928	[31mERROR[0m	failed to get user	{"error": "sql: expected 9 destination arguments in Scan, not 8"}
+2024/06/01 09:44:17.928	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:44:17.928	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "3.709042ms"}
+2024/06/01 09:47:35.771	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:47:39.424	[31mERROR[0m	sql: Scan error on column index 8, name "last_code_update": converting NULL to string is unsupported	{"email": "asd@asdasd.sd"}
+2024/06/01 09:47:39.424	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 8, name \"last_code_update\": converting NULL to string is unsupported"}
+2024/06/01 09:47:39.424	[31mERROR[0m	sql: Scan error on column index 8, name "last_code_update": converting NULL to string is unsupported	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:47:39.424	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "33.744792ms"}
+2024/06/01 09:51:10.220	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:51:10.852	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 10	{"email": "asd@asdasd.sd"}
+2024/06/01 09:51:10.852	[31mERROR[0m	failed to get user	{"error": "sql: expected 9 destination arguments in Scan, not 10"}
+2024/06/01 09:51:10.852	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 10	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:51:10.852	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "53.815458ms"}
+2024/06/01 09:52:20.420	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:52:21.281	[31mERROR[0m	sql: Scan error on column index 8, name "last_code_update": unsupported Scan, storing driver.Value type <nil> into type *time.Time	{"email": "asd@asdasd.sd"}
+2024/06/01 09:52:21.281	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 8, name \"last_code_update\": unsupported Scan, storing driver.Value type <nil> into type *time.Time"}
+2024/06/01 09:52:21.281	[31mERROR[0m	sql: Scan error on column index 8, name "last_code_update": unsupported Scan, storing driver.Value type <nil> into type *time.Time	{"url": "/users/auth", "method": "POST"}
+2024/06/01 09:52:21.281	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "21.699458ms"}
+2024/06/01 09:54:29.887	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:54:32.708	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "39.724042ms"}
+2024/06/01 09:54:35.634	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "7.104042ms"}
+2024/06/01 09:56:37.827	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.004333ms"}
+2024/06/01 09:59:10.286	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 09:59:12.403	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "26.513166ms"}
+2024/06/01 10:05:33.999	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:05:36.710	[31mERROR[0m	you can receive code again in 2h54m35.6903s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:05:36.710	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "39.483584ms"}
+2024/06/01 10:05:42.363	[31mERROR[0m	you can receive code again in 2h54m30.037223s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:05:42.363	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.872375ms"}
+2024/06/01 10:05:45.856	[31mERROR[0m	you can receive code again in 2h54m26.544034s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:05:45.856	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.480709ms"}
+2024/06/01 10:05:48.563	[31mERROR[0m	you can receive code again in 2h54m23.836488s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:05:48.563	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "9.70825ms"}
+2024/06/01 10:06:15.018	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:06:18.457	[31mERROR[0m	you can receive code again in 2h53m53.943064s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:06:18.457	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "20.004458ms"}
+2024/06/01 10:06:41.859	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:06:42.653	[31mERROR[0m	you can receive code again in 2h53m29.746772s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:06:42.653	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.285417ms"}
+2024/06/01 10:07:35.260	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:07:36.260	[31mERROR[0m	you can receive code again in 2h52m36.139641s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:07:36.261	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "30.430625ms"}
+2024/06/01 10:08:16.497	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:08:18.131	[31mERROR[0m	you can receive code again in 2h51m54.268718s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:08:18.131	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "25.233959ms"}
+2024/06/01 10:14:13.646	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:14:15.578	[31mERROR[0m	you can receive code again in 2h45m56.821688s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:14:15.578	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "70.291834ms"}
+2024/06/01 10:15:16.725	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:15:18.422	[31mERROR[0m	you can receive code again in 2h44m53.980171s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:15:18.422	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "18.037167ms"}
+2024/06/01 10:16:31.340	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:16:36.065	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "28.079875ms"}
+2024/06/01 10:16:38.209	[31mERROR[0m	you can receive code again in 57.849623s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:16:38.209	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "6.139709ms"}
+2024/06/01 10:16:43.327	[31mERROR[0m	you can receive code again in 52.731225s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:16:43.327	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "11.5895ms"}
+2024/06/01 10:17:13.899	[31mERROR[0m	you can receive code again in 22.159324s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:17:13.900	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "19.283291ms"}
+2024/06/01 10:17:22.179	[31mERROR[0m	you can receive code again in 13.879936s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:17:22.185	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "27.404792ms"}
+2024/06/01 10:17:28.455	[31mERROR[0m	you can receive code again in 7.603982s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:17:28.456	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "3.440959ms"}
+2024/06/01 10:17:34.524	[31mERROR[0m	you can receive code again in 1.534822s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:17:34.524	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "3.302792ms"}
+2024/06/01 10:17:37.111	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "22.408917ms"}
+2024/06/01 10:18:13.509	[31mERROR[0m	you can receive code again in 23.594622s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:18:13.509	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "4.697541ms"}
+2024/06/01 10:18:22.180	[31mERROR[0m	you can receive code again in 14.923229s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:18:22.180	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.782625ms"}
+2024/06/01 10:18:29.263	[31mERROR[0m	you can receive code again in 7.84054s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:18:29.263	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.781917ms"}
+2024/06/01 10:18:34.511	[31mERROR[0m	you can receive code again in 2.592125s	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:18:34.511	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.393584ms"}
+2024/06/01 10:18:38.408	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "9.297833ms"}
