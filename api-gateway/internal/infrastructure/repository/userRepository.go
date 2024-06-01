@@ -83,6 +83,28 @@ func (ur *UserRepository) GetUserById(id uuid.UUID) (userEntity.User, error) {
 	return us, nil
 }
 
+func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) {
+	var us userEntity.User
+	query := "SELECT * FROM users WHERE email = $1"
+	row := ur.db.QueryRow(query, email)
+
+	var createdAt string
+	var updatedAt string
+	var roleString string
+
+	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+	if err == sql.ErrNoRows {
+		ur.logger.Error("User not found", zap.String("email", email))
+		return us, ErrUserNotFound
+	} else if err != nil {
+		ur.logger.Error(err.Error(), zap.String("email", email))
+		return us, err
+	}
+	us.Role = userEntity.ParseRole(roleString)
+
+	return us, nil
+}
+
 func (ur *UserRepository) CreateUser(u userEntity.User) error {
 	query := "INSERT INTO users (id, username, enabled, role, code, email) VALUES ($1, $2, $3, $4, $5, $6)"
 
@@ -140,7 +162,6 @@ func (ur *UserRepository) GetAllUsers() ([]userEntity.User, error) {
 func (ur *UserRepository) UpdateUser(u userEntity.User) error {
 	query := "UPDATE users SET username = $1, email = $2, enabled = $3, role = $4, code = $5, updated_at = $6 WHERE id = $7"
 	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), u.ID)
-	fmt.Println("here?")
 	if err != nil {
 		ur.logger.Error(err.Error())
 		return err

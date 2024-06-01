@@ -2,6 +2,7 @@ package userservice
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/utils"
@@ -24,6 +25,7 @@ type MessageBroker interface {
 
 type UserRepo interface {
 	GetUserById(id uuid.UUID) (userEntity.User, error)
+	GetUserByEmail(email string) (userEntity.User, error)
 	CreateUser(user userEntity.User) error
 	CheckUserIfExistsByUsername(username string) bool
 	CheckUserIfExistsByEmail(email string) bool
@@ -46,26 +48,39 @@ func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker, jwt
 	}
 }
 
-func (us *UserService) Registration(username, email string) (uuid.UUID, error) {
-	if isExists := us.userRepo.CheckUserIfExistsByUsername(username); isExists {
-		return uuid.UUID{}, ErrUserWithThisUsernameExists
-	}
-	if isExists := us.userRepo.CheckUserIfExistsByEmail(email); isExists {
-		return uuid.UUID{}, ErrUserWithThisEmailExists
+func (us *UserService) Authentication(email string) (uuid.UUID, error) {
+	isExists := us.userRepo.CheckUserIfExistsByEmail(email)
+
+	var user userEntity.User
+	var err error
+
+	code, _ := utils.GenerateOneTimeCode(6)
+
+	if !isExists {
+		user = *userEntity.NewUser("", email, code)
+		err = us.userRepo.CreateUser(user)
+		if err != nil {
+			us.logger.Error("failed to create user", zap.Error(err))
+			return uuid.UUID{}, ErrCannotCreateUser
+		}
+	} else {
+		user, err = us.userRepo.GetUserByEmail(email)
+		if err != nil {
+			us.logger.Error("failed to get user", zap.Error(err))
+			return uuid.UUID{}, err
+		}
+
+		_, err := us.UpdateUser(user.ID, userEntity.UpdateUserRequest{
+			Code: &code,
+		})
+		user.Code = code
+		if err != nil {
+			us.logger.Error("failed to update user", zap.Error(err))
+			return uuid.UUID{}, err
+		}
 	}
 
-	code, err := utils.GenerateOneTimeCode(6)
-	if err != nil {
-		us.logger.Error("failed to generate code", zap.Error(err))
-		return uuid.UUID{}, ErrCannotCreateUser
-	}
-	user := userEntity.NewUser(username, email, code)
-
-	err = us.userRepo.CreateUser(*user)
-	if err != nil {
-		us.logger.Error("failed to create user", zap.Error(err))
-		return uuid.UUID{}, ErrCannotCreateUser
-	}
+	fmt.Println(user, "user before publish")
 
 	us.messageBroker.Publish(contracts.UserCreatedTopic, contracts.UserCreatedMessage{
 		Username: user.Username,

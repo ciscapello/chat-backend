@@ -61,8 +61,6 @@ definitions:
     properties:
       email:
         type: string
-      username:
-        type: string
     type: object
   userhandler.resp:
     properties:

@@ -492,9 +492,6 @@ const docTemplate = `{
             "properties": {
                 "email": {
                     "type": "string"
-                },
-                "username": {
-                    "type": "string"
                 }
             }
         },

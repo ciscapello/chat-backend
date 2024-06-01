@@ -9,8 +9,7 @@ import (
 )
 
 type requestBody struct {
-	Username string `json:"username"`
-	Email    string `json:"email"`
+	Email string `json:"email"`
 }
 
 type resp struct {
@@ -42,19 +41,13 @@ func (uh *UserHandler) Auth(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if !uh.isValidUsername(rb.Username) {
-		response.SendError(w, http.StatusBadRequest, "Invalid username")
-		uh.logErrorInRequest(r, "Invalid username")
-		return
-	}
-
 	if !uh.isValidEmail(rb.Email) {
 		response.SendError(w, http.StatusBadRequest, "Invalid email")
 		uh.logErrorInRequest(r, "Invalid email")
 		return
 	}
 
-	uid, err := uh.userService.Registration(rb.Username, rb.Email)
+	uid, err := uh.userService.Authentication(rb.Email)
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, err.Error())
 		uh.logErrorInRequest(r, err.Error())
