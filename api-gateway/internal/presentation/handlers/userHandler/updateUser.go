@@ -2,6 +2,7 @@ package userhandler
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 
@@ -50,6 +51,8 @@ func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		uh.logErrorInRequest(r, "Unable to unmarshal request body")
 		return
 	}
+
+	fmt.Println(requestBody)
 
 	if requestBody.Email != nil && !uh.isValidEmail(*requestBody.Email) {
 		response.SendError(w, http.StatusBadRequest, "Invalid email")

@@ -70,7 +70,7 @@ func (ur *UserRepository) GetUserById(id uuid.UUID) (userEntity.User, error) {
 	var updatedAt string
 	var roleString string
 
-	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 	us.Role = userEntity.ParseRole(roleString)
 
 	if err == sql.ErrNoRows {
@@ -161,7 +161,7 @@ func (ur *UserRepository) GetAllUsers() ([]userEntity.User, error) {
 
 func (ur *UserRepository) UpdateUser(u userEntity.User) error {
 	query := "UPDATE users SET username = $1, email = $2, enabled = $3, role = $4, code = $5, updated_at = $6 WHERE id = $7"
-	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), nil, u.ID)
+	res, err := ur.db.Exec(query, u.Username, u.Email, u.Enabled, u.Role.String(), u.Code, time.Now(), u.ID)
 	if err != nil {
 		ur.logger.Error(err.Error())
 		return err

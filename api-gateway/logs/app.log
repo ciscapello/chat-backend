@@ -845,3 +845,58 @@
 2024/06/01 10:18:34.511	[31mERROR[0m	you can receive code again in 2.592125s	{"url": "/users/auth", "method": "POST"}
 2024/06/01 10:18:34.511	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "2.393584ms"}
 2024/06/01 10:18:38.408	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "9.297833ms"}
+2024/06/01 10:19:53.216	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "23.333ms"}
+2024/06/01 10:20:06.241	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"id": "0bf9c6d0-af89-4d36-931f-68555f8f6ef8"}
+2024/06/01 10:20:06.242	[31mERROR[0m	failed to get user	{"error": "sql: expected 9 destination arguments in Scan, not 8"}
+2024/06/01 10:20:06.242	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8	{"url": "/users/check-code", "method": "POST"}
+2024/06/01 10:20:06.242	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "11.226833ms"}
+2024/06/01 10:20:57.346	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:20:58.231	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "45.365875ms"}
+2024/06/01 10:27:28.410	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "25.210958ms"}
+2024/06/01 10:27:40.944	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.022916ms"}
+2024/06/01 10:28:15.531	[31mERROR[0m	Invalid email	{"url": "/users", "method": "PUT"}
+2024/06/01 10:28:15.532	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "1.095708ms"}
+2024/06/01 10:28:22.787	[31mERROR[0m	pq: got 8 parameters but the statement requires 7
+2024/06/01 10:28:22.787	[31mERROR[0m	pq: got 8 parameters but the statement requires 7	{"url": "/users", "method": "PUT"}
+2024/06/01 10:28:22.787	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "5.096708ms"}
+2024/06/01 10:29:32.257	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:29:33.026	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "47.500583ms"}
+2024/06/01 10:29:55.840	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "14.813417ms"}
+2024/06/01 10:30:10.393	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.7945ms"}
+2024/06/01 10:32:05.045	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:32:05.046	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "1.216291ms"}
+2024/06/01 10:32:11.812	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:32:11.813	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "215.583µs"}
+2024/06/01 10:34:40.124	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:34:41.468	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/01 10:34:41.469	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "1.221875ms"}
+2024/06/01 10:35:07.214	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "37.082041ms"}
+2024/06/01 10:37:52.403	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:37:55.540	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "35.196208ms"}
+2024/06/01 10:38:02.980	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "6.082458ms"}
+2024/06/01 10:39:15.398	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:39:16.278	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "34.927666ms"}
+2024/06/01 10:39:38.864	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:40:09.076	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:40:09.763	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "47.158042ms"}
+2024/06/01 10:41:59.547	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "497.625µs"}
+2024/06/01 10:41:59.635	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "391.875µs"}
+2024/06/01 10:41:59.635	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "531.541µs"}
+2024/06/01 10:41:59.646	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "12.793917ms"}
+2024/06/01 10:41:59.759	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "6.846042ms"}
+2024/06/01 10:41:59.760	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "51.708µs"}
+2024/06/01 10:42:00.766	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "219.125µs"}
+2024/06/01 10:42:00.824	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "177.791µs"}
+2024/06/01 10:42:16.871	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "31.736417ms"}
+2024/06/01 10:42:37.755	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "4.229667ms"}
+2024/06/01 10:42:55.564	[31mERROR[0m	Invalid token	{"error": "token has invalid claims: token is expired"}
+2024/06/01 10:42:55.564	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "198.208µs"}
+2024/06/01 10:45:09.653	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:45:14.079	[31mERROR[0m	Invalid token	{"error": "token has invalid claims: token is expired"}
+2024/06/01 10:45:14.079	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "304.167µs"}
+2024/06/01 10:46:15.001	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:46:15.736	[31mERROR[0m	Invalid token	{"error": "token has invalid claims: token is expired"}
+2024/06/01 10:46:15.736	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "1.75625ms"}
+2024/06/01 10:46:38.791	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 10:46:41.601	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/01 10:46:41.601	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "349.875µs"}

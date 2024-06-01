@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
+	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )
@@ -46,9 +47,16 @@ func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 
 		claims, err := am.jwtManager.verifyToken(authHeader)
 		if err != nil {
-			am.logger.Error("Invalid token", zap.Error(err))
-			http.Error(w, "Invalid token", http.StatusUnauthorized)
-			return
+			if errors.Is(err, jwt.ErrTokenExpired) {
+				am.logger.Error("Token expired", zap.Error(err))
+				http.Error(w, "Token expired", http.StatusUnauthorized)
+				return
+			} else {
+				am.logger.Error("Invalid token", zap.Error(err))
+				http.Error(w, "Invalid token", http.StatusUnauthorized)
+				return
+			}
+
 		}
 
 		if claims.role != am.requiredRole {

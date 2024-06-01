@@ -12,6 +12,11 @@ import (
 	"go.uber.org/zap"
 )
 
+var (
+	ErrTokenExpired = errors.New("token expired")
+	ErrInvalidToken = errors.New("invalid token")
+)
+
 type JwtManager struct {
 	accsTokenExpires    time.Duration
 	refreshTokenExpires time.Duration
@@ -60,7 +65,7 @@ func (j *JwtManager) genAccessToken(uid string) (string, error) {
 
 	claims := jwt.MapClaims{
 		"id":   uid,
-		"exp":  time.Now().Add(j.accsTokenExpires).Unix(),
+		"exp":  time.Now().Add(j.accsTokenExpires).UTC().Unix(),
 		"role": userEntity.Regular.String(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
@@ -75,7 +80,7 @@ func (j *JwtManager) genAccessToken(uid string) (string, error) {
 func (j *JwtManager) genRefreshToken(uid string) (string, error) {
 	claims := jwt.MapClaims{
 		"id":  uid,
-		"exp": time.Now().Add(j.refreshTokenExpires).Unix(),
+		"exp": time.Now().Add(j.refreshTokenExpires).UTC().Unix(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
@@ -99,25 +104,7 @@ func (j *JwtManager) VerifyRefreshToken(refreshTokenStr string) (string, error) 
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 		return claims["id"].(string), nil
 	}
-	return "", errors.New("invalid token")
-}
-
-func (j *JwtManager) Verify(tokenStr string) (string, error) {
-	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
-		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
-		}
-		return []byte(j.accsTokenSecret), nil
-	})
-	if err != nil {
-		return "", err
-	}
-
-	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		return claims["id"].(string), nil
-	}
-
-	return "", errors.New("invalid token")
+	return "", ErrInvalidToken
 }
 
 func (j *JwtManager) verifyToken(tokenStr string) (tokenClaims, error) {
@@ -129,24 +116,27 @@ func (j *JwtManager) verifyToken(tokenStr string) (tokenClaims, error) {
 		return []byte(j.accsTokenSecret), nil
 	})
 	if err != nil {
+		fmt.Println(err)
 		return tokenClaims{}, err
 	}
 
-	fmt.Println("here2")
-
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+
 		uidStr, ok := claims["id"].(string)
 		if !ok {
-			return tokenClaims{}, errors.New("invalid token")
+			return tokenClaims{}, ErrInvalidToken
 		}
+
 		id, err := uuid.Parse(uidStr)
 		if err != nil {
 			return tokenClaims{}, err
 		}
+
 		roleStr, ok := claims["role"].(string)
 		if !ok {
-			return tokenClaims{}, errors.New("invalid token")
+			return tokenClaims{}, ErrInvalidToken
 		}
+
 		role := userEntity.ParseRole(roleStr)
 		return tokenClaims{
 			id:   id,
@@ -154,7 +144,5 @@ func (j *JwtManager) verifyToken(tokenStr string) (tokenClaims, error) {
 		}, nil
 	}
 
-	fmt.Println("here3")
-
-	return tokenClaims{}, errors.New("invalid token")
+	return tokenClaims{}, ErrInvalidToken
 }
