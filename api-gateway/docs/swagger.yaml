@@ -100,6 +100,8 @@ paths:
                 error:
                   type: string
               type: object
+      security:
+      - BearerAuth: []
       summary: Get all users
       tags:
       - users

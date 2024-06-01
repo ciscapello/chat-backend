@@ -59,7 +59,9 @@ func (uh *UserHandler) Refresh(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tokens, err := uh.jwtManager.Generate(id)
+	role := uh.userService.GetUserRole(id)
+
+	tokens, err := uh.jwtManager.Generate(id, role)
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, "unable to generate tokens")
 		uh.logErrorInRequest(r, "unable to generate tokens")

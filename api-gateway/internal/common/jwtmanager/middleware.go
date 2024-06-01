@@ -13,9 +13,8 @@ import (
 )
 
 type AuthMiddleware struct {
-	requiredRole userEntity.Role
-	logger       *zap.Logger
-	jwtManager   *JwtManager
+	logger     *zap.Logger
+	jwtManager *JwtManager
 }
 
 type contextKey string
@@ -23,14 +22,14 @@ type contextKey string
 const (
 	authorizationHeader = "Authorization"
 
-	userIdCtx contextKey = "userId"
+	userIdCtx   contextKey = "userId"
+	userRoleCtx contextKey = "userRole"
 )
 
-func NewAuthMiddleware(requiredRole userEntity.Role, logger *zap.Logger, j *JwtManager) *AuthMiddleware {
+func NewAuthMiddleware(logger *zap.Logger, j *JwtManager) *AuthMiddleware {
 	return &AuthMiddleware{
-		requiredRole: requiredRole,
-		logger:       logger,
-		jwtManager:   j,
+		logger:     logger,
+		jwtManager: j,
 	}
 }
 
@@ -59,21 +58,24 @@ func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 
 		}
 
-		if claims.role != am.requiredRole {
-			am.logger.Error("Invalid role", zap.String("role", claims.role.String()))
-			http.Error(w, "Forbidden", http.StatusForbidden)
-			return
-		}
-
 		ctx := context.WithValue(r.Context(), userIdCtx, claims.id)
+		ctx = context.WithValue(ctx, userRoleCtx, claims.role)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
 
-func GetUserId(ctx context.Context) (string, error) {
+func (JwtManager) GetUserId(ctx context.Context) (string, error) {
 	userId, ok := ctx.Value(userIdCtx).(uuid.UUID)
 	if !ok {
 		return "", errors.New("user id is not in the context")
 	}
 	return userId.String(), nil
+}
+
+func (JwtManager) GetUserRole(ctx context.Context) (userEntity.Role, error) {
+	role, ok := ctx.Value(userRoleCtx).(userEntity.Role)
+	if !ok {
+		return userEntity.Role(0), errors.New("user id is not in the context")
+	}
+	return role, nil
 }

@@ -60,7 +60,9 @@ func (uh *UserHandler) CheckCode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tokens, err := uh.userService.GetTokens(id)
+	role := uh.userService.GetUserRole(id)
+
+	tokens, err := uh.userService.GetTokens(id, role)
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, err.Error())
 		uh.logErrorInRequest(r, err.Error())

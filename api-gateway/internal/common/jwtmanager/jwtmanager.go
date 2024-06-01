@@ -27,6 +27,8 @@ type JwtManager struct {
 }
 
 func NewJwtManager(config *config.Config, logger *zap.Logger) *JwtManager {
+	fmt.Println("accs", config.AccessTokenExpTime)
+
 	return &JwtManager{
 		accsTokenExpires:    time.Duration(config.AccessTokenExpTime),
 		refreshTokenExpires: time.Duration(config.RefreshTokenExpTime),
@@ -37,9 +39,9 @@ func NewJwtManager(config *config.Config, logger *zap.Logger) *JwtManager {
 	}
 }
 
-func (j *JwtManager) Generate(uid uuid.UUID) (ReturnTokenType, error) {
+func (j *JwtManager) Generate(uid uuid.UUID, role userEntity.Role) (ReturnTokenType, error) {
 
-	accessToken, err := j.genAccessToken(uid.String())
+	accessToken, err := j.genAccessToken(uid.String(), role)
 	if err != nil {
 		j.logger.Error("failed to generate access token", zap.Error(err))
 		return ReturnTokenType{}, err
@@ -57,7 +59,7 @@ func (j *JwtManager) Generate(uid uuid.UUID) (ReturnTokenType, error) {
 	}, nil
 }
 
-func (j *JwtManager) genAccessToken(uid string) (string, error) {
+func (j *JwtManager) genAccessToken(uid string, role userEntity.Role) (string, error) {
 	fmt.Println(time.Now())
 	fmt.Println(time.Now().Add(j.accsTokenExpires))
 	fmt.Println(j.accsTokenExpires)
@@ -66,7 +68,7 @@ func (j *JwtManager) genAccessToken(uid string) (string, error) {
 	claims := jwt.MapClaims{
 		"id":   uid,
 		"exp":  time.Now().Add(j.accsTokenExpires).UTC().Unix(),
-		"role": userEntity.Regular.String(),
+		"role": role.String(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 

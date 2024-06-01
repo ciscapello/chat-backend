@@ -6,7 +6,6 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
@@ -24,7 +23,7 @@ import (
 // @Router /users [put]
 func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
-	id, err := jwtmanager.GetUserId(r.Context())
+	id, err := uh.jwtManager.GetUserId(r.Context())
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, "invalid token")
 		uh.logErrorInRequest(r, "invalid token")

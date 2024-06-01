@@ -33,6 +33,7 @@ type UserRepo interface {
 	GetAllUsers() ([]userEntity.User, error)
 	UpdateUser(u userEntity.User) error
 	UpdateCode(id uuid.UUID, code string) error
+	GetUserRole(id uuid.UUID) userEntity.Role
 }
 
 var (
@@ -165,8 +166,12 @@ func (us *UserService) CheckCode(uuid uuid.UUID, code string) (bool, error) {
 	return code == usr.Code, nil
 }
 
-func (us *UserService) GetTokens(id uuid.UUID) (jwtmanager.ReturnTokenType, error) {
-	tokens, err := us.jwtManager.Generate(id)
+func (us *UserService) GetUserRole(id uuid.UUID) userEntity.Role {
+	return us.userRepo.GetUserRole(id)
+}
+
+func (us *UserService) GetTokens(id uuid.UUID, role userEntity.Role) (jwtmanager.ReturnTokenType, error) {
+	tokens, err := us.jwtManager.Generate(id, role)
 	if err != nil {
 		us.logger.Error("failed to generate tokens", zap.Error(err))
 		return jwtmanager.ReturnTokenType{}, err

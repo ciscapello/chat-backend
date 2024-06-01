@@ -3,7 +3,6 @@ package userhandler
 import (
 	"net/http"
 
-	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
@@ -21,7 +20,7 @@ import (
 // @Router /users/{id} [get]
 func (uh *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 
-	id, err := jwtmanager.GetUserId(r.Context())
+	id, err := uh.jwtManager.GetUserId(r.Context())
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, "invalid token")
 		uh.logErrorInRequest(r, "invalid token")

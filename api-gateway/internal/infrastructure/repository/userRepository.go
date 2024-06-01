@@ -141,7 +141,7 @@ func (ur *UserRepository) GetAllUsers() ([]userEntity.User, error) {
 
 	for rows.Next() {
 		var us userEntity.User
-		err := rows.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email)
+		err := rows.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 		if err != nil {
 			ur.logger.Error(err.Error())
 			return nil, err
@@ -194,6 +194,29 @@ func (ur *UserRepository) UpdateCode(id uuid.UUID, code string) error {
 		return ErrUserNotFound
 	}
 	return nil
+}
+
+func (ur *UserRepository) GetUserRole(id uuid.UUID) userEntity.Role {
+	fmt.Println(id)
+	query := "SELECT role FROM users WHERE id = $1"
+	var role string
+
+	row := ur.db.QueryRow(query, id)
+	fmt.Println(row)
+	err := row.Scan(&role)
+	if err != nil {
+		fmt.Println(err)
+		ur.logger.Error(err.Error())
+		return userEntity.Regular
+	}
+
+	fmt.Println(role)
+
+	if role != userEntity.Admin.String() {
+		return userEntity.Regular
+	}
+
+	return userEntity.Admin
 }
 
 func (ur *UserRepository) Registration() {}

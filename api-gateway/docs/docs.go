@@ -17,6 +17,11 @@ const docTemplate = `{
     "paths": {
         "/users": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get all users",
                 "consumes": [
                     "application/json"

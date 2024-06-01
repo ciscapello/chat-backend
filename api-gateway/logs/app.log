@@ -900,3 +900,70 @@
 2024/06/01 10:46:38.791	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/06/01 10:46:41.601	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
 2024/06/01 10:46:41.601	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "349.875µs"}
+2024/06/01 15:29:26.736	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:29:41.198	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "2.958792ms"}
+2024/06/01 15:29:41.204	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "533.25µs"}
+2024/06/01 15:29:41.205	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "189.167µs"}
+2024/06/01 15:29:41.216	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "10.875792ms"}
+2024/06/01 15:29:41.328	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "325.375µs"}
+2024/06/01 15:29:42.064	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "83.75µs"}
+2024/06/01 15:32:36.911	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "518.791µs"}
+2024/06/01 15:32:36.927	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "41.583µs"}
+2024/06/01 15:32:36.930	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "26.542µs"}
+2024/06/01 15:32:36.931	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "54.958µs"}
+2024/06/01 15:32:36.972	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "412.666µs"}
+2024/06/01 15:32:36.975	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "33.291µs"}
+2024/06/01 15:32:47.978	[31mERROR[0m	Authorization header missing
+2024/06/01 15:32:47.978	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "376.833µs"}
+2024/06/01 15:32:54.861	[31mERROR[0m	Invalid token	{"error": "token is malformed: token contains an invalid number of segments"}
+2024/06/01 15:32:54.861	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "144.292µs"}
+2024/06/01 15:33:20.199	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "25.321583ms"}
+2024/06/01 15:33:37.655	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "4.832042ms"}
+2024/06/01 15:33:45.966	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/01 15:33:45.966	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "230.833µs"}
+2024/06/01 15:35:12.022	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.7225ms"}
+2024/06/01 15:35:15.987	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.763834ms"}
+2024/06/01 15:36:10.211	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:36:20.653	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:36:47.221	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:37:01.756	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:37:32.551	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:37:36.932	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:37:51.480	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "42.620083ms"}
+2024/06/01 15:38:05.133	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.844333ms"}
+2024/06/01 15:38:23.276	[31mERROR[0m	forbidden	{"url": "/users", "method": "GET"}
+2024/06/01 15:38:23.276	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "624.708µs"}
+2024/06/01 15:39:29.303	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "18.592542ms"}
+2024/06/01 15:39:41.268	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "1.704708ms"}
+2024/06/01 15:39:49.742	[31mERROR[0m	forbidden	{"url": "/users", "method": "GET"}
+2024/06/01 15:39:49.742	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "224.125µs"}
+2024/06/01 15:51:16.739	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:51:21.927	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/01 15:51:21.927	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "199µs"}
+2024/06/01 15:51:43.666	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "21.854834ms"}
+2024/06/01 15:52:04.010	[31mERROR[0m	sql: no rows in result set
+2024/06/01 15:52:04.011	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.509166ms"}
+2024/06/01 15:52:21.585	[31mERROR[0m	forbidden	{"url": "/users", "method": "GET"}
+2024/06/01 15:52:21.586	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "615.334µs"}
+2024/06/01 15:53:17.961	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:53:19.919	[31mERROR[0m	sql: no rows in result set
+2024/06/01 15:53:19.920	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "22.807083ms"}
+2024/06/01 15:53:44.450	[31mERROR[0m	sql: no rows in result set
+2024/06/01 15:53:44.452	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "9.73825ms"}
+2024/06/01 15:53:53.733	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:53:54.513	[31mERROR[0m	sql: no rows in result set
+2024/06/01 15:53:54.513	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "16.093667ms"}
+2024/06/01 15:56:14.608	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:56:17.412	[31mERROR[0m	pq: got 1 parameters but the statement requires 0
+2024/06/01 15:56:17.412	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "108.651208ms"}
+2024/06/01 15:56:32.896	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:56:33.892	[31mERROR[0m	sql: no rows in result set
+2024/06/01 15:56:33.893	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "21.586791ms"}
+2024/06/01 15:57:03.043	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:57:18.350	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:57:19.779	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "15.494834ms"}
+2024/06/01 15:57:39.247	[31mERROR[0m	sql: expected 9 destination arguments in Scan, not 8
+2024/06/01 15:57:39.248	[31mERROR[0m	cannot get users	{"error": "sql: expected 9 destination arguments in Scan, not 8"}
+2024/06/01 15:57:39.248	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "13.302125ms"}
+2024/06/01 15:58:19.429	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/01 15:58:21.077	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "16.489291ms"}
