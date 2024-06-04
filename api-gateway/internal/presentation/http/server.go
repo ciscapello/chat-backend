@@ -9,16 +9,18 @@ import (
 
 	"github.com/ciscapello/api-gateway/internal/application/config"
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
-	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/defaultHandler"
-	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/userHandler"
+	conversationhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/conversation_handler"
+	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
+	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
 )
 
 type Handlers struct {
-	UserHandler    *userhandler.UserHandler
-	DefaultHandler *defaulthandler.DefaultHandler
+	UserHandler         *userhandler.UserHandler
+	DefaultHandler      *defaulthandler.DefaultHandler
+	ConversationHandler *conversationhandler.ConversationHandler
 }
 
 type Server struct {
@@ -29,11 +31,6 @@ type Server struct {
 
 func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	router := mux.NewRouter()
-
-	// wd, err := os.Getwd()
-	// if err != nil {
-	// logger.Fatal("Error getting current working directory", zap.Error(err))
-	// }
 
 	jwtm := jwtmanager.NewJwtManager(cfg, logger)
 
@@ -46,6 +43,9 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 
 	userRouter := router.PathPrefix("/users").Subrouter()
 	ConfigureUserRoutes(userRouter, handlers.UserHandler, jwtMiddleware.Middleware)
+
+	conversationRoutes := router.PathPrefix("/conversations").Subrouter()
+	ConfigureConversationRoutes(conversationRoutes, handlers.ConversationHandler, jwtMiddleware.Middleware)
 
 	router.Handle("", userRouter)
 
@@ -83,16 +83,4 @@ func (s *Server) Run() error {
 
 func (s *Server) Stop(ctx context.Context) error {
 	return s.httpServer.Shutdown(ctx)
-}
-
-func ConfigureUserRoutes(subrouter *mux.Router,
-	handlers *userhandler.UserHandler,
-	jwtMiddleware mux.MiddlewareFunc) {
-
-	subrouter.Handle("", jwtMiddleware.Middleware(http.HandlerFunc(handlers.GetAllUsers))).Methods(http.MethodGet)
-	subrouter.Handle("/{id}", jwtMiddleware.Middleware(http.HandlerFunc(handlers.GetUser))).Methods(http.MethodGet)
-	subrouter.Handle("", jwtMiddleware.Middleware(http.HandlerFunc(handlers.UpdateUser))).Methods(http.MethodPut)
-	subrouter.HandleFunc("/auth", handlers.Auth).Methods(http.MethodPost)
-	subrouter.HandleFunc("/refresh", handlers.Refresh).Methods(http.MethodPost)
-	subrouter.HandleFunc("/check-code", handlers.CheckCode).Methods(http.MethodPost)
 }

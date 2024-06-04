@@ -1,4 +1,9 @@
 definitions:
+  conversationhandler.createConversationRequest:
+    properties:
+      second_user_id:
+        type: string
+    type: object
   jwtmanager.ReturnTokenType:
     properties:
       access_token:
@@ -72,6 +77,37 @@ info:
   title: API Gateway
   version: "1.0"
 paths:
+  /conversations:
+    post:
+      consumes:
+      - application/json
+      description: Create conversation
+      parameters:
+      - description: Request body containing user_id and second_user_id
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/conversationhandler.createConversationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      security:
+      - BearerAuth: []
+      summary: Create conversation
+      tags:
+      - conversations
   /users:
     get:
       consumes:

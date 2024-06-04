@@ -14,11 +14,13 @@ import (
 	"github.com/ciscapello/api-gateway/internal/application/db"
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/logger"
+	conversationservice "github.com/ciscapello/api-gateway/internal/domain/service/conversationService"
 	userservice "github.com/ciscapello/api-gateway/internal/domain/service/userService"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
-	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/defaultHandler"
-	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/userHandler"
+	conversationhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/conversation_handler"
+	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
+	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	httpServer "github.com/ciscapello/api-gateway/internal/presentation/http"
 
 	_ "github.com/ciscapello/api-gateway/docs"
@@ -48,17 +50,21 @@ func run() {
 	defer producer.Close()
 
 	userRepository := repository.NewUserRepository(database, logger)
+	conversationRepo := repository.NewConversationRepository(database, logger)
 
 	jwtMan := jwtmanager.NewJwtManager(config, logger)
 
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
+	conversationService := conversationservice.New(conversationRepo, logger, jwtMan)
 
 	userHandler := userhandler.New(userService, logger, jwtMan)
 	defaulthandler := defaulthandler.New(logger)
+	conversationhandler := conversationhandler.New(conversationService, logger, jwtMan)
 
 	httpServer := httpServer.New(config, &httpServer.Handlers{
-		UserHandler:    userHandler,
-		DefaultHandler: defaulthandler,
+		UserHandler:         userHandler,
+		DefaultHandler:      defaulthandler,
+		ConversationHandler: conversationhandler,
 	}, logger)
 
 	go func() {

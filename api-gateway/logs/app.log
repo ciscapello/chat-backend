@@ -967,3 +967,44 @@
 2024/06/01 15:57:39.248	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "13.302125ms"}
 2024/06/01 15:58:19.429	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/06/01 15:58:21.077	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "16.489291ms"}
+2024/06/04 18:58:35.681	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 18:59:06.392	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 20:55:01.497	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 20:55:02.714	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "252.584µs"}
+2024/06/04 20:55:02.725	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "1.850459ms"}
+2024/06/04 20:55:02.729	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "2.019875ms"}
+2024/06/04 20:55:02.730	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "7.181209ms"}
+2024/06/04 20:55:02.852	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "202.875µs"}
+2024/06/04 20:55:04.921	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "631.333µs"}
+2024/06/04 20:55:24.129	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "61.887834ms"}
+2024/06/04 20:55:25.435	[31mERROR[0m	you can receive code again in 58.662219s	{"url": "/users/auth", "method": "POST"}
+2024/06/04 20:55:25.435	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "3.850792ms"}
+2024/06/04 20:55:44.998	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "19.146166ms"}
+2024/06/04 20:56:09.874	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "13.737583ms"}
+2024/06/04 20:56:37.999	[31mERROR[0m	LastInsertId is not supported by this driver	{"url": "/conversations", "method": "POST"}
+2024/06/04 20:56:37.999	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "15.624375ms"}
+2024/06/04 21:09:13.043	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 21:09:26.050	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "49.951458ms"}
+2024/06/04 21:35:05.980	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "11.332375ms"}
+2024/06/04 21:54:43.644	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 21:54:48.604	[31mERROR[0m	pq: column p1.users_id does not exist
+2024/06/04 21:54:48.610	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "37.962792ms"}
+2024/06/04 21:54:51.511	[31mERROR[0m	pq: column p1.users_id does not exist
+2024/06/04 21:54:51.517	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "7.082166ms"}
+2024/06/04 21:55:35.118	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/04 21:55:54.556	[31mERROR[0m	conversation with users da24bc10-93cb-4dd2-8f06-97cb8bd93584 and 0bf9c6d0-af89-4d36-931f-68555f8f6ef8 already exists	{"url": "/conversations", "method": "POST"}
+2024/06/04 21:55:54.556	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "23.707458ms"}
+2024/06/04 21:56:21.751	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/04 21:56:21.753	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "2.08125ms"}
+2024/06/04 21:56:34.702	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "20.885208ms"}
+2024/06/04 21:57:27.483	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "6.653291ms"}
+2024/06/04 21:57:38.947	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "18.378375ms"}
+2024/06/04 21:57:41.755	[31mERROR[0m	conversation with users da24bc10-93cb-4dd2-8f06-97cb8bd93584 and 744e0a0c-5e21-4394-bdc8-30d4f3ddf3bc already exists	{"url": "/conversations", "method": "POST"}
+2024/06/04 21:57:41.755	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "2.185208ms"}
+2024/06/04 21:58:13.857	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.683667ms"}
+2024/06/04 21:58:28.330	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "3.835333ms"}
+2024/06/04 21:58:47.496	[31mERROR[0m	conversation with users 744e0a0c-5e21-4394-bdc8-30d4f3ddf3bc and da24bc10-93cb-4dd2-8f06-97cb8bd93584 already exists	{"url": "/conversations", "method": "POST"}
+2024/06/04 21:58:47.497	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "2.978625ms"}
+2024/06/04 21:58:57.746	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "13.41025ms"}
+2024/06/04 21:59:01.405	[31mERROR[0m	conversation with users 744e0a0c-5e21-4394-bdc8-30d4f3ddf3bc and 7b8d16fa-5734-4cd5-a30b-e2ae88be3459 already exists	{"url": "/conversations", "method": "POST"}
+2024/06/04 21:59:01.405	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "5.710791ms"}
