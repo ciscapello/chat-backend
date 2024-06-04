@@ -1008,3 +1008,4 @@
 2024/06/04 21:58:57.746	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "13.41025ms"}
 2024/06/04 21:59:01.405	[31mERROR[0m	conversation with users 744e0a0c-5e21-4394-bdc8-30d4f3ddf3bc and 7b8d16fa-5734-4cd5-a30b-e2ae88be3459 already exists	{"url": "/conversations", "method": "POST"}
 2024/06/04 21:59:01.405	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "5.710791ms"}
+2024/06/04 22:11:00.865	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}

@@ -1,7 +1,7 @@
 package jwtmanager
 
 import (
-	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/google/uuid"
 )
 

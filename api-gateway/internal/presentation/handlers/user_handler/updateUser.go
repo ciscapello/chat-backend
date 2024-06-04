@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ciscapello/api-gateway/internal/domain/entity/userEntity"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
 )
