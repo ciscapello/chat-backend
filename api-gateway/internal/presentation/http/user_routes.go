@@ -10,7 +10,7 @@ import (
 func ConfigureUserRoutes(subrouter *mux.Router,
 	handlers *userhandler.UserHandler,
 	jwtMiddleware mux.MiddlewareFunc) {
-	subrouter.HandleFunc("/search", handlers.SearchUsers).Queries("username", "{username}").Methods(http.MethodGet)
+	subrouter.Handle("/search", jwtMiddleware.Middleware(http.HandlerFunc(handlers.SearchUsers))).Queries("username", "{username}").Methods(http.MethodGet)
 	subrouter.HandleFunc("/auth", handlers.Auth).Methods(http.MethodPost)
 	subrouter.HandleFunc("/refresh", handlers.Refresh).Methods(http.MethodPost)
 	subrouter.HandleFunc("/check-code", handlers.CheckCode).Methods(http.MethodPost)

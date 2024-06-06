@@ -235,10 +235,10 @@ func (ur *UserRepository) GetUserRole(id uuid.UUID) userEntity.Role {
 	return userEntity.Admin
 }
 
-func (ur *UserRepository) FindUsersByUsername(username string) ([]userEntity.PublicUser, error) {
-	query := `SELECT id, username, email FROM users WHERE username IS NOT NULL AND LOWER(username) LIKE '%' || LOWER($1) || '%'`
+func (ur *UserRepository) FindUsersByUsername(username string, uid uuid.UUID) ([]userEntity.PublicUser, error) {
+	query := `SELECT id, username, email FROM users WHERE id != $1 AND username IS NOT NULL AND LOWER(username) LIKE '%' || LOWER($2) || '%'`
 
-	rows, err := ur.db.Query(query, username)
+	rows, err := ur.db.Query(query, uid, username)
 	if err != nil {
 		return nil, err
 	}
