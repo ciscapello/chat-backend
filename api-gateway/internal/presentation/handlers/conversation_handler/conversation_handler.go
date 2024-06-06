@@ -2,7 +2,7 @@ package conversationhandler
 
 import (
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
-	conversationservice "github.com/ciscapello/api-gateway/internal/domain/service/conversationService"
+	conversationservice "github.com/ciscapello/api-gateway/internal/domain/service/conversation_service"
 	"go.uber.org/zap"
 )
 

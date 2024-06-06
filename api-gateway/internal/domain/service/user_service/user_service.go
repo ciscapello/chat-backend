@@ -34,6 +34,7 @@ type UserRepo interface {
 	UpdateUser(u userEntity.User) error
 	UpdateCode(id uuid.UUID, code string) error
 	GetUserRole(id uuid.UUID) userEntity.Role
+	FindUsersByUsername(username string) ([]userEntity.PublicUser, error)
 }
 
 var (
@@ -177,4 +178,8 @@ func (us *UserService) GetTokens(id uuid.UUID, role userEntity.Role) (jwtmanager
 		return jwtmanager.ReturnTokenType{}, err
 	}
 	return tokens, nil
+}
+
+func (us *UserService) FindUsersByUsername(username string) ([]userEntity.PublicUser, error) {
+	return us.userRepo.FindUsersByUsername(username)
 }

@@ -8,6 +8,7 @@ import (
 
 type ConversationStorer interface {
 	CreateConversation(creatorId uuid.UUID, secondUserId uuid.UUID) error
+	// GetConversations(userId uuid.UUID) ([]uuid.UUID, error)
 }
 
 type ConversationService struct {

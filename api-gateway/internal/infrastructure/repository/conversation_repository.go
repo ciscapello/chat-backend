@@ -71,3 +71,28 @@ func (cr *ConversationRepository) CreateConversation(creatorId uuid.UUID, second
 
 	return nil
 }
+
+func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) error {
+	query := `SELECT c.id, u.username, u.email FROM conversations c
+	JOIN participants p ON c.id = p.conversation_id
+	JOIN users u ON p.user_id = u.id
+	WHERE p.user_id = $1 OR c.creator_id = $1
+	`
+
+	rows, err := cr.db.Query(query, userId)
+	if err != nil {
+		return err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var conversationId int
+		err := rows.Scan(&conversationId)
+		if err != nil {
+			return err
+		}
+		fmt.Println(conversationId)
+	}
+
+	return nil
+}

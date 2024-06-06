@@ -323,6 +323,42 @@ paths:
       summary: Refresh
       tags:
       - users
+  /users/search:
+    get:
+      consumes:
+      - application/json
+      description: Search users
+      parameters:
+      - description: Search query
+        in: query
+        name: username
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/userEntity.PublicUser'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: Search users
+      tags:
+      - users
 securityDefinitions:
   BearerAuth:
     in: header

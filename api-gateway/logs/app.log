@@ -1009,3 +1009,225 @@
 2024/06/04 21:59:01.405	[31mERROR[0m	conversation with users 744e0a0c-5e21-4394-bdc8-30d4f3ddf3bc and 7b8d16fa-5734-4cd5-a30b-e2ae88be3459 already exists	{"url": "/conversations", "method": "POST"}
 2024/06/04 21:59:01.405	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "5.710791ms"}
 2024/06/04 22:11:00.865	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 08:52:31.741	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 08:52:32.467	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "439.5µs"}
+2024/06/05 08:52:32.486	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "759.25µs"}
+2024/06/05 08:52:32.489	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "348µs"}
+2024/06/05 08:52:32.490	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "1.2185ms"}
+2024/06/05 08:52:32.591	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "338.792µs"}
+2024/06/05 08:52:36.301	[31mERROR[0m	Authorization header missing
+2024/06/05 08:52:36.301	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users", "status": 200, "duration": "102.375µs"}
+2024/06/05 17:59:51.253	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 17:59:57.672	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "815.167µs"}
+2024/06/05 17:59:57.717	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "565.042µs"}
+2024/06/05 17:59:57.728	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "10.618292ms"}
+2024/06/05 17:59:57.749	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "30.015ms"}
+2024/06/05 17:59:57.846	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "2.579959ms"}
+2024/06/05 17:59:59.707	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "168.792µs"}
+2024/06/05 17:59:59.716	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "32.25µs"}
+2024/06/05 17:59:59.716	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "9.75µs"}
+2024/06/05 17:59:59.716	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "7.75µs"}
+2024/06/05 17:59:59.838	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "230.667µs"}
+2024/06/05 18:00:20.948	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "58.195875ms"}
+2024/06/05 18:00:42.802	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "9.3325ms"}
+2024/06/05 18:00:59.113	[31mERROR[0m	pq: duplicate key value violates unique constraint "users_username_key"
+2024/06/05 18:00:59.113	[31mERROR[0m	failed to create user	{"error": "pq: duplicate key value violates unique constraint \"users_username_key\""}
+2024/06/05 18:00:59.113	[31mERROR[0m	cannot create user	{"url": "/users/auth", "method": "POST"}
+2024/06/05 18:00:59.113	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "7.061625ms"}
+2024/06/05 18:02:21.943	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 18:02:24.214	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "50.172292ms"}
+2024/06/05 18:02:26.153	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"email": "admin@admsin.com"}
+2024/06/05 18:02:26.154	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 1, name \"username\": converting NULL to string is unsupported"}
+2024/06/05 18:02:26.155	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"url": "/users/auth", "method": "POST"}
+2024/06/05 18:02:26.155	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "4.499083ms"}
+2024/06/05 18:05:23.872	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 18:05:28.745	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "50.339583ms"}
+2024/06/05 18:05:30.116	[31mERROR[0m	you can receive code again in 58.619078s	{"url": "/users/auth", "method": "POST"}
+2024/06/05 18:05:30.116	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.72225ms"}
+2024/06/05 18:07:39.150	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "7.787708ms"}
+2024/06/05 18:07:44.038	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/05 18:07:44.041	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "1.385959ms"}
+2024/06/05 20:40:31.370	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 20:40:33.224	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "527.875µs"}
+2024/06/05 20:40:33.233	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "3.061875ms"}
+2024/06/05 20:40:33.234	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "291.833µs"}
+2024/06/05 20:40:33.235	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "494.167µs"}
+2024/06/05 20:40:33.354	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "482.292µs"}
+2024/06/05 20:57:08.296	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "798.542µs"}
+2024/06/05 20:57:08.308	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "64.334µs"}
+2024/06/05 20:57:08.310	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "833.583µs"}
+2024/06/05 20:57:08.311	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "13µs"}
+2024/06/05 20:57:08.399	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "287.041µs"}
+2024/06/05 20:57:08.405	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "339.625µs"}
+2024/06/05 20:57:46.999	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "20.554584ms"}
+2024/06/05 20:59:23.002	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "3.056708ms"}
+2024/06/05 21:25:38.826	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "8.110125ms"}
+2024/06/05 21:25:38.836	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "1.113042ms"}
+2024/06/05 21:25:38.836	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "699.209µs"}
+2024/06/05 21:25:38.837	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "1.343542ms"}
+2024/06/05 21:25:38.957	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "476.791µs"}
+2024/06/05 21:25:56.966	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "17.628667ms"}
+2024/06/05 21:29:29.700	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "24.493ms"}
+2024/06/05 21:43:37.643	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "50.715959ms"}
+2024/06/05 21:43:48.606	[31mERROR[0m	you can receive code again in 49.026445s	{"url": "/users/auth", "method": "POST"}
+2024/06/05 21:43:48.607	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "34.857167ms"}
+2024/06/05 21:44:23.761	[31mERROR[0m	you can receive code again in 13.871632s	{"url": "/users/auth", "method": "POST"}
+2024/06/05 21:44:23.762	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "8.362375ms"}
+2024/06/05 21:44:56.612	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "21.8395ms"}
+2024/06/05 21:45:37.592	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "27.06525ms"}
+2024/06/05 21:45:51.895	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"id": "f86db791-fd63-40a6-b700-95942593c8e5"}
+2024/06/05 21:45:51.896	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 1, name \"username\": converting NULL to string is unsupported"}
+2024/06/05 21:45:51.896	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"url": "/users/check-code", "method": "POST"}
+2024/06/05 21:45:51.896	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "11.408333ms"}
+2024/06/05 21:48:05.665	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 21:48:07.733	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"id": "f86db791-fd63-40a6-b700-95942593c8e5"}
+2024/06/05 21:48:07.733	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 1, name \"username\": converting NULL to string is unsupported"}
+2024/06/05 21:48:07.733	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"url": "/users/check-code", "method": "POST"}
+2024/06/05 21:48:07.733	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "70.2085ms"}
+2024/06/05 21:48:13.476	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"id": "f86db791-fd63-40a6-b700-95942593c8e5"}
+2024/06/05 21:48:13.476	[31mERROR[0m	failed to get user	{"error": "sql: Scan error on column index 1, name \"username\": converting NULL to string is unsupported"}
+2024/06/05 21:48:13.477	[31mERROR[0m	sql: Scan error on column index 1, name "username": converting NULL to string is unsupported	{"url": "/users/check-code", "method": "POST"}
+2024/06/05 21:48:13.477	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "2.081625ms"}
+2024/06/05 21:50:22.935	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/05 21:50:24.876	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "43.303208ms"}
+2024/06/05 21:50:36.895	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "21.140042ms"}
+2024/06/05 21:50:59.787	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "6.49025ms"}
+2024/06/05 22:03:20.032	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "29.91375ms"}
+2024/06/05 22:03:31.499	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "32.558833ms"}
+2024/06/05 22:04:28.884	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "9.711875ms"}
+2024/06/05 22:04:38.251	[31mERROR[0m	Authorization header missing
+2024/06/05 22:04:38.254	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "4.009333ms"}
+2024/06/05 22:05:12.927	[31mERROR[0m	Authorization header missing
+2024/06/05 22:05:12.928	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "976.75µs"}
+2024/06/05 22:05:23.988	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "17.579834ms"}
+2024/06/05 22:05:50.824	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "11.156667ms"}
+2024/06/05 22:30:52.425	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "21.872542ms"}
+2024/06/05 22:31:01.901	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "15.006292ms"}
+2024/06/05 22:31:09.408	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "8.688833ms"}
+2024/06/06 18:05:05.655	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:05:08.018	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "1.049541ms"}
+2024/06/06 18:05:08.032	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "341.917µs"}
+2024/06/06 18:05:08.033	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "2.34875ms"}
+2024/06/06 18:05:08.039	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "5.776166ms"}
+2024/06/06 18:05:08.159	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "389.875µs"}
+2024/06/06 18:05:22.824	[31mERROR[0m	Authorization header missing
+2024/06/06 18:05:22.825	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "1.000917ms"}
+2024/06/06 18:05:24.105	[31mERROR[0m	Authorization header missing
+2024/06/06 18:05:24.105	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "389.584µs"}
+2024/06/06 18:05:26.703	[31mERROR[0m	Authorization header missing
+2024/06/06 18:05:26.705	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "78.542µs"}
+2024/06/06 18:05:53.293	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:05:57.247	[31mERROR[0m	Authorization header missing
+2024/06/06 18:05:57.248	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "508.5µs"}
+2024/06/06 18:06:00.816	[31mERROR[0m	Authorization header missing
+2024/06/06 18:06:00.816	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "366.958µs"}
+2024/06/06 18:07:23.059	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:07:37.958	[31mERROR[0m	Authorization header missing
+2024/06/06 18:07:37.958	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "121.917µs"}
+2024/06/06 18:08:05.400	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:08:07.725	[31mERROR[0m	Authorization header missing
+2024/06/06 18:08:07.725	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "77.25µs"}
+2024/06/06 18:09:12.430	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:09:13.673	[31mERROR[0m	Authorization header missing
+2024/06/06 18:09:13.673	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "316.208µs"}
+2024/06/06 18:09:16.137	[31mERROR[0m	Authorization header missing
+2024/06/06 18:09:16.137	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "105.416µs"}
+2024/06/06 18:15:34.946	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:15:38.067	[31mERROR[0m	Authorization header missing
+2024/06/06 18:15:38.067	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "135.958µs"}
+2024/06/06 18:15:40.718	[31mERROR[0m	Authorization header missing
+2024/06/06 18:15:40.718	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdasd", "status": 200, "duration": "145.75µs"}
+2024/06/06 18:15:41.318	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "507.041µs"}
+2024/06/06 18:15:41.349	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "7.685542ms"}
+2024/06/06 18:15:41.352	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "16.904292ms"}
+2024/06/06 18:15:41.353	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "18.326916ms"}
+2024/06/06 18:15:41.441	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "46.5µs"}
+2024/06/06 18:15:41.443	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "5.057833ms"}
+2024/06/06 18:15:45.226	[31mERROR[0m	Authorization header missing
+2024/06/06 18:15:45.226	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdas", "status": 200, "duration": "360.084µs"}
+2024/06/06 18:15:46.674	[31mERROR[0m	Authorization header missing
+2024/06/06 18:15:46.674	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdas", "status": 200, "duration": "103.709µs"}
+2024/06/06 18:16:13.267	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:16:17.089	[31mERROR[0m	Authorization header missing
+2024/06/06 18:16:17.089	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdas", "status": 200, "duration": "109.541µs"}
+2024/06/06 18:16:17.585	[31mERROR[0m	Authorization header missing
+2024/06/06 18:16:17.585	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdas", "status": 200, "duration": "94.625µs"}
+2024/06/06 18:16:48.043	[31mERROR[0m	Authorization header missing
+2024/06/06 18:16:48.050	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asdfd", "status": 200, "duration": "243.333µs"}
+2024/06/06 18:20:03.194	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "5.337583ms"}
+2024/06/06 18:20:03.212	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "167.333µs"}
+2024/06/06 18:20:03.214	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "5.0745ms"}
+2024/06/06 18:20:03.220	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "6.813958ms"}
+2024/06/06 18:20:03.315	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "2.406208ms"}
+2024/06/06 18:20:03.324	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "7.428541ms"}
+2024/06/06 18:20:35.992	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:20:36.963	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "697.542µs"}
+2024/06/06 18:20:36.982	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "2.386875ms"}
+2024/06/06 18:20:36.983	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "278.958µs"}
+2024/06/06 18:20:36.995	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "11.267583ms"}
+2024/06/06 18:20:37.040	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "1.261416ms"}
+2024/06/06 18:20:37.042	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "120.125µs"}
+2024/06/06 18:20:39.468	[31mERROR[0m	Authorization header missing
+2024/06/06 18:20:39.468	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "180.333µs"}
+2024/06/06 18:20:40.972	[31mERROR[0m	Authorization header missing
+2024/06/06 18:20:40.975	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "3.694125ms"}
+2024/06/06 18:21:55.644	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:21:57.870	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "307.791µs"}
+2024/06/06 18:21:57.885	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "205.375µs"}
+2024/06/06 18:21:57.888	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "401.75µs"}
+2024/06/06 18:21:57.893	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "4.730417ms"}
+2024/06/06 18:21:57.936	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "741.5µs"}
+2024/06/06 18:21:57.944	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "47.542µs"}
+2024/06/06 18:22:00.794	[31mERROR[0m	Authorization header missing
+2024/06/06 18:22:00.794	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "239.125µs"}
+2024/06/06 18:22:01.564	[31mERROR[0m	Authorization header missing
+2024/06/06 18:22:01.564	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "191.333µs"}
+2024/06/06 18:22:22.156	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:22:22.795	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "30.125µs"}
+2024/06/06 18:22:23.595	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "27.208µs"}
+2024/06/06 18:22:24.668	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search", "status": 200, "duration": "452.167µs"}
+2024/06/06 18:22:54.572	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:22:56.117	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "687.417µs"}
+2024/06/06 18:22:56.130	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "479.584µs"}
+2024/06/06 18:22:56.145	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "5.363291ms"}
+2024/06/06 18:22:56.146	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "15.358375ms"}
+2024/06/06 18:22:56.191	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "1.147333ms"}
+2024/06/06 18:22:56.196	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "174.209µs"}
+2024/06/06 18:23:07.996	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:23:08.856	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "869.916µs"}
+2024/06/06 18:23:08.874	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "1.444959ms"}
+2024/06/06 18:23:08.884	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "9.528167ms"}
+2024/06/06 18:23:08.884	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "398.042µs"}
+2024/06/06 18:23:08.938	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "332.25µs"}
+2024/06/06 18:23:08.942	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "73.834µs"}
+2024/06/06 18:23:11.999	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asd", "status": 200, "duration": "32.791µs"}
+2024/06/06 18:23:13.718	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=asd", "status": 200, "duration": "154.291µs"}
+2024/06/06 18:27:35.973	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:38:27.943	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:38:31.597	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "856.75µs"}
+2024/06/06 18:38:31.615	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "259.166µs"}
+2024/06/06 18:38:31.620	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "838.042µs"}
+2024/06/06 18:38:31.622	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "4.356875ms"}
+2024/06/06 18:38:31.722	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "706.833µs"}
+2024/06/06 18:38:31.725	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "53.083µs"}
+2024/06/06 18:38:36.923	[31mERROR[0m	cannot get users	{"error": "pq: syntax error at or near \"CONTAINS\""}
+2024/06/06 18:38:36.928	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "43.372209ms"}
+2024/06/06 18:43:08.589	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:43:11.419	[31mERROR[0m	cannot get users	{"error": "pq: syntax error at or near \"CONTAINS\""}
+2024/06/06 18:43:11.421	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "30.691833ms"}
+2024/06/06 18:43:34.060	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:43:36.936	[31mERROR[0m	cannot get users	{"error": "pq: syntax error at or near \"CONTAINS\""}
+2024/06/06 18:43:36.937	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "20.063375ms"}
+2024/06/06 18:44:01.125	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:44:02.914	[31mERROR[0m	cannot get users	{"error": "pq: column \"%$1%\" does not exist"}
+2024/06/06 18:44:02.915	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "47.218208ms"}
+2024/06/06 18:45:24.595	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:45:27.664	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "39.729417ms"}
+2024/06/06 18:45:42.153	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vol", "status": 200, "duration": "2.221042ms"}
+2024/06/06 18:45:53.347	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=v", "status": 200, "duration": "2.300417ms"}
+2024/06/06 18:46:06.765	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vladimir", "status": 200, "duration": "6.388375ms"}
+2024/06/06 18:46:55.243	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/06 18:47:00.324	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vlad", "status": 200, "duration": "15.836042ms"}
+2024/06/06 18:47:04.441	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=vla", "status": 200, "duration": "11.083792ms"}
+2024/06/06 18:47:06.435	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=cv", "status": 200, "duration": "6.111208ms"}
+2024/06/06 18:47:12.158	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=lex", "status": 200, "duration": "1.850416ms"}

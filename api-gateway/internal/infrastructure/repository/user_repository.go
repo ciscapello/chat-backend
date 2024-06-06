@@ -34,7 +34,8 @@ func (ur *UserRepository) CheckUserIfExistsByEmail(email string) bool {
 	var user userEntity.User
 	query := "SELECT * FROM users WHERE email = $1"
 	row := ur.db.QueryRow(query, email)
-	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
+	var username sql.NullString
+	err := row.Scan(&user.ID, &username, &user.Code, &user.Role, &user.Enabled)
 	if err == sql.ErrNoRows {
 		return false
 	} else if err != nil {
@@ -46,9 +47,10 @@ func (ur *UserRepository) CheckUserIfExistsByEmail(email string) bool {
 func (ur *UserRepository) CheckUserIfExistsByUsername(username string) bool {
 	fmt.Println(username)
 	var user userEntity.User
+	var name sql.NullString
 	query := "SELECT * FROM users WHERE username = $1"
 	row := ur.db.QueryRow(query, username)
-	err := row.Scan(&user.ID, &user.Username, &user.Code, &user.Role, &user.Enabled)
+	err := row.Scan(&user.ID, &name, &user.Code, &user.Role, &user.Enabled)
 	fmt.Println(row)
 	fmt.Println(user)
 	if err == sql.ErrNoRows {
@@ -70,8 +72,16 @@ func (ur *UserRepository) GetUserById(id uuid.UUID) (userEntity.User, error) {
 	var updatedAt string
 	var roleString string
 
-	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
+	var username sql.NullString
+
+	err := row.Scan(&us.ID, &username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 	us.Role = userEntity.ParseRole(roleString)
+
+	if username.Valid {
+		us.Username = username.String
+	} else {
+		us.Username = ""
+	}
 
 	if err == sql.ErrNoRows {
 		ur.logger.Error("User not found", zap.String("id", id.String()))
@@ -91,14 +101,20 @@ func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) 
 	var createdAt string
 	var updatedAt string
 	var roleString string
+	var username sql.NullString
 
-	err := row.Scan(&us.ID, &us.Username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
+	err := row.Scan(&us.ID, &username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 	if err == sql.ErrNoRows {
 		ur.logger.Error("User not found", zap.String("email", email))
 		return us, ErrUserNotFound
 	} else if err != nil {
 		ur.logger.Error(err.Error(), zap.String("email", email))
 		return us, err
+	}
+	if username.Valid {
+		us.Username = username.String
+	} else {
+		us.Username = ""
 	}
 	us.Role = userEntity.ParseRole(roleString)
 
@@ -108,7 +124,7 @@ func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) 
 func (ur *UserRepository) CreateUser(u userEntity.User) error {
 	query := "INSERT INTO users (id, username, enabled, role, code, email, last_code_update) VALUES ($1, $2, $3, $4, $5, $6, $7)"
 
-	res, err := ur.db.Exec(query, u.ID, u.Username, u.Enabled, u.Role.String(), u.Code, u.Email, time.Now().UTC())
+	res, err := ur.db.Exec(query, u.ID, nil, u.Enabled, u.Role.String(), u.Code, u.Email, time.Now().UTC())
 	if err != nil {
 		ur.logger.Error(err.Error())
 		return err
@@ -219,7 +235,28 @@ func (ur *UserRepository) GetUserRole(id uuid.UUID) userEntity.Role {
 	return userEntity.Admin
 }
 
-func (ur *UserRepository) Registration() {}
+func (ur *UserRepository) FindUsersByUsername(username string) ([]userEntity.PublicUser, error) {
+	query := `SELECT id, username, email FROM users WHERE username IS NOT NULL AND LOWER(username) LIKE '%' || LOWER($1) || '%'`
+
+	rows, err := ur.db.Query(query, username)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var users []userEntity.PublicUser
+
+	for rows.Next() {
+		var us userEntity.PublicUser
+		err := rows.Scan(&us.ID, &us.Username, &us.Email)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, us)
+	}
+
+	return users, nil
+}
 
 func (ur *UserRepository) Login() {}
 

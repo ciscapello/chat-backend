@@ -35,8 +35,10 @@ func NewAuthMiddleware(logger *zap.Logger, j *JwtManager) *AuthMiddleware {
 
 func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		fmt.Println(r.URL.String())
+
 		authHeader := r.Header.Get(authorizationHeader)
-		fmt.Println(authHeader)
 
 		if authHeader == "" {
 			am.logger.Error("Authorization header missing")

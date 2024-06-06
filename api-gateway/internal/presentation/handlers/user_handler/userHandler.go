@@ -2,7 +2,7 @@ package userhandler
 
 import (
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
-	userservice "github.com/ciscapello/api-gateway/internal/domain/service/userService"
+	userservice "github.com/ciscapello/api-gateway/internal/domain/service/user_service"
 	"go.uber.org/zap"
 )
 
