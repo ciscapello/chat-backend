@@ -36,6 +36,7 @@ func (uh *UserHandler) GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		response.SendError(w, http.StatusBadRequest, "cannot get users")
 		uh.logger.Error("cannot get users", zap.Error(err))
+		return
 	}
 
 	response.SendSuccess(w, http.StatusOK, users)
