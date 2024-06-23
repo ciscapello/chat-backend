@@ -8,7 +8,7 @@ import (
 
 type ConversationStorer interface {
 	CreateConversation(creatorId uuid.UUID, secondUserId uuid.UUID) error
-	// GetConversations(userId uuid.UUID) ([]uuid.UUID, error)
+	// GetConversations(userId uuid.UUID) ([]conversationentity., error)
 }
 
 type ConversationService struct {
@@ -28,3 +28,7 @@ func New(conversationStorer ConversationStorer, logger *zap.Logger, jwtManager *
 func (us *ConversationService) CreateConversation(creatorId uuid.UUID, secondUserId uuid.UUID) error {
 	return us.conversationStorer.CreateConversation(creatorId, secondUserId)
 }
+
+// func (us *ConversationService) GetUserConversations(userId uuid.UUID) error {
+// return us.conversationStorer.GetConversations(userId)
+// }

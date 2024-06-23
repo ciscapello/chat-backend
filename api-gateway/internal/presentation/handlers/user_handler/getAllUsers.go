@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
-	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"go.uber.org/zap"
 )
 
@@ -21,23 +20,23 @@ func (uh *UserHandler) GetAllUsers(w http.ResponseWriter, r *http.Request) {
 
 	role, err := uh.jwtManager.GetUserRole(r.Context())
 	if err != nil {
-		response.SendError(w, http.StatusBadRequest, "invalid token")
+		uh.responder.SendError(w, http.StatusBadRequest, "invalid token")
 		uh.logErrorInRequest(r, "invalid token")
 		return
 	}
 
 	if role != userEntity.Admin {
-		response.SendError(w, http.StatusForbidden, "forbidden")
+		uh.responder.SendError(w, http.StatusForbidden, "forbidden")
 		uh.logErrorInRequest(r, "forbidden")
 		return
 	}
 
 	users, err := uh.userService.GetAllUsers()
 	if err != nil {
-		response.SendError(w, http.StatusBadRequest, "cannot get users")
+		uh.responder.SendError(w, http.StatusBadRequest, "cannot get users")
 		uh.logger.Error("cannot get users", zap.Error(err))
 		return
 	}
 
-	response.SendSuccess(w, http.StatusOK, users)
+	uh.responder.SendSuccess(w, http.StatusOK, users)
 }

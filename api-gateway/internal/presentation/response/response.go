@@ -12,6 +12,9 @@ type Response struct {
 	StatusCode int         `json:"status_code"`
 }
 
+type Responder struct {
+}
+
 func sendJson(w http.ResponseWriter, statusCode int, payload interface{}) {
 	response, err := json.Marshal(payload)
 	if err != nil {
@@ -24,7 +27,7 @@ func sendJson(w http.ResponseWriter, statusCode int, payload interface{}) {
 	w.Write(response)
 }
 
-func SendSuccess(w http.ResponseWriter, statusCode int, payload interface{}) {
+func (rs Responder) SendSuccess(w http.ResponseWriter, statusCode int, payload interface{}) {
 	response := Response{
 		Data:       payload,
 		StatusCode: statusCode,
@@ -32,7 +35,7 @@ func SendSuccess(w http.ResponseWriter, statusCode int, payload interface{}) {
 	sendJson(w, statusCode, response)
 }
 
-func SendError(w http.ResponseWriter, statusCode int, message string) {
+func (rs Responder) SendError(w http.ResponseWriter, statusCode int, message string) {
 	response := Response{
 		Error:      message,
 		StatusCode: statusCode,

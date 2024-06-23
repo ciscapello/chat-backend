@@ -1450,3 +1450,106 @@
 2024/06/06 22:35:30.821	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Va", "status": 200, "duration": "1.435916ms"}
 2024/06/06 22:35:30.894	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vas", "status": 200, "duration": "7.89575ms"}
 2024/06/06 22:35:31.800	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Va", "status": 200, "duration": "1.703416ms"}
+2024/06/10 19:59:41.187	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/10 20:18:55.478	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "5.610708ms"}
+2024/06/10 20:18:55.508	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "1.04375ms"}
+2024/06/10 20:18:55.508	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "2.374458ms"}
+2024/06/10 20:18:55.525	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "19.03025ms"}
+2024/06/10 20:18:55.633	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "5.646834ms"}
+2024/06/21 19:45:53.462	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/21 19:46:05.519	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "694.209µs"}
+2024/06/21 19:46:05.527	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "71.5µs"}
+2024/06/21 19:46:05.528	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "430.584µs"}
+2024/06/21 19:46:05.529	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "1.6405ms"}
+2024/06/21 19:46:05.647	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "458.458µs"}
+2024/06/21 19:46:06.255	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "135.584µs"}
+2024/06/21 19:48:05.495	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "90.625µs"}
+2024/06/21 19:53:55.391	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:55.392	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=S", "status": 200, "duration": "2.766542ms"}
+2024/06/21 19:53:55.415	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:55.415	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Sd", "status": 200, "duration": "112.875µs"}
+2024/06/21 19:53:55.420	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:55.420	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=As", "status": 200, "duration": "81.375µs"}
+2024/06/21 19:53:56.123	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:56.123	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "192.5µs"}
+2024/06/21 19:53:56.335	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:56.335	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "166.5µs"}
+2024/06/21 19:53:56.585	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 19:53:56.585	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vl", "status": 200, "duration": "167.75µs"}
+2024/06/21 20:11:15.539	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "124.975542ms"}
+2024/06/21 20:11:25.158	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "23.686167ms"}
+2024/06/21 20:11:34.265	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "16.517291ms"}
+2024/06/21 20:11:36.186	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "9.167584ms"}
+2024/06/21 20:11:38.125	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Aa", "status": 200, "duration": "2.094541ms"}
+2024/06/21 20:11:38.520	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "12.113917ms"}
+2024/06/21 20:11:38.910	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "11.408625ms"}
+2024/06/21 20:11:39.746	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "5.123125ms"}
+2024/06/21 20:11:39.996	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vl", "status": 200, "duration": "5.15325ms"}
+2024/06/21 20:11:40.511	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "15.553792ms"}
+2024/06/21 20:11:40.943	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "6.049542ms"}
+2024/06/21 20:11:41.740	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "3.980834ms"}
+2024/06/21 20:11:41.983	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vl", "status": 200, "duration": "32.610417ms"}
+2024/06/21 20:11:42.196	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vla", "status": 200, "duration": "2.350792ms"}
+2024/06/21 20:11:42.430	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vl", "status": 200, "duration": "2.356167ms"}
+2024/06/21 20:11:42.596	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "2.488041ms"}
+2024/06/21 20:11:43.076	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "3.152375ms"}
+2024/06/21 20:11:43.804	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Al", "status": 200, "duration": "7.767ms"}
+2024/06/21 20:11:44.193	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=All", "status": 200, "duration": "1.763041ms"}
+2024/06/21 20:11:44.598	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Al", "status": 200, "duration": "20.872917ms"}
+2024/06/21 20:11:44.852	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "5.439583ms"}
+2024/06/21 20:11:45.313	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "6.066667ms"}
+2024/06/21 20:11:45.499	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Al", "status": 200, "duration": "13.5575ms"}
+2024/06/21 20:11:46.345	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Ale", "status": 200, "duration": "2.351375ms"}
+2024/06/21 20:11:46.689	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Al", "status": 200, "duration": "2.13325ms"}
+2024/06/21 20:11:46.863	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "5.50825ms"}
+2024/06/21 20:11:47.407	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "16.711833ms"}
+2024/06/21 20:18:26.656	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vs", "status": 200, "duration": "7.120417ms"}
+2024/06/21 20:18:27.427	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "20.250042ms"}
+2024/06/21 20:20:18.159	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "1.814334ms"}
+2024/06/21 22:42:03.602	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 22:42:03.603	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/9c50f946-1aa9-42b2-abae-56a9e62bdcbe", "status": 200, "duration": "711.5µs"}
+2024/06/21 22:45:19.599	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/21 22:45:24.069	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 22:45:24.070	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/a219a585-97bd-4d5c-951f-2640dc537e7c", "status": 200, "duration": "514.084µs"}
+2024/06/21 22:45:40.496	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 22:45:40.497	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/a219a585-97bd-4d5c-951f-2640dc537e7c", "status": 200, "duration": "213.375µs"}
+2024/06/21 22:45:50.163	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "838.083µs"}
+2024/06/21 22:45:50.178	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "390.417µs"}
+2024/06/21 22:45:50.180	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "3.25775ms"}
+2024/06/21 22:45:50.180	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "1.377ms"}
+2024/06/21 22:45:50.289	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "170.75µs"}
+2024/06/21 22:45:50.289	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "2.809709ms"}
+2024/06/21 22:45:58.136	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "904.75µs"}
+2024/06/21 22:46:01.936	[31mERROR[0m	Authorization header missing
+2024/06/21 22:46:01.936	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/a219a585-97bd-4d5c-951f-2640dc537e7c", "status": 200, "duration": "403.209µs"}
+2024/06/21 22:46:46.581	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/21 22:46:48.699	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/a219a585-97bd-4d5c-951f-2640dc537e7c", "status": 200, "duration": "36.284458ms"}
+2024/06/21 22:46:53.243	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/9c50f946-1aa9-42b2-abae-56a9e62bdcbe", "status": 200, "duration": "20.609042ms"}
+2024/06/21 22:46:55.438	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/84aac1fa-588a-4e09-981f-0d80d3fd6479", "status": 200, "duration": "4.731875ms"}
+2024/06/21 22:46:57.907	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/ec25db35-b750-4db8-90a1-a40dcd76ce76", "status": 200, "duration": "12.55075ms"}
+2024/06/21 22:47:33.425	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/06/21 22:47:33.429	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "4.129292ms"}
+2024/06/21 22:47:50.922	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "5.807958ms"}
+2024/06/21 22:48:12.446	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "3.073042ms"}
+2024/06/21 22:48:17.415	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "12.192541ms"}
+2024/06/21 22:48:19.870	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=A", "status": 200, "duration": "4.158625ms"}
+2024/06/21 22:48:21.999	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/9c50f946-1aa9-42b2-abae-56a9e62bdcbe", "status": 200, "duration": "14.458458ms"}
+2024/06/21 22:48:23.335	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "11.965125ms"}
+2024/06/21 22:48:30.601	[31mERROR[0m	conversation with users 66c661eb-abaa-4087-8e47-b8788774d5fe and 9c50f946-1aa9-42b2-abae-56a9e62bdcbe already exists	{"url": "/conversations", "method": "POST"}
+2024/06/21 22:48:30.602	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "3.383041ms"}
+2024/06/23 22:06:34.383	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/23 22:06:44.007	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "991.708µs"}
+2024/06/23 22:06:44.025	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "549.875µs"}
+2024/06/23 22:06:44.032	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "811.042µs"}
+2024/06/23 22:06:44.032	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "3.693333ms"}
+2024/06/23 22:06:44.135	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "361.042µs"}
+2024/06/23 22:06:44.169	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "60.917µs"}
+2024/06/23 22:07:14.260	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/23 22:07:14.260	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "380.625µs"}
+2024/06/23 22:07:15.234	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/23 22:07:15.234	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "370.792µs"}
+2024/06/23 22:08:16.592	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/23 22:47:00.353	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/23 22:47:00.354	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "828.25µs"}
+2024/06/23 22:47:05.597	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/23 22:47:05.597	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "494.958µs"}

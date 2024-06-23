@@ -22,6 +22,7 @@ import (
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	httpServer "github.com/ciscapello/api-gateway/internal/presentation/http"
+	"github.com/ciscapello/api-gateway/internal/presentation/response"
 
 	_ "github.com/ciscapello/api-gateway/docs"
 	_ "github.com/swaggo/http-swagger" // http-swagger middleware
@@ -57,9 +58,11 @@ func run() {
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
 	conversationService := conversationservice.New(conversationRepo, logger, jwtMan)
 
-	userHandler := userhandler.New(userService, logger, jwtMan)
+	responder := response.Responder{}
+
+	userHandler := userhandler.New(userService, logger, jwtMan, responder)
 	defaulthandler := defaulthandler.New(logger)
-	conversationhandler := conversationhandler.New(conversationService, logger, jwtMan)
+	conversationhandler := conversationhandler.New(conversationService, logger, jwtMan, responder)
 
 	httpServer := httpServer.New(config, &httpServer.Handlers{
 		UserHandler:         userHandler,
