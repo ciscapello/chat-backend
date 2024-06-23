@@ -48,7 +48,6 @@ func (uh *UserHandler) Auth(w http.ResponseWriter, r *http.Request) {
 	uid, err := uh.userService.Authentication(rb.Email)
 	if err != nil {
 		uh.responder.SendError(w, http.StatusBadRequest, err.Error())
-		uh.logErrorInRequest(r, err.Error())
 		return
 	}
 

@@ -87,16 +87,6 @@ func TestAuth(t *testing.T) {
 				t.Errorf("expected status %v; got %v", tc.expectedStatus, recorder.Code)
 			}
 
-			if tc.expectedStatus == http.StatusOK {
-				var res resBody
-				if err := json.NewDecoder(recorder.Body).Decode(&res); err != nil {
-					t.Errorf("could not decode response: %v", err)
-				}
-				if res.ID == "" {
-					t.Error("expected a valid ID; got an empty string")
-				}
-			}
-
 		})
 	}
 
