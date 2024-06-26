@@ -64,13 +64,6 @@ func (us *UserService) Authentication(email string) (uuid.UUID, error) {
 		lastCodeUpdateUTC := user.LastCodeUpdate.UTC()
 		currentTimeUTC := time.Now().UTC()
 
-		fmt.Println("LastCodeUpdate Add minute", user.LastCodeUpdate.Add(time.Minute))
-		fmt.Println("time now", time.Now())
-
-		fmt.Println("LastCodeUpdate (UTC):", lastCodeUpdateUTC)
-		fmt.Println("LastCodeUpdate Add minute (UTC):", lastCodeUpdateUTC.Add(time.Minute))
-		fmt.Println("Time now (UTC):", currentTimeUTC)
-
 		if lastCodeUpdateUTC.Add(time.Minute).After(currentTimeUTC) {
 			return uuid.UUID{}, fmt.Errorf("you can receive code again in %v", time.Until(lastCodeUpdateUTC.Add(time.Minute)))
 		}
@@ -83,8 +76,6 @@ func (us *UserService) Authentication(email string) (uuid.UUID, error) {
 
 		user.Code = code
 	}
-
-	fmt.Println(user, "user before publish")
 
 	us.messageBroker.Publish(contracts.UserCreatedTopic, contracts.UserCreatedMessage{
 		Username: user.Username,

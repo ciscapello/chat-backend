@@ -1553,3 +1553,4 @@
 2024/06/23 22:47:00.354	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "828.25µs"}
 2024/06/23 22:47:05.597	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
 2024/06/23 22:47:05.597	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "494.958µs"}
+2024/06/26 18:37:37.182	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
