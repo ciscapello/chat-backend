@@ -4,6 +4,15 @@ definitions:
       second_user_id:
         type: string
     type: object
+  dto.ConversationsDTO:
+    properties:
+      id:
+        type: string
+      lastMessage:
+        type: string
+      user:
+        $ref: '#/definitions/userEntity.PublicUser'
+    type: object
   jwtmanager.ReturnTokenType:
     properties:
       access_token:
@@ -78,6 +87,41 @@ info:
   version: "1.0"
 paths:
   /conversations:
+    get:
+      consumes:
+      - application/json
+      description: Get conversations that belongs to user
+      parameters:
+      - description: Skip items count
+        in: query
+        name: skip
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/dto.ConversationsDTO'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      security:
+      - BearerAuth: []
+      summary: Get conversations
+      tags:
+      - conversations
     post:
       consumes:
       - application/json
@@ -210,8 +254,6 @@ paths:
                 error:
                   type: string
               type: object
-      security:
-      - BearerAuth: []
       summary: Get user
       tags:
       - users

@@ -13,6 +13,13 @@ type ConversationRepository struct {
 	db     *sql.DB
 }
 
+type ConversationsWithUser struct {
+	ID       int
+	UserID   string
+	Username string
+	Email    string
+}
+
 func NewConversationRepository(db *sql.DB, logger *zap.Logger) *ConversationRepository {
 	return &ConversationRepository{
 		logger: logger,
@@ -72,27 +79,32 @@ func (cr *ConversationRepository) CreateConversation(creatorId uuid.UUID, second
 	return nil
 }
 
-func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) error {
-	query := `SELECT c.id, u.username, u.email FROM conversations c
+func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) ([]ConversationsWithUser, error) {
+	query := `SELECT c.id, u.id, u.username, u.email FROM conversations c
 	JOIN participants p ON c.id = p.conversation_id
 	JOIN users u ON p.user_id = u.id
-	WHERE p.user_id = $1 OR c.creator_id = $1
+	WHERE (p.user_id = $1 OR c.creator_id = $1)
+	AND u.id <> $1
 	`
+
+	convs := []ConversationsWithUser{}
 
 	rows, err := cr.db.Query(query, userId)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer rows.Close()
 
 	for rows.Next() {
-		var conversationId int
-		err := rows.Scan(&conversationId)
+		conv := ConversationsWithUser{}
+		err := rows.Scan(&conv.ID, &conv.UserID, &conv.Username, &conv.Email)
+		convs = append(convs, conv)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		fmt.Println(conversationId)
 	}
 
-	return nil
+	fmt.Println(convs)
+
+	return convs, nil
 }

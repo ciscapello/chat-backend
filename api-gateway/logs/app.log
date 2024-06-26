@@ -1554,3 +1554,82 @@
 2024/06/23 22:47:05.597	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
 2024/06/23 22:47:05.597	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "494.958µs"}
 2024/06/26 18:37:37.182	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 18:58:52.879	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 18:59:32.454	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "1.983666ms"}
+2024/06/26 18:59:32.473	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "460.666µs"}
+2024/06/26 18:59:32.479	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "1.828125ms"}
+2024/06/26 18:59:32.479	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "6.021583ms"}
+2024/06/26 18:59:32.592	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "405.917µs"}
+2024/06/26 19:00:13.388	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 19:00:20.833	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "702.333µs"}
+2024/06/26 19:00:20.855	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "1.425208ms"}
+2024/06/26 19:00:20.855	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "2.018875ms"}
+2024/06/26 19:00:20.863	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "9.441333ms"}
+2024/06/26 19:00:20.912	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "8.91175ms"}
+2024/06/26 19:00:20.916	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/favicon-32x32.png", "status": 200, "duration": "821.417µs"}
+2024/06/26 22:10:12.985	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:10:22.234	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "22.804167ms"}
+2024/06/26 22:10:31.589	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "11.150125ms"}
+2024/06/26 22:10:35.567	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "27.423917ms"}
+2024/06/26 22:10:37.490	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "5.328417ms"}
+2024/06/26 22:10:37.950	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vl", "status": 200, "duration": "4.480792ms"}
+2024/06/26 22:10:39.050	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/f263bb44-8168-4abb-8efc-57f9432f18c4", "status": 200, "duration": "4.786875ms"}
+2024/06/26 22:10:40.452	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "15.721541ms"}
+2024/06/26 22:12:28.777	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/index.html", "status": 200, "duration": "456.375µs"}
+2024/06/26 22:12:28.791	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui.css", "status": 200, "duration": "202.416µs"}
+2024/06/26 22:12:28.796	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-standalone-preset.js", "status": 200, "duration": "2.339583ms"}
+2024/06/26 22:12:28.798	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/swagger-ui-bundle.js", "status": 200, "duration": "5.241084ms"}
+2024/06/26 22:12:28.920	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/docs/doc.json", "status": 200, "duration": "7.794291ms"}
+2024/06/26 22:13:34.183	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "18.882916ms"}
+2024/06/26 22:14:03.325	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "6.584542ms"}
+2024/06/26 22:14:06.617	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "3.716083ms"}
+2024/06/26 22:14:15.136	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "5.160334ms"}
+2024/06/26 22:14:19.586	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "5.451791ms"}
+2024/06/26 22:14:22.984	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "12.630625ms"}
+2024/06/26 22:14:27.800	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "2.696084ms"}
+2024/06/26 22:14:34.397	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "5.256125ms"}
+2024/06/26 22:14:48.869	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "7.194875ms"}
+2024/06/26 22:14:51.675	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "3.854792ms"}
+2024/06/26 22:15:50.893	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:15:54.819	[31mERROR[0m	sql: Scan error on column index 1, name "id": destination not a pointer	{"url": "/conversations", "method": "GET"}
+2024/06/26 22:15:54.819	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "23.211875ms"}
+2024/06/26 22:16:30.974	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:16:32.930	[31mERROR[0m	invalid UUID length: 0	{"url": "/conversations", "method": "GET"}
+2024/06/26 22:16:32.931	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "19.8055ms"}
+2024/06/26 22:17:05.350	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:17:06.723	[31mERROR[0m	invalid UUID length: 0	{"url": "/conversations", "method": "GET"}
+2024/06/26 22:17:06.723	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "39.67225ms"}
+2024/06/26 22:17:37.859	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "4.382542ms"}
+2024/06/26 22:17:38.026	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Va", "status": 200, "duration": "2.36725ms"}
+2024/06/26 22:17:38.219	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Vas", "status": 200, "duration": "5.908084ms"}
+2024/06/26 22:17:38.817	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Va", "status": 200, "duration": "1.356ms"}
+2024/06/26 22:17:39.921	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/9e4d3781-21ff-4b6a-aa48-46420c0bd28c", "status": 200, "duration": "17.589708ms"}
+2024/06/26 22:17:40.695	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "5.068ms"}
+2024/06/26 22:17:43.289	[31mERROR[0m	invalid UUID length: 0	{"url": "/conversations", "method": "GET"}
+2024/06/26 22:17:43.290	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "7.110042ms"}
+2024/06/26 22:27:11.377	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:27:14.902	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "22.240083ms"}
+2024/06/26 22:27:41.325	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:27:42.018	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "24.262959ms"}
+2024/06/26 22:28:11.400	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "22.4975ms"}
+2024/06/26 22:29:21.556	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:29:37.009	[31mERROR[0m	Invalid email	{"url": "/users/auth", "method": "POST"}
+2024/06/26 22:29:37.010	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "1.882209ms"}
+2024/06/26 22:29:41.918	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/auth", "status": 200, "duration": "33.6215ms"}
+2024/06/26 22:29:49.897	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/users/check-code", "status": 200, "duration": "3.336708ms"}
+2024/06/26 22:29:57.111	[34mINFO[0m	[HTTP]	{"method": "PUT", "url": "/users", "status": 200, "duration": "5.87225ms"}
+2024/06/26 22:29:58.845	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=V", "status": 200, "duration": "9.059917ms"}
+2024/06/26 22:29:59.191	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/search?username=Va", "status": 200, "duration": "5.865625ms"}
+2024/06/26 22:30:00.088	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/9e4d3781-21ff-4b6a-aa48-46420c0bd28c", "status": 200, "duration": "1.987125ms"}
+2024/06/26 22:30:00.839	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "7.829416ms"}
+2024/06/26 22:30:02.449	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/2be0879a-8b60-4804-abca-1a87a457695d", "status": 200, "duration": "18.481125ms"}
+2024/06/26 22:30:03.219	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "24.603584ms"}
+2024/06/26 22:30:04.819	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/users/12ddf3fa-1efa-479a-9e2f-4229888c210f", "status": 200, "duration": "4.196042ms"}
+2024/06/26 22:30:05.588	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/conversations", "status": 200, "duration": "26.920125ms"}
+2024/06/26 22:30:08.526	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "3.733333ms"}
+2024/06/26 22:31:20.121	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:31:33.088	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "39.724791ms"}
+2024/06/26 22:35:56.911	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:35:58.539	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "17.196417ms"}
+2024/06/26 22:36:10.844	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/06/26 22:36:12.637	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/conversations", "status": 200, "duration": "14.696041ms"}
