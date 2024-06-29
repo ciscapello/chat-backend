@@ -22,7 +22,7 @@ type resp struct {
 // @Param request body requestBody true "Request body containing username and email"
 // @Success 200 {object} response.Response{data=resp}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/auth [post]
+// @Router /api/v1/users/auth [post]
 func (uh *UserHandler) Auth(w http.ResponseWriter, r *http.Request) {
 
 	var rb requestBody

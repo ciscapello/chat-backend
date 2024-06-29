@@ -31,25 +31,26 @@ type Server struct {
 
 func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	router := mux.NewRouter()
+	routerWithPrefix := router.PathPrefix("/api").Subrouter()
 
 	jwtm := jwtmanager.NewJwtManager(cfg, logger)
 
 	jwtMiddleware := jwtmanager.NewAuthMiddleware(logger, jwtm)
 
-	router.Use(LoggingMiddleware(logger))
+	routerWithPrefix.Use(LoggingMiddleware(logger))
 
-	router.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)
-	router.MethodNotAllowedHandler = http.HandlerFunc(handlers.DefaultHandler.MethodNotAllowedHandler)
+	routerWithPrefix.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)
+	routerWithPrefix.MethodNotAllowedHandler = http.HandlerFunc(handlers.DefaultHandler.MethodNotAllowedHandler)
 
-	userRouter := router.PathPrefix("/users").Subrouter()
+	userRouter := routerWithPrefix.PathPrefix("/v1/users").Subrouter()
 	ConfigureUserRoutes(userRouter, handlers.UserHandler, jwtMiddleware.Middleware)
 
-	conversationRoutes := router.PathPrefix("/conversations").Subrouter()
+	conversationRoutes := routerWithPrefix.PathPrefix("/v1/conversations").Subrouter()
 	ConfigureConversationRoutes(conversationRoutes, handlers.ConversationHandler, jwtMiddleware.Middleware)
 
-	router.Handle("", userRouter)
+	routerWithPrefix.Handle("", userRouter) // TODO: what is it?
 
-	err := router.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
+	err := routerWithPrefix.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
 		pathTemplate, _ := route.GetPathTemplate()
 		methods, _ := route.GetMethods()
 		if pathTemplate != "" {

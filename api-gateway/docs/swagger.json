@@ -6,7 +6,7 @@
         "version": "1.0"
     },
     "paths": {
-        "/conversations": {
+        "/api/v1/conversations": {
             "get": {
                 "security": [
                     {
@@ -124,7 +124,7 @@
                 }
             }
         },
-        "/users": {
+        "/api/v1/users": {
             "get": {
                 "security": [
                     {
@@ -252,7 +252,7 @@
                 }
             }
         },
-        "/users/auth": {
+        "/api/v1/users/auth": {
             "post": {
                 "description": "Authentication by username and email",
                 "consumes": [
@@ -316,7 +316,7 @@
                 }
             }
         },
-        "/users/check-code": {
+        "/api/v1/users/check-code": {
             "post": {
                 "description": "Check code with id and code",
                 "consumes": [
@@ -380,7 +380,7 @@
                 }
             }
         },
-        "/users/refresh": {
+        "/api/v1/users/refresh": {
             "post": {
                 "description": "Refresh token",
                 "consumes": [
@@ -444,7 +444,7 @@
                 }
             }
         },
-        "/users/search": {
+        "/api/v1/users/search": {
             "get": {
                 "description": "Search users",
                 "consumes": [
@@ -508,7 +508,7 @@
                 }
             }
         },
-        "/users/{id}": {
+        "/api/v1/users/{id}": {
             "get": {
                 "description": "Get user by id",
                 "consumes": [
@@ -584,9 +584,9 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string"
+                    "type": "integer"
                 },
-                "lastMessage": {
+                "last_message": {
                     "type": "string"
                 },
                 "user": {

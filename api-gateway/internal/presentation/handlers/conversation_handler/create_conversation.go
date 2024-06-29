@@ -21,7 +21,7 @@ type createConversationRequest struct {
 // @Param request body createConversationRequest true "Request body containing user_id and second_user_id"
 // @Success 200
 // @Failure 400 {object} response.Response{error=string}
-// @Router /conversations [post]
+// @Router /api/v1/conversations [post]
 func (ch *ConversationHandler) CreateConversation(w http.ResponseWriter, r *http.Request) {
 	creatorIdStr, err := ch.jwtManager.GetUserId(r.Context())
 	if err != nil {

@@ -21,7 +21,7 @@ type checkCodeReq struct {
 // @Param request body checkCodeReq true "Request body containing ID and Code"
 // @Success 200 {object} response.Response{data=jwtmanager.ReturnTokenType}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/check-code [post]
+// @Router /api/v1/users/check-code [post]
 func (uh *UserHandler) CheckCode(w http.ResponseWriter, r *http.Request) {
 
 	var body checkCodeReq

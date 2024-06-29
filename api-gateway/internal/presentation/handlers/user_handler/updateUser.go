@@ -19,7 +19,7 @@ import (
 // @Param request body userEntity.UpdateUserRequest true "User with optional fields"
 // @Success 200 {object} response.Response{data=userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users [put]
+// @Router /api/v1/users [put]
 func (uh *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 	id, err := uh.jwtManager.GetUserId(r.Context())

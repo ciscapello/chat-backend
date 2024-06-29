@@ -15,7 +15,7 @@ import (
 // @Param id path string true "User ID"
 // @Success 200 {object} response.Response{data=userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/{id} [get]
+// @Router /api/v1/users/{id} [get]
 func (uh *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)

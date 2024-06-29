@@ -15,7 +15,7 @@ import (
 // @Param skip query integer false "Skip items count"
 // @Success 200 {object} response.Response{data=dto.ConversationsDTO}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /conversations [get]
+// @Router /api/v1/conversations [get]
 func (ch *ConversationHandler) GetConversations(w http.ResponseWriter, r *http.Request) {
 	userId, err := ch.jwtManager.GetUserId(r.Context())
 

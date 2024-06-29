@@ -15,7 +15,7 @@ import (
 // @Security BearerAuth
 // @Success 200 {object} response.Response{data=[]userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users [get]
+// @Router /api/v1/users [get]
 func (uh *UserHandler) GetAllUsers(w http.ResponseWriter, r *http.Request) {
 
 	role, err := uh.jwtManager.GetUserRole(r.Context())

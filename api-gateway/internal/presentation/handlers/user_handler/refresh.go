@@ -20,7 +20,7 @@ type refreshRequest struct {
 // @Param request body refreshRequest true "Request body containing refresh token"
 // @Success 200 {object} response.Response{data=jwtmanager.ReturnTokenType}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/refresh [post]
+// @Router /api/v1/users/refresh [post]
 func (uh *UserHandler) Refresh(w http.ResponseWriter, r *http.Request) {
 
 	var body refreshRequest

@@ -15,7 +15,7 @@ import (
 // @Param username query string false "Search query"
 // @Success 200 {object} response.Response{data=[]userEntity.PublicUser}
 // @Failure 400 {object} response.Response{error=string}
-// @Router /users/search [get]
+// @Router /api/v1/users/search [get]
 func (uh *UserHandler) SearchUsers(w http.ResponseWriter, r *http.Request) {
 
 	username := r.URL.Query().Get("username")

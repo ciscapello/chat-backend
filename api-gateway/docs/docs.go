@@ -15,7 +15,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/conversations": {
+        "/api/v1/conversations": {
             "get": {
                 "security": [
                     {
@@ -133,7 +133,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users": {
+        "/api/v1/users": {
             "get": {
                 "security": [
                     {
@@ -261,7 +261,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/auth": {
+        "/api/v1/users/auth": {
             "post": {
                 "description": "Authentication by username and email",
                 "consumes": [
@@ -325,7 +325,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/check-code": {
+        "/api/v1/users/check-code": {
             "post": {
                 "description": "Check code with id and code",
                 "consumes": [
@@ -389,7 +389,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/refresh": {
+        "/api/v1/users/refresh": {
             "post": {
                 "description": "Refresh token",
                 "consumes": [
@@ -453,7 +453,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/search": {
+        "/api/v1/users/search": {
             "get": {
                 "description": "Search users",
                 "consumes": [
@@ -517,7 +517,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/{id}": {
+        "/api/v1/users/{id}": {
             "get": {
                 "description": "Get user by id",
                 "consumes": [
@@ -593,9 +593,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string"
+                    "type": "integer"
                 },
-                "lastMessage": {
+                "last_message": {
                     "type": "string"
                 },
                 "user": {

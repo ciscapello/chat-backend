@@ -7,8 +7,8 @@ definitions:
   dto.ConversationsDTO:
     properties:
       id:
-        type: string
-      lastMessage:
+        type: integer
+      last_message:
         type: string
       user:
         $ref: '#/definitions/userEntity.PublicUser'
@@ -86,7 +86,7 @@ info:
   title: API Gateway
   version: "1.0"
 paths:
-  /conversations:
+  /api/v1/conversations:
     get:
       consumes:
       - application/json
@@ -152,7 +152,7 @@ paths:
       summary: Create conversation
       tags:
       - conversations
-  /users:
+  /api/v1/users:
     get:
       consumes:
       - application/json
@@ -222,7 +222,7 @@ paths:
       summary: Update user
       tags:
       - users
-  /users/{id}:
+  /api/v1/users/{id}:
     get:
       consumes:
       - application/json
@@ -257,7 +257,7 @@ paths:
       summary: Get user
       tags:
       - users
-  /users/auth:
+  /api/v1/users/auth:
     post:
       consumes:
       - application/json
@@ -293,7 +293,7 @@ paths:
       summary: Authentication
       tags:
       - users
-  /users/check-code:
+  /api/v1/users/check-code:
     post:
       consumes:
       - application/json
@@ -329,7 +329,7 @@ paths:
       summary: Check code
       tags:
       - users
-  /users/refresh:
+  /api/v1/users/refresh:
     post:
       consumes:
       - application/json
@@ -365,7 +365,7 @@ paths:
       summary: Refresh
       tags:
       - users
-  /users/search:
+  /api/v1/users/search:
     get:
       consumes:
       - application/json
