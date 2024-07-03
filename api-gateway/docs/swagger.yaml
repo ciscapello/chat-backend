@@ -20,6 +20,13 @@ definitions:
       refresh_token:
         type: string
     type: object
+  messagehandler.createMessageRequestBody:
+    properties:
+      conversation_id:
+        type: integer
+      text:
+        type: string
+    type: object
   response.Response:
     properties:
       data: {}
@@ -152,6 +159,37 @@ paths:
       summary: Create conversation
       tags:
       - conversations
+  /api/v1/messages:
+    post:
+      consumes:
+      - application/json
+      description: Create message
+      parameters:
+      - description: Request body containing conversation_id and text of the message
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/messagehandler.createMessageRequestBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                error:
+                  type: string
+              type: object
+      security:
+      - BearerAuth: []
+      summary: Create message
+      tags:
+      - messages
   /api/v1/users:
     get:
       consumes:

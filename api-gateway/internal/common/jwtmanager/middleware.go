@@ -67,6 +67,8 @@ func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 }
 
 func (JwtManager) GetUserId(ctx context.Context) (string, error) {
+
+	fmt.Println("asdasd")
 	userId, ok := ctx.Value(userIdCtx).(uuid.UUID)
 	if !ok {
 		return "", errors.New("user id is not in the context")

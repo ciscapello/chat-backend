@@ -11,6 +11,7 @@ import (
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	conversationhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/conversation_handler"
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
+	messagehandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/message_handler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
@@ -21,6 +22,7 @@ type Handlers struct {
 	UserHandler         *userhandler.UserHandler
 	DefaultHandler      *defaulthandler.DefaultHandler
 	ConversationHandler *conversationhandler.ConversationHandler
+	MessageHandler      *messagehandler.MessagesHandler
 }
 
 type Server struct {
@@ -48,7 +50,8 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	conversationRoutes := routerWithPrefix.PathPrefix("/v1/conversations").Subrouter()
 	ConfigureConversationRoutes(conversationRoutes, handlers.ConversationHandler, jwtMiddleware.Middleware)
 
-	routerWithPrefix.Handle("", userRouter) // TODO: what is it?
+	messageRouter := routerWithPrefix.PathPrefix("/v1/messages").Subrouter()
+	ConfigureMessagesRoutes(messageRouter, handlers.MessageHandler, jwtMiddleware.Middleware)
 
 	err := routerWithPrefix.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
 		pathTemplate, _ := route.GetPathTemplate()

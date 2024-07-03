@@ -93,3 +93,21 @@
 2024/06/21 22:47:50.924	[34mINFO[0m	Sending email
 2024/06/26 22:10:22.257	[34mINFO[0m	Sending email
 2024/06/26 22:29:41.933	[34mINFO[0m	Sending email
+2024/06/30 18:07:25.973	[34mINFO[0m	Sending email
+2024/06/30 18:27:12.029	[34mINFO[0m	Sending email
+2024/06/30 22:34:16.705	[34mINFO[0m	Sending email
+2024/06/30 22:38:42.046	[34mINFO[0m	Sending email
+2024/06/30 22:40:57.841	[34mINFO[0m	Sending email
+2024/06/30 22:49:09.179	[34mINFO[0m	Sending email
+2024/07/01 22:17:38.050	[34mINFO[0m	Sending email
+2024/07/01 22:36:10.129	[34mINFO[0m	Sending email
+2024/07/01 22:36:30.136	[31mERROR[0m	Get "https://api.telegram.org/bot7338324481:AAEJS7-7kDQRrnn0NBSeCwJPaiJT7SyBlEs/sendMessage?chat_id=-1002161138641&disable_notification=false&parse_mode=HTML&text=code+891555": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024/07/01 22:39:20.908	[34mINFO[0m	Sending email
+2024/07/01 22:40:35.763	[34mINFO[0m	Sending email
+2024/07/01 22:42:29.753	[34mINFO[0m	Sending email
+2024/07/01 22:44:12.038	[34mINFO[0m	Sending email
+2024/07/03 21:13:32.069	[34mINFO[0m	Sending email
+2024/07/03 22:16:22.295	[34mINFO[0m	Sending email
+2024/07/03 22:16:43.766	[31mERROR[0m	Get "https://api.telegram.org/bot7338324481:AAEJS7-7kDQRrnn0NBSeCwJPaiJT7SyBlEs/sendMessage?chat_id=-1002161138641&disable_notification=false&parse_mode=HTML&text=code+924195": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024/07/03 22:17:25.823	[34mINFO[0m	Sending email
+2024/07/03 23:10:35.082	[34mINFO[0m	Sending email

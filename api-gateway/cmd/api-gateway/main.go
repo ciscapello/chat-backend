@@ -15,11 +15,13 @@ import (
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api-gateway/internal/common/logger"
 	conversationservice "github.com/ciscapello/api-gateway/internal/domain/service/conversation_service"
+	messageservice "github.com/ciscapello/api-gateway/internal/domain/service/message_service"
 	userservice "github.com/ciscapello/api-gateway/internal/domain/service/user_service"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/rabbitmq"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
 	conversationhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/conversation_handler"
 	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
+	messagehandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/message_handler"
 	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	httpServer "github.com/ciscapello/api-gateway/internal/presentation/http"
 	"github.com/ciscapello/api-gateway/internal/presentation/response"
@@ -52,22 +54,26 @@ func run() {
 
 	userRepository := repository.NewUserRepository(database, logger)
 	conversationRepo := repository.NewConversationRepository(database, logger)
+	messagesRepo := repository.NewMessagesRepository(database, logger)
 
 	jwtMan := jwtmanager.NewJwtManager(config, logger)
 
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
 	conversationService := conversationservice.New(conversationRepo, logger, jwtMan)
+	messagesService := messageservice.New(messagesRepo, logger, jwtMan)
 
 	responder := response.Responder{}
 
 	userHandler := userhandler.New(userService, logger, jwtMan, responder)
 	defaulthandler := defaulthandler.New(logger)
 	conversationhandler := conversationhandler.New(conversationService, logger, jwtMan, responder)
+	messagesHandler := messagehandler.New(messagesService, logger, jwtMan, responder)
 
 	httpServer := httpServer.New(config, &httpServer.Handlers{
 		UserHandler:         userHandler,
 		DefaultHandler:      defaulthandler,
 		ConversationHandler: conversationhandler,
+		MessageHandler:      messagesHandler,
 	}, logger)
 
 	go func() {

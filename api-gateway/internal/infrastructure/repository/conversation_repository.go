@@ -80,14 +80,21 @@ func (cr *ConversationRepository) CreateConversation(creatorId uuid.UUID, second
 }
 
 func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) ([]ConversationsWithUser, error) {
-	query := `SELECT c.id, u.id, u.username, u.email FROM conversations c
-	JOIN participants p ON c.id = p.conversation_id
-	JOIN users u ON p.user_id = u.id
-	WHERE (p.user_id = $1 OR c.creator_id = $1)
-	AND u.id <> $1
+	query := `select c.id, u2.id, u2.username, u2.email from conversations c 
+	join participants p on p.conversation_id = c.id 
+	join users u2 on u2.id = p.user_id 
+	where p.conversation_id in (
+		select c.id from conversations c
+		join participants p ON p.conversation_id = c.id 
+		join users u on u.id = p.user_id
+		where u.id = $1
+	)
+	and u2.id <> $1
 	`
 
 	convs := []ConversationsWithUser{}
+
+	nullableStr := sql.NullString{}
 
 	rows, err := cr.db.Query(query, userId)
 	if err != nil {
@@ -97,7 +104,8 @@ func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) ([]Conv
 
 	for rows.Next() {
 		conv := ConversationsWithUser{}
-		err := rows.Scan(&conv.ID, &conv.UserID, &conv.Username, &conv.Email)
+		err := rows.Scan(&conv.ID, &conv.UserID, &nullableStr, &conv.Email)
+		conv.Username = nullableStr.String
 		convs = append(convs, conv)
 		if err != nil {
 			return nil, err

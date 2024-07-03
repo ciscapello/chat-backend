@@ -140,6 +140,7 @@ func (j *JwtManager) verifyToken(tokenStr string) (tokenClaims, error) {
 		}
 
 		role := userEntity.ParseRole(roleStr)
+
 		return tokenClaims{
 			id:   id,
 			role: role,
