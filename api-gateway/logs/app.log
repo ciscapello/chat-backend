@@ -10216,3 +10216,33 @@
 2024/07/05 22:39:39.158	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 2024/07/05 22:39:40.941	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "27.047625ms"}
 2024/07/05 22:39:43.343	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.106292ms"}
+2024/07/05 22:40:53.780	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.967417ms"}
+2024/07/05 22:41:00.236	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "7.5635ms"}
+2024/07/05 22:41:19.638	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "14.014ms"}
+2024/07/05 22:41:22.157	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.829958ms"}
+2024/07/05 22:41:35.717	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "7.8305ms"}
+2024/07/05 22:41:53.092	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "6.028834ms"}
+2024/07/05 22:42:11.032	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.431041ms"}
+2024/07/05 22:42:16.187	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.909042ms"}
+2024/07/05 22:42:40.227	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "6.053834ms"}
+2024/07/05 22:42:51.881	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.372333ms"}
+2024/07/05 22:43:06.091	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.895959ms"}
+2024/07/05 22:43:13.582	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.052459ms"}
+2024/07/05 22:43:20.286	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.248792ms"}
+2024/07/05 22:43:52.940	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/07/05 22:45:31.332	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "53.049958ms"}
+2024/07/05 22:45:53.863	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.798875ms"}
+2024/07/05 22:48:21.786	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.834958ms"}
+2024/07/05 22:48:41.276	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "7.746375ms"}
+2024/07/05 22:49:13.134	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "8.515917ms"}
+2024/07/05 22:49:52.131	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.291083ms"}
+2024/07/05 22:49:58.779	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.131666ms"}
+2024/07/05 22:50:07.065	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.322833ms"}
+2024/07/05 22:50:10.786	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.882875ms"}
+2024/07/05 22:50:15.163	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "8.059292ms"}
+2024/07/05 22:50:29.535	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "8.504833ms"}
+2024/07/05 22:51:07.157	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.779ms"}
+2024/07/05 22:51:41.594	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.724041ms"}
+2024/07/05 22:52:21.937	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.039ms"}
+2024/07/05 22:52:58.352	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.458584ms"}
+2024/07/05 22:53:01.806	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "7.029708ms"}
