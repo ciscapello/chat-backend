@@ -5,5 +5,5 @@ import userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user
 type ConversationsDTO struct {
 	ID          int                   `json:"id"`
 	User        userEntity.PublicUser `json:"user"`
-	LastMessage string                `json:"last_message"`
+	LastMessage *MessageDTO           `json:"last_message,omitempty"`
 }

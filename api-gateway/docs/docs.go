@@ -650,10 +650,24 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "last_message": {
-                    "type": "string"
+                    "$ref": "#/definitions/dto.MessageDTO"
                 },
                 "user": {
                     "$ref": "#/definitions/userEntity.PublicUser"
+                }
+            }
+        },
+        "dto.MessageDTO": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "message_body": {
+                    "type": "string"
+                },
+                "sender_id": {
+                    "type": "string"
                 }
             }
         },

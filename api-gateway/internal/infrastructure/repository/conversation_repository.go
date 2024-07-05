@@ -3,6 +3,7 @@ package repository
 import (
 	"database/sql"
 	"fmt"
+	"time"
 
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -14,10 +15,13 @@ type ConversationRepository struct {
 }
 
 type ConversationsWithUser struct {
-	ID       int
-	UserID   string
-	Username string
-	Email    string
+	ID                   int
+	UserID               string
+	Username             string
+	Email                string
+	LastMessageBody      string
+	LastMessageCreatedAt time.Time
+	LastMessageSenderId  string
 }
 
 func NewConversationRepository(db *sql.DB, logger *zap.Logger) *ConversationRepository {
@@ -80,21 +84,41 @@ func (cr *ConversationRepository) CreateConversation(creatorId uuid.UUID, second
 }
 
 func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) ([]ConversationsWithUser, error) {
-	query := `select c.id, u2.id, u2.username, u2.email from conversations c 
+	query := `select c.id, u2.id, u2.username, u2.email, m.message, m.created_at, m.sender_id from conversations c 
 	join participants p on p.conversation_id = c.id 
-	join users u2 on u2.id = p.user_id 
+	join users u2 on u2.id = p.user_id
+	left join (
+		select 
+            m1.conversation_id, 
+            m1.message, 
+            m1.created_at,
+            m1.sender_id
+        from 
+            messages m1
+            join (
+                select 
+                    conversation_id, 
+                    max(created_at) AS latest_message_time
+                from 
+                    messages
+                group by
+                    conversation_id
+            ) m2 ON m1.conversation_id = m2.conversation_id AND m1.created_at = m2.latest_message_time
+	) m on c.id = m.conversation_id
 	where p.conversation_id in (
 		select c.id from conversations c
 		join participants p ON p.conversation_id = c.id 
-		join users u on u.id = p.user_id
-		where u.id = $1
+		where p.user_id = $1
 	)
 	and u2.id <> $1
 	`
 
 	convs := []ConversationsWithUser{}
 
-	nullableStr := sql.NullString{}
+	nullableUsername := sql.NullString{}
+	nullableMessageBody := sql.NullString{}
+	nullableCreatedAt := sql.NullTime{}
+	nullableSenderId := sql.NullString{}
 
 	rows, err := cr.db.Query(query, userId)
 	if err != nil {
@@ -104,15 +128,17 @@ func (cr *ConversationRepository) GetConversationsList(userId uuid.UUID) ([]Conv
 
 	for rows.Next() {
 		conv := ConversationsWithUser{}
-		err := rows.Scan(&conv.ID, &conv.UserID, &nullableStr, &conv.Email)
-		conv.Username = nullableStr.String
+
+		err := rows.Scan(&conv.ID, &conv.UserID, &nullableUsername, &conv.Email, &nullableMessageBody, &nullableCreatedAt, &nullableSenderId)
+		conv.Username = nullableUsername.String
+		conv.LastMessageBody = nullableMessageBody.String
+		conv.LastMessageCreatedAt = nullableCreatedAt.Time
+		conv.LastMessageSenderId = nullableSenderId.String
 		convs = append(convs, conv)
 		if err != nil {
 			return nil, err
 		}
 	}
-
-	fmt.Println(convs)
 
 	return convs, nil
 }

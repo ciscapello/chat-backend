@@ -9,9 +9,18 @@ definitions:
       id:
         type: integer
       last_message:
-        type: string
+        $ref: '#/definitions/dto.MessageDTO'
       user:
         $ref: '#/definitions/userEntity.PublicUser'
+    type: object
+  dto.MessageDTO:
+    properties:
+      created_at:
+        type: string
+      message_body:
+        type: string
+      sender_id:
+        type: string
     type: object
   jwtmanager.ReturnTokenType:
     properties:

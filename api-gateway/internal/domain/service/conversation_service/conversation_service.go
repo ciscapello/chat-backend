@@ -1,6 +1,8 @@
 package conversationservice
 
 import (
+	"fmt"
+
 	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
 	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
@@ -40,19 +42,32 @@ func (us *ConversationService) GetUserConversations(userId uuid.UUID) ([]dto.Con
 	}
 
 	for index, conv := range conversations {
-		dto := dto.ConversationsDTO{}
+		convDTO := dto.ConversationsDTO{}
 		usr := userEntity.PublicUser{}
+		msgDTO := &dto.MessageDTO{}
 
 		uid, err := uuid.Parse(conv.UserID)
 		if err != nil {
 			return nil, err
 		}
-		dto.ID = conv.ID
+		convDTO.ID = conv.ID
 		usr.ID = uid
 		usr.Email = conv.Email
 		usr.Username = conv.Username
-		dto.User = usr
-		dtos[index] = dto
+		convDTO.User = usr
+
+		senderUid, err := uuid.Parse(conv.LastMessageSenderId)
+		if err != nil {
+			fmt.Println(conv.LastMessageSenderId, "err")
+			msgDTO = nil
+		} else {
+			msgDTO.MessageBody = conv.LastMessageBody
+			msgDTO.CreatedAt = conv.LastMessageCreatedAt
+			msgDTO.SenderId = senderUid
+		}
+
+		convDTO.LastMessage = msgDTO
+		dtos[index] = convDTO
 	}
 
 	return dtos, nil
