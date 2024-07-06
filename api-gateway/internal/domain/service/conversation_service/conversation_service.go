@@ -44,7 +44,7 @@ func (us *ConversationService) GetUserConversations(userId uuid.UUID) ([]dto.Con
 	for index, conv := range conversations {
 		convDTO := dto.ConversationsDTO{}
 		usr := userEntity.PublicUser{}
-		msgDTO := &dto.MessageDTO{}
+		msgDTO := &dto.ConversationMessageDTO{}
 
 		uid, err := uuid.Parse(conv.UserID)
 		if err != nil {

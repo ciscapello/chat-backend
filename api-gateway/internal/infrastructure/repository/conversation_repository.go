@@ -31,6 +31,20 @@ func NewConversationRepository(db *sql.DB, logger *zap.Logger) *ConversationRepo
 	}
 }
 
+func (cr *ConversationRepository) CheckIfConversationBelongsToUser(userId uuid.UUID, conversationId int) bool {
+	query := `select c.id from conversations c 
+	join participants p on p.conversation_id = c.id 
+	where p.user_id = $1 and c.id = $2
+	`
+	row := cr.db.QueryRow(query, userId, conversationId)
+	if row.Err() != nil {
+		return false
+	}
+	var id int
+	err := row.Scan(&id)
+	return err == nil
+}
+
 func (cr *ConversationRepository) CheckIfConversationExists(creatorId uuid.UUID, secondUserId uuid.UUID) bool {
 	query := `
 	SELECT p1.conversation_id FROM participants p1

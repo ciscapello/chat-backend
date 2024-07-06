@@ -2,7 +2,6 @@ package messagehandler
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -25,9 +24,9 @@ type createMessageRequestBody struct {
 // @Failure 400 {object} response.Response{error=string}
 // @Router /api/v1/messages [post]
 func (mh *MessagesHandler) CreateMessage(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(mh)
+
 	userId, err := mh.jwtManager.GetUserId(r.Context())
-	fmt.Println("here5")
+
 	if err != nil {
 		mh.responder.SendError(w, http.StatusBadRequest, "cannot get user id")
 		mh.logErrorInRequest(r, "cannot get user id")

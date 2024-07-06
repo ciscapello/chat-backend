@@ -187,6 +187,76 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/messages/{conversation_id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get messages by conversation id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "messages"
+                ],
+                "summary": "Get messages",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Conversation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/response.Response"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/dto.MessageDTO"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/response.Response"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/users": {
             "get": {
                 "security": [
@@ -643,6 +713,20 @@ const docTemplate = `{
                 }
             }
         },
+        "dto.ConversationMessageDTO": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "message_body": {
+                    "type": "string"
+                },
+                "sender_id": {
+                    "type": "string"
+                }
+            }
+        },
         "dto.ConversationsDTO": {
             "type": "object",
             "properties": {
@@ -650,7 +734,7 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "last_message": {
-                    "$ref": "#/definitions/dto.MessageDTO"
+                    "$ref": "#/definitions/dto.ConversationMessageDTO"
                 },
                 "user": {
                     "$ref": "#/definitions/userEntity.PublicUser"
@@ -667,6 +751,20 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "sender_id": {
+                    "type": "string"
+                },
+                "user": {
+                    "$ref": "#/definitions/dto.MessageUserDTO"
+                }
+            }
+        },
+        "dto.MessageUserDTO": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "username": {
                     "type": "string"
                 }
             }
