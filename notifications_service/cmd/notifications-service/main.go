@@ -1,0 +1,29 @@
+package main
+
+import (
+	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/notification_service/application/config"
+	"github.com/ciscapello/notification_service/common/logger"
+	emailservice "github.com/ciscapello/notification_service/internal/domain/service/emailService"
+	"github.com/ciscapello/notification_service/internal/infrastructure/rabbitmq"
+	"github.com/ciscapello/notification_service/internal/infrastructure/telegram"
+)
+
+func main() {
+
+	conf := config.New()
+
+	logger := logger.GetLogger(conf)
+
+	es := emailservice.New(*conf, logger)
+	telegramManager := telegram.New(logger, *conf)
+	cons := rabbitmq.NewConsumer(conf, logger, es, telegramManager)
+
+	never := make(chan bool, 1)
+
+	go func() {
+		cons.Consume(contracts.UserCreatedTopic, never)
+	}()
+
+	<-never
+}
