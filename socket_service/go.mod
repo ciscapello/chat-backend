@@ -1,4 +1,4 @@
-module github.com/ciscapello/socket-service
+module github.com/ciscapello/socket_service
 
 go 1.22.3
 

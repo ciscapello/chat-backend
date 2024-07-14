@@ -1,3 +1,3 @@
 .PHONY: run
 run:
-	go run ./cmd/socket-service/main.go
+	go run ./cmd/socket_service/main.go
