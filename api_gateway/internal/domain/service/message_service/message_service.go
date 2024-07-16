@@ -42,12 +42,13 @@ func New(messagesStorer MessagesStorer, messageBroker MessageBroker, conversatio
 	}
 }
 
-func (ms *MessagesService) CreateMessage(senderId uuid.UUID, conversationId int, message string) error {
+func (ms *MessagesService) CreateMessage(senderId uuid.UUID, receiverId uuid.UUID, conversationId int, message string) error {
 
-	var body contracts.MessageCreatedBody
+	var body contracts.MessageSocketBody
 
 	body.ConversationId = conversationId
-	body.SenderId = senderId
+	body.FromUserID = senderId.String()
+	body.ToUserID = receiverId.String()
 	body.MessageBody = message
 
 	err := ms.messageBroker.Publish(contracts.MessageCreatedTopic, body)

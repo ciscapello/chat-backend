@@ -9,29 +9,31 @@ import (
 )
 
 const (
-	DB_PASSWORD = "DB_PASSWORD"
-	DB_HOST     = "DB_HOST"
-	DB_PORT     = "DB_PORT"
-	DB_NAME     = "DB_NAME"
-	DB_USER     = "DB_USER"
-	HTTP_PORT   = "HTTP_PORT"
+	DB_PASSWORD         = "DB_PASSWORD"
+	DB_HOST             = "DB_HOST"
+	DB_PORT             = "DB_PORT"
+	DB_NAME             = "DB_NAME"
+	DB_USER             = "DB_USER"
+	HTTP_PORT           = "HTTP_PORT"
+	SOCKET_SERVICE_PORT = "SOCKET_SERVICE_PORT"
 )
 
 var ErrNoEnvs = errors.New("there's no environment variables")
 
 type Config struct {
-	DbPassword    string
-	DbHost        string
-	DbPort        string
-	DbName        string
-	DbUser        string
-	HttpPort      string
-	LogPath       string
-	RmqConnStr    string
-	EmailAddress  string
-	EmailPassword string
-	BotToken      string
-	ChatId        string
+	DbPassword        string
+	DbHost            string
+	DbPort            string
+	DbName            string
+	DbUser            string
+	HttpPort          string
+	LogPath           string
+	RmqConnStr        string
+	EmailAddress      string
+	EmailPassword     string
+	BotToken          string
+	ChatId            string
+	SocketServicePort string
 }
 
 func New() *Config {
@@ -46,12 +48,10 @@ func New() *Config {
 	dbName := os.Getenv(DB_NAME)
 	dbUser := os.Getenv(DB_USER)
 	httpPort := os.Getenv(HTTP_PORT)
+	socketServicePort := os.Getenv(SOCKET_SERVICE_PORT)
 
 	rmqHost := os.Getenv("RMQ_HOST")
 	rmqPost := os.Getenv("RMQ_PORT")
-
-	emailAddr := os.Getenv("EMAIL_ADDRESS")
-	emailPass := os.Getenv("EMAIL_PASSWORD")
 
 	botToken := os.Getenv("BOT_TOKEN")
 	chatId := os.Getenv("CHAT_ID")
@@ -64,17 +64,16 @@ func New() *Config {
 	}
 
 	return &Config{
-		DbPassword:    dbPassword,
-		DbHost:        dbHost,
-		DbPort:        dbPort,
-		DbName:        dbName,
-		DbUser:        dbUser,
-		HttpPort:      httpPort,
-		LogPath:       path + "/logs",
-		RmqConnStr:    rmqConnStr,
-		EmailAddress:  emailAddr,
-		EmailPassword: emailPass,
-		BotToken:      botToken,
-		ChatId:        chatId,
+		DbPassword:        dbPassword,
+		DbHost:            dbHost,
+		DbPort:            dbPort,
+		DbName:            dbName,
+		DbUser:            dbUser,
+		HttpPort:          httpPort,
+		LogPath:           path + "/logs",
+		RmqConnStr:        rmqConnStr,
+		BotToken:          botToken,
+		ChatId:            chatId,
+		SocketServicePort: socketServicePort,
 	}
 }

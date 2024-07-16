@@ -6,20 +6,14 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/ciscapello/lib/contracts"
+
 	"github.com/gorilla/websocket"
 )
 
 type Client struct {
 	Conn   *websocket.Conn
 	UserId string
-}
-
-type Message struct {
-	Type           string `json:"type"`
-	ConversationId int    `json:"conversation_id,omitempty"`
-	FromUserID     string `json:"from_user_id,omitempty"`
-	ToUserID       string `json:"to_user_id,omitempty"`
-	MessageBody    string `json:"message_body,omitempty"`
 }
 
 var upgrader = websocket.Upgrader{
@@ -30,34 +24,35 @@ var upgrader = websocket.Upgrader{
 }
 
 var clients = make(map[*Client]bool)
-var broadcast = make(chan *Message)
+var broadcast = make(chan *contracts.MessageSocketBody)
 
 func receiver(client *Client) {
 	for {
-		_, p, err := client.Conn.ReadMessage()
+		msgType, p, err := client.Conn.ReadMessage()
+		fmt.Println("Message type:", msgType, "Payload:", string(p), "Error:", err)
 		if err != nil {
 			fmt.Println(err)
 			return
 		}
 
-		m := &Message{}
-		err = json.Unmarshal(p, m)
-
+		var body contracts.MessageSocketBody
+		err = json.Unmarshal(p, &body)
 		if err != nil {
-			fmt.Println("error while unmarshaling chat", err)
+			fmt.Println("Error unmarshaling JSON:", err)
 			continue
 		}
+		fmt.Println("Unmarshaled body:", body)
 
 		fmt.Println("host", client.Conn.RemoteAddr())
-		if m.Type == "bootup" {
+		if body.Type == "bootup" {
 			// do mapping on bootup
-			client.UserId = m.FromUserID
+			client.UserId = body.FromUserID
 			fmt.Println("client successfully mapped", &client, client, client.UserId)
 			continue
 		}
 
-		fmt.Println("received message", m.Type, m.MessageBody)
-		broadcast <- m
+		fmt.Println("received message", body.Type, body.MessageBody)
+		broadcast <- &body
 	}
 }
 

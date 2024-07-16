@@ -2,8 +2,11 @@ package messageservice
 
 import (
 	"errors"
+	"fmt"
 
+	"github.com/ciscapello/lib/contracts"
 	"github.com/ciscapello/message_service/internal/infrastructure/repository"
+	"github.com/ciscapello/message_service/internal/infrastructure/wsClient"
 	"github.com/ciscapello/message_service/pkg/dto"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -17,21 +20,46 @@ type MessagesStorer interface {
 
 type MessagesService struct {
 	messagesStorer MessagesStorer
+	ws             *wsClient.WsClient
 
 	logger *zap.Logger
 }
 
-func New(messagesStorer MessagesStorer, logger *zap.Logger) *MessagesService {
+func New(messagesStorer MessagesStorer, ws *wsClient.WsClient, logger *zap.Logger) *MessagesService {
 	return &MessagesService{
 		messagesStorer: messagesStorer,
-
-		logger: logger,
+		ws:             ws,
+		logger:         logger,
 	}
 }
 
-func (ms *MessagesService) CreateMessage(senderId uuid.UUID, conversationId int, message string) error {
+func (ms *MessagesService) CreateMessage(senderId string, receiverId string, conversationId int, message string) error {
 
-	return ms.messagesStorer.CreateMessage(senderId, conversationId, message)
+	senderUid, err := uuid.Parse(senderId)
+	if err != nil {
+		return err
+	}
+
+	err = ms.messagesStorer.CreateMessage(senderUid, conversationId, message)
+	if err != nil {
+		return err
+	}
+
+	body := contracts.MessageSocketBody{
+		FromUserID:     senderId,
+		ToUserID:       receiverId,
+		ConversationId: conversationId,
+		MessageBody:    message,
+	}
+
+	fmt.Println(body)
+
+	err = ms.ws.SendMessage(body)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (ms *MessagesService) GetMessages(conversationId int, userId uuid.UUID) ([]dto.MessageDTO, error) {

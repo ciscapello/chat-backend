@@ -9,6 +9,7 @@ import (
 )
 
 type createMessageRequestBody struct {
+	MessageTo      string `json:"message_to"`
 	ConversationId int    `json:"conversation_id"`
 	Text           string `json:"text"`
 }
@@ -56,7 +57,14 @@ func (mh *MessagesHandler) CreateMessage(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	err = mh.messagesService.CreateMessage(uid, body.ConversationId, body.Text)
+	receiverId, err := uuid.Parse(body.MessageTo)
+	if err != nil {
+		mh.responder.SendError(w, http.StatusBadRequest, "Unable to parse receiver id")
+		mh.logErrorInRequest(r, "Unable to parse receiver id")
+		return
+	}
+
+	err = mh.messagesService.CreateMessage(uid, receiverId, body.ConversationId, body.Text)
 	if err != nil {
 		mh.responder.SendError(w, http.StatusInternalServerError, err.Error())
 		mh.logErrorInRequest(r, err.Error())

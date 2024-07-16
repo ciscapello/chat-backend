@@ -36,7 +36,7 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 
 	go func() {
 		for d := range msgs {
-			var body contracts.MessageCreatedBody
+			var body contracts.MessageSocketBody
 
 			fmt.Println(d.Body)
 
@@ -45,7 +45,7 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 				log.Fatal(err)
 			}
 
-			c.MessagesService.CreateMessage(body.SenderId, body.ConversationId, body.MessageBody)
+			c.MessagesService.CreateMessage(body.FromUserID, body.ToUserID, body.ConversationId, body.MessageBody)
 		}
 		doneCh <- true
 	}()

@@ -10497,3 +10497,64 @@
 2024/07/16 18:12:14.756	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "2.050541ms"}
 2024/07/16 18:12:14.762	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.283084ms"}
 2024/07/16 18:12:16.057	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.616792ms"}
+2024/07/16 18:50:48.820	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/07/16 18:50:54.311	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "4.588ms"}
+2024/07/16 18:50:54.353	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "39.627083ms"}
+2024/07/16 18:51:43.571	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.423417ms"}
+2024/07/16 18:51:43.577	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.288625ms"}
+2024/07/16 18:59:03.887	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/messages/60", "status": 200, "duration": "11.174791ms"}
+2024/07/16 18:59:05.587	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "9.259458ms"}
+2024/07/16 18:59:07.547	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "14.647958ms"}
+2024/07/16 18:59:07.552	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.329041ms"}
+2024/07/16 19:01:02.727	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "8.606291ms"}
+2024/07/16 19:01:02.748	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "17.951333ms"}
+2024/07/16 19:01:22.108	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "2.963916ms"}
+2024/07/16 19:01:22.121	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "9.697917ms"}
+2024/07/16 19:01:32.445	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.412375ms"}
+2024/07/16 19:01:32.451	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.074208ms"}
+2024/07/16 19:01:33.683	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "16.153625ms"}
+2024/07/16 19:02:29.520	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "18.454792ms"}
+2024/07/16 19:02:38.363	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "4.870625ms"}
+2024/07/16 19:02:38.370	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.688875ms"}
+2024/07/16 21:30:39.929	[31mERROR[0m	Token expired	{"error": "token has invalid claims: token is expired"}
+2024/07/16 21:30:39.934	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/messages/60", "status": 200, "duration": "5.168625ms"}
+2024/07/16 21:30:39.953	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/users/refresh", "status": 200, "duration": "5.310791ms"}
+2024/07/16 21:30:52.335	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/users/auth", "status": 200, "duration": "16.196917ms"}
+2024/07/16 21:30:58.918	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/users/check-code", "status": 200, "duration": "4.788792ms"}
+2024/07/16 21:30:58.979	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "10.555417ms"}
+2024/07/16 21:31:01.970	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/users/search?username=V", "status": 200, "duration": "5.856875ms"}
+2024/07/16 21:31:02.661	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/users/f263bb44-8168-4abb-8efc-57f9432f18c4", "status": 200, "duration": "2.7035ms"}
+2024/07/16 21:31:03.545	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/conversations", "status": 200, "duration": "16.3405ms"}
+2024/07/16 21:31:05.120	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "10.203666ms"}
+2024/07/16 21:31:07.699	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.657375ms"}
+2024/07/16 21:31:07.704	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "2.059375ms"}
+2024/07/16 21:31:09.841	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/users/9e4d3781-21ff-4b6a-aa48-46420c0bd28c", "status": 200, "duration": "4.660958ms"}
+2024/07/16 21:31:10.690	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/conversations", "status": 200, "duration": "3.336375ms"}
+2024/07/16 21:31:13.041	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "17.625209ms"}
+2024/07/16 21:31:15.546	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.751916ms"}
+2024/07/16 21:31:15.555	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.890708ms"}
+2024/07/16 21:46:07.603	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.811792ms"}
+2024/07/16 21:46:24.628	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "9.685542ms"}
+2024/07/16 21:46:39.080	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.79675ms"}
+2024/07/16 21:46:56.570	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.07325ms"}
+2024/07/16 21:47:03.548	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.440084ms"}
+2024/07/16 21:54:02.481	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.922125ms"}
+2024/07/16 21:54:07.109	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "3.83775ms"}
+2024/07/16 21:54:07.118	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "4.281541ms"}
+2024/07/16 21:54:51.936	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.533708ms"}
+2024/07/16 21:54:51.946	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.094166ms"}
+2024/07/16 21:56:35.840	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "2.547541ms"}
+2024/07/16 21:56:35.854	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "8.303583ms"}
+2024/07/16 21:57:00.439	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "4.545708ms"}
+2024/07/16 21:57:00.450	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "5.439083ms"}
+2024/07/16 21:57:33.424	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "2.701666ms"}
+2024/07/16 21:57:33.440	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "12.987834ms"}
+2024/07/16 22:02:14.236	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "1.910584ms"}
+2024/07/16 22:02:14.245	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.279833ms"}
+2024/07/16 22:02:54.616	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/07/16 22:03:02.546	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "2.052959ms"}
+2024/07/16 22:03:02.567	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "17.63525ms"}
+2024/07/16 22:04:57.931	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/07/16 22:08:10.810	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
+2024/07/16 22:08:19.392	[34mINFO[0m	[HTTP]	{"method": "POST", "url": "/api/v1/messages", "status": 200, "duration": "6.954125ms"}
+2024/07/16 22:08:19.435	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "37.4555ms"}

@@ -4,13 +4,12 @@ import (
 	"log"
 
 	"github.com/ciscapello/message_service/internal/application/config"
-	"github.com/google/uuid"
 	amqp "github.com/rabbitmq/amqp091-go"
 	"go.uber.org/zap"
 )
 
 type IMessagesService interface {
-	CreateMessage(senderId uuid.UUID, conversationId int, message string) error
+	CreateMessage(senderId string, receiverId string, conversationId int, message string) error
 }
 
 type Consumer struct {
