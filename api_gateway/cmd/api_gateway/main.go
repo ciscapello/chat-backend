@@ -60,7 +60,7 @@ func run() {
 
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
 	conversationService := conversationservice.New(conversationRepo, logger, jwtMan)
-	messagesService := messageservice.New(messagesRepo, conversationRepo, logger, jwtMan)
+	messagesService := messageservice.New(messagesRepo, producer, conversationRepo, logger, jwtMan)
 
 	responder := response.Responder{}
 

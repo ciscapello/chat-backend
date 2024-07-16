@@ -2,6 +2,7 @@ package rabbitmq
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 
 	"github.com/ciscapello/lib/contracts"
@@ -35,14 +36,16 @@ func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {
 
 	go func() {
 		for d := range msgs {
-
 			var body contracts.MessageCreatedBody
+
+			fmt.Println(d.Body)
 
 			err := json.Unmarshal(d.Body, &body)
 			if err != nil {
 				log.Fatal(err)
 			}
 
+			c.MessagesService.CreateMessage(body.SenderId, body.ConversationId, body.MessageBody)
 		}
 		doneCh <- true
 	}()
