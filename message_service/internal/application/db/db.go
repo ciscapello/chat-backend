@@ -20,11 +20,8 @@ func New() *Database {
 }
 
 func (d *Database) Start(config *config.Config) *sql.DB {
-	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		config.DbHost, config.DbPort, config.DbUser, config.DbPassword, config.DbName)
 
-	db, err := sql.Open("postgres", psqlInfo)
+	db, err := sql.Open("postgres", config.DbUrl)
 
 	if err != nil {
 		log.Fatal(err, ErrCannotConnect)
