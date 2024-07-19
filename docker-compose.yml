@@ -17,6 +17,7 @@ services:
     depends_on:
       - postgres
       - rabbitmq
+    restart: unless-stopped
 
   message_service:
     build:
@@ -30,6 +31,7 @@ services:
       - postgres
       - rabbitmq
       - socket_service
+    restart: unless-stopped
 
   notifications_service:
     build:
@@ -43,6 +45,7 @@ services:
     depends_on:
       - postgres
       - rabbitmq
+    restart: unless-stopped
 
   socket_service:
     build:
@@ -51,12 +54,14 @@ services:
       - HTTP_PORT=3002
     depends_on:
       - rabbitmq
+    restart: unless-stopped
 
   rabbitmq:
     image: rabbitmq:3-management
     ports:
       - "5672:5672"
       - "15672:15672"
+    restart: unless-stopped
 
   postgres:
     image: postgres:13
@@ -68,6 +73,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
 
 volumes:
   postgres_data:
