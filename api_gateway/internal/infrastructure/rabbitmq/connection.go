@@ -18,12 +18,12 @@ func NewProducer(config *config.Config, logger *zap.Logger) *Producer {
 	var err error
 	conn, err := amqp.Dial(config.RmqConnStr)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, "cannot connect to rmq")
 	}
 
 	ch, err := conn.Channel()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, "cannot create channel")
 	}
 
 	return &Producer{
