@@ -4,9 +4,11 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"log/slog"
 	"os"
 	"time"
 
+	"github.com/joho/godotenv"
 	"go.uber.org/zap"
 )
 
@@ -31,10 +33,10 @@ type Config struct {
 }
 
 func New() *Config {
-	// err := godotenv.Load()
-	// if err != nil {
-	// 	log.Fatal(ErrNoEnvs)
-	// }
+	err := godotenv.Load()
+	if err != nil {
+		slog.Warn(ErrNoEnvs.Error())
+	}
 	httpPort := os.Getenv(HTTP_PORT)
 	dbUrl := os.Getenv(DATABASE_URL)
 

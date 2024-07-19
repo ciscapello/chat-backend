@@ -3,6 +3,7 @@ package config
 import (
 	"errors"
 	"log"
+	"log/slog"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -32,7 +33,7 @@ type Config struct {
 func New() *Config {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal(ErrNoEnvs)
+		slog.Warn(ErrNoEnvs.Error())
 	}
 
 	emailAddr := os.Getenv("EMAIL_ADDRESS")
