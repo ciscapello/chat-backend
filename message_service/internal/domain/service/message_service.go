@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/ciscapello/message_service/internal/infrastructure/repository"
 	"github.com/ciscapello/message_service/internal/infrastructure/wsClient"
 	"github.com/ciscapello/message_service/pkg/dto"

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 )
 
 func (c *Consumer) Consume(queueName string, doneCh chan<- bool) error {

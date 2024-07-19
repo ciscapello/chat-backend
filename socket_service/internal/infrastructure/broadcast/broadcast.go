@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 )
 
 var broadcast = make(chan *contracts.MessageSocketBody)

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/ciscapello/notification_service/application/config"
 	"github.com/ciscapello/notification_service/common/logger"
 	emailservice "github.com/ciscapello/notification_service/internal/domain/service/emailService"

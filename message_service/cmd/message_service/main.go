@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/ciscapello/message_service/internal/application/config"
 	"github.com/ciscapello/message_service/internal/application/db"
 	"github.com/ciscapello/message_service/internal/common/logger"
