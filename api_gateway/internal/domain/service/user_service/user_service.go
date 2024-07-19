@@ -8,7 +8,7 @@ import (
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api_gateway/internal/common/utils"
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
-	"github.com/ciscapello/lib/contracts"
+	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )

@@ -16,7 +16,7 @@ COPY . .
 RUN go build -o api_gateway ./cmd/api_gateway/main.go
 
 # Открываем порт, который будет использоваться приложением
-EXPOSE 8080
+EXPOSE 3000
 
 # Указываем команду для запуска приложения
 CMD ["./api_gateway"]
