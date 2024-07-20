@@ -1,0 +1,56 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  KUBECONFIG_DATA: ${{ secrets.KUBECONFIG_DATA }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to Docker Hub
+        run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+      - name: Build and push api-gateway image
+        run: |
+          docker build -t $DOCKER_USERNAME/chat-api-gateway:latest ./api_gateway
+          docker push $DOCKER_USERNAME/chat-api-gateway:latest
+
+      - name: Build and push socket-service image
+        run: |
+          docker build -t $DOCKER_USERNAME/chat-socket-service:latest ./socket_service
+          docker push $DOCKER_USERNAME/chat-socket-service:latest
+
+      - name: Build and push notifications-service image
+        run: |
+          docker build -t $DOCKER_USERNAME/chat-notifications-service:latest ./notifications_service
+          docker push $DOCKER_USERNAME/chat-notifications-service:latest
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: "v1.18.0"
+
+      - name: Decode and configure KUBECONFIG
+        run: |
+          echo "${KUBECONFIG_DATA}" | base64 --decode > $HOME/.kube/config
+          kubectl config set-context --current --namespace=ecom-namespace
+
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f ./k8s/api-gateway-deployment.yaml
+          kubectl apply -f ./k8s/socket-service-deployment.yaml
+          kubectl apply -f ./k8s/notifications-service-deployment.yaml
