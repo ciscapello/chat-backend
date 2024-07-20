@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socket-service
+  namespace: ecom-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: socket-service
+  template:
+    metadata:
+      labels:
+        app: socket-service
+    spec:
+      containers:
+        - name: socket-service
+          image: ciscapello/chat-socket-service:latest
+          envFrom:
+            - configMapRef:
+                name: ecom-config
+          ports:
+            - containerPort: 3002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: socket-service
+  namespace: ecom-namespace
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3002
+  selector:
+    app: socket-service

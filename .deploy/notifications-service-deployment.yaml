@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications-service
+  namespace: ecom-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications-service
+  template:
+    metadata:
+      labels:
+        app: notifications-service
+    spec:
+      containers:
+        - name: notifications-service
+          image: ciscapello/chat-notification-service:latest
+          envFrom:
+            - configMapRef:
+                name: ecom-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notifications-service
+  namespace: ecom-namespace
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: notifications-service

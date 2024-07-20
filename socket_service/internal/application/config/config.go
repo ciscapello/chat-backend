@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	HTTP_PORT = "HTTP_PORT"
+	SOCKET_SERVICE_HTTP_PORT = "SOCKET_SERVICE_HTTP_PORT"
 )
 
 var ErrNoEnvs = errors.New("there's no environment variables")
@@ -27,7 +27,7 @@ func New() *Config {
 		slog.Warn(ErrNoEnvs.Error())
 	}
 
-	httpPort := os.Getenv(HTTP_PORT)
+	httpPort := os.Getenv(SOCKET_SERVICE_HTTP_PORT)
 
 	path, err := os.Getwd()
 	if err != nil {

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log/slog"
 	"net/http"
 
 	"github.com/ciscapello/socket_service/internal/application/config"
@@ -12,5 +13,8 @@ func main() {
 	http.HandleFunc("/ws", broadcast.ServeWs)
 	go broadcast.Broadcaster()
 
-	http.ListenAndServe(":"+config.HttpPort, nil)
+	err := http.ListenAndServe(":"+config.HttpPort, nil)
+	if err != nil {
+		slog.Error("cannot listen and serve on", config.HttpPort)
+	}
 }

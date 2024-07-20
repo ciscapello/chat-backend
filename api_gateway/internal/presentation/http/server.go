@@ -44,6 +44,8 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 	routerWithPrefix.NotFoundHandler = http.HandlerFunc(handlers.DefaultHandler.NotFoundHandler)
 	routerWithPrefix.MethodNotAllowedHandler = http.HandlerFunc(handlers.DefaultHandler.MethodNotAllowedHandler)
 
+	routerWithPrefix.HandleFunc("/v1/health", handlers.DefaultHandler.HealthHandler).Methods(http.MethodGet)
+
 	userRouter := routerWithPrefix.PathPrefix("/v1/users").Subrouter()
 	ConfigureUserRoutes(userRouter, handlers.UserHandler, jwtMiddleware.Middleware)
 
