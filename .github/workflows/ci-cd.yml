@@ -44,6 +44,10 @@ jobs:
         with:
           version: "v1.18.0"
 
+      - name: Create .kube directory
+        run: |
+          mkdir -p $HOME/.kube
+
       - name: Decode and configure KUBECONFIG
         run: |
           echo "${KUBECONFIG_DATA}" | base64 --decode > $HOME/.kube/config
