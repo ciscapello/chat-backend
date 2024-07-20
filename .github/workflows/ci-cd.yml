@@ -53,12 +53,6 @@ jobs:
           echo "${KUBECONFIG_DATA}" | base64 --decode > $HOME/.kube/config
           kubectl config set-context --current --namespace=ecom-namespace
 
-      - name: Apply Kubernetes manifests
-        run: |
-          kubectl apply -f ./k8s/api-gateway-deployment.yaml
-          kubectl apply -f ./k8s/socket-service-deployment.yaml
-          kubectl apply -f ./k8s/notifications-service-deployment.yaml
-
       - name: Send Telegram message
         uses: metalpoch/telegram-alerts-action@v1
         with:
@@ -70,3 +64,9 @@ jobs:
           parse-mode: HTML
           disable-notification: true
           disable-web-page-preview: true
+
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f ./k8s/api-gateway-deployment.yaml
+          kubectl apply -f ./k8s/socket-service-deployment.yaml
+          kubectl apply -f ./k8s/notifications-service-deployment.yaml
