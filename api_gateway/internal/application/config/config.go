@@ -13,9 +13,10 @@ import (
 )
 
 const (
-	DATABASE_URL = "DATABASE_URL"
-	RABBITMQ_URL = "RABBITMQ_URL"
-	HTTP_PORT    = "HTTP_PORT"
+	DATABASE_URL       = "DATABASE_URL"
+	RABBITMQ_URL       = "RABBITMQ_URL"
+	HTTP_PORT          = "HTTP_PORT"
+	SOCKET_SERVICE_URL = "SOCKET_SERVICE_URL"
 )
 
 var ErrNoEnvs = errors.New("there's no environment variables")
@@ -25,6 +26,7 @@ type Config struct {
 	HttpPort   string
 	LogPath    string
 	RmqConnStr string
+	SocketUrl  string
 
 	AccessTokenExpTime  time.Duration
 	RefreshTokenExpTime time.Duration
@@ -38,6 +40,7 @@ func New() *Config {
 		slog.Warn(ErrNoEnvs.Error())
 	}
 	httpPort := os.Getenv(HTTP_PORT)
+	socketUrl := os.Getenv(SOCKET_SERVICE_URL)
 	dbUrl := os.Getenv(DATABASE_URL)
 
 	accessTokenExpTimeStr := os.Getenv("ACCESS_TOKEN_EXPIRES_IN")
@@ -67,6 +70,7 @@ func New() *Config {
 		HttpPort:   httpPort,
 		LogPath:    path + "/logs",
 		RmqConnStr: rmqConnStr,
+		SocketUrl:  socketUrl,
 
 		AccessTokenExpTime:  accessTokenExpTime,
 		RefreshTokenExpTime: refreshTokenExpTime,

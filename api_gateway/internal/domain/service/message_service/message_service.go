@@ -2,9 +2,11 @@ package messageservice
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
+	"github.com/ciscapello/api_gateway/internal/infrastructure/wsClient"
 	"github.com/ciscapello/api_gateway/pkg/dto"
 	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
@@ -29,29 +31,36 @@ type MessagesService struct {
 	conversationStorer ConversationStorer
 	logger             *zap.Logger
 	jwtManager         *jwtmanager.JwtManager
-	messageBroker      MessageBroker
+	ws                 *wsClient.WsClient
 }
 
-func New(messagesStorer MessagesStorer, messageBroker MessageBroker, conversationStorer ConversationStorer, logger *zap.Logger, jwtManager *jwtmanager.JwtManager) *MessagesService {
+func New(messagesStorer MessagesStorer, wsClient *wsClient.WsClient, conversationStorer ConversationStorer, logger *zap.Logger, jwtManager *jwtmanager.JwtManager) *MessagesService {
 	return &MessagesService{
 		messagesStorer:     messagesStorer,
 		conversationStorer: conversationStorer,
 		logger:             logger,
 		jwtManager:         jwtManager,
-		messageBroker:      messageBroker,
+		ws:                 wsClient,
 	}
 }
 
 func (ms *MessagesService) CreateMessage(senderId uuid.UUID, receiverId uuid.UUID, conversationId int, message string) error {
 
-	var body contracts.MessageSocketBody
+	err := ms.messagesStorer.CreateMessage(senderId, conversationId, message)
+	if err != nil {
+		return err
+	}
 
-	body.ConversationId = conversationId
-	body.FromUserID = senderId.String()
-	body.ToUserID = receiverId.String()
-	body.MessageBody = message
+	body := contracts.MessageSocketBody{
+		FromUserID:     senderId.String(),
+		ToUserID:       receiverId.String(),
+		ConversationId: conversationId,
+		MessageBody:    message,
+	}
 
-	err := ms.messageBroker.Publish(contracts.MessageCreatedTopic, body)
+	fmt.Println(body)
+
+	err = ms.ws.SendMessage(body)
 	if err != nil {
 		return err
 	}

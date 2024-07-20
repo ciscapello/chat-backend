@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"os/signal"
@@ -19,6 +20,7 @@ import (
 	userservice "github.com/ciscapello/api_gateway/internal/domain/service/user_service"
 	"github.com/ciscapello/api_gateway/internal/infrastructure/rabbitmq"
 	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
+	"github.com/ciscapello/api_gateway/internal/infrastructure/wsClient"
 	conversationhandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/conversation_handler"
 	defaulthandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/default_handler"
 	messagehandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/message_handler"
@@ -58,9 +60,14 @@ func run() {
 
 	jwtMan := jwtmanager.NewJwtManager(config, logger)
 
+	ws, err := wsClient.New(*config)
+	if err != nil {
+		log.Fatal("cannot create ws client instance", err)
+	}
+
 	userService := userservice.New(userRepository, logger, producer, jwtMan)
 	conversationService := conversationservice.New(conversationRepo, logger, jwtMan)
-	messagesService := messageservice.New(messagesRepo, producer, conversationRepo, logger, jwtMan)
+	messagesService := messageservice.New(messagesRepo, ws, conversationRepo, logger, jwtMan)
 
 	responder := response.Responder{}
 
