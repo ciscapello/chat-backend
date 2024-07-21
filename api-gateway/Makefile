@@ -7,7 +7,7 @@ MIGRATIONS_DIR=migrations
 
 .PHONY: run
 run:
-	go run ./cmd/api_gateway/main.go
+	go run ./cmd/api-gateway/main.go
 
 migrate-up:
 	goose -dir $(MIGRATIONS_DIR) $(DB_CONNECTION) up

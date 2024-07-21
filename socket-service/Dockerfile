@@ -13,7 +13,7 @@ RUN go mod download
 COPY . .
 
 # Компилируем приложение
-RUN go build -o notifications_service ./cmd/notifications_service/main.go
+RUN go build -o socket-service ./cmd/socket-service/main.go
 
 # Указываем команду для запуска приложения
-CMD ["./notifications_service"]
+CMD ["./socket-service"]

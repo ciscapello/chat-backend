@@ -1,7 +1,7 @@
 services:
-  api_gateway:
+  api-gateway:
     build:
-      context: ./api_gateway
+      context: ./api-gateway
     ports:
       - "8080:3000"
     environment:
@@ -19,9 +19,9 @@ services:
       - rabbitmq
     restart: unless-stopped
 
-  notifications_service:
+  notifications-service:
     build:
-      context: ./notifications_service
+      context: ./notifications-service
     environment:
       - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
       - EMAIL_ADDRESS=chatius101@gmail.com
@@ -33,9 +33,9 @@ services:
       - rabbitmq
     restart: unless-stopped
 
-  socket_service:
+  socket-service:
     build:
-      context: ./socket_service
+      context: ./socket-service
     environment:
       - HTTP_PORT=3002
     depends_on:
