@@ -2,13 +2,13 @@ package conversationservice
 
 import (
 	"fmt"
+	"log/slog"
 
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
 	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
 	"github.com/ciscapello/api_gateway/pkg/dto"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type ConversationStorer interface {
@@ -18,11 +18,11 @@ type ConversationStorer interface {
 
 type ConversationService struct {
 	conversationStorer ConversationStorer
-	logger             *zap.Logger
+	logger             *slog.Logger
 	jwtManager         *jwtmanager.JwtManager
 }
 
-func New(conversationStorer ConversationStorer, logger *zap.Logger, jwtManager *jwtmanager.JwtManager) *ConversationService {
+func New(conversationStorer ConversationStorer, logger *slog.Logger, jwtManager *jwtmanager.JwtManager) *ConversationService {
 	return &ConversationService{
 		conversationStorer: conversationStorer,
 		logger:             logger,

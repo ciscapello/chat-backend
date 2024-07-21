@@ -2,19 +2,19 @@ package rabbitmq
 
 import (
 	"log"
+	"log/slog"
 
 	"github.com/ciscapello/api_gateway/internal/application/config"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"go.uber.org/zap"
 )
 
 type Producer struct {
 	Channel    *amqp.Channel
 	Connection *amqp.Connection
-	logger     *zap.Logger
+	logger     *slog.Logger
 }
 
-func NewProducer(config *config.Config, logger *zap.Logger) *Producer {
+func NewProducer(config *config.Config, logger *slog.Logger) *Producer {
 	var err error
 	conn, err := amqp.Dial(config.RmqConnStr)
 	if err != nil {

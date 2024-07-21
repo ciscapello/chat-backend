@@ -1,10 +1,10 @@
 package userhandler
 
 import (
+	"log/slog"
 	"net/http"
 
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
-	"go.uber.org/zap"
 )
 
 // @Summary Get all users
@@ -34,7 +34,7 @@ func (uh *UserHandler) GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	users, err := uh.userService.GetAllUsers()
 	if err != nil {
 		uh.responder.SendError(w, http.StatusBadRequest, "cannot get users")
-		uh.logger.Error("cannot get users", zap.Error(err))
+		uh.logger.Error("cannot get users", slog.String("message", err.Error()))
 		return
 	}
 

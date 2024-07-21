@@ -3,6 +3,7 @@ package userservice
 import (
 	"errors"
 	"fmt"
+	"log/slog"
 	"time"
 
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
@@ -10,12 +11,11 @@ import (
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
 	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type UserService struct {
 	userRepo      UserRepo
-	logger        *zap.Logger
+	logger        *slog.Logger
 	messageBroker MessageBroker
 	jwtManager    *jwtmanager.JwtManager
 }
@@ -30,7 +30,7 @@ var (
 	ErrUserWithThisEmailExists    = errors.New("user with this email already exists")
 )
 
-func New(userRepo UserRepo, logger *zap.Logger, messageBroker MessageBroker, jwtmanager *jwtmanager.JwtManager) *UserService {
+func New(userRepo UserRepo, logger *slog.Logger, messageBroker MessageBroker, jwtmanager *jwtmanager.JwtManager) *UserService {
 	return &UserService{
 		userRepo:      userRepo,
 		logger:        logger,
@@ -51,13 +51,13 @@ func (us *UserService) Authentication(email string) (uuid.UUID, error) {
 		user = *userEntity.NewUser("", email, code)
 		err = us.userRepo.CreateUser(user)
 		if err != nil {
-			us.logger.Error("failed to create user", zap.Error(err))
+			us.logger.Error("failed to create user", slog.String("message", err.Error()))
 			return uuid.UUID{}, ErrCannotCreateUser
 		}
 	} else {
 		user, err = us.userRepo.GetUserByEmail(email)
 		if err != nil {
-			us.logger.Error("failed to get user", zap.Error(err))
+			us.logger.Error("failed to get user", slog.String("message", err.Error()))
 			return uuid.UUID{}, err
 		}
 
@@ -70,7 +70,7 @@ func (us *UserService) Authentication(email string) (uuid.UUID, error) {
 
 		err := us.userRepo.UpdateCode(user.ID, code)
 		if err != nil {
-			us.logger.Error("failed to update code", zap.Error(err))
+			us.logger.Error("failed to update code", slog.String("message", err.Error()))
 			return uuid.UUID{}, err
 		}
 
@@ -138,7 +138,7 @@ func (us *UserService) UpdateUser(uuid uuid.UUID, fields userEntity.UpdateUserRe
 func (us *UserService) CheckCode(uuid uuid.UUID, code string) (bool, error) {
 	usr, err := us.userRepo.GetUserById(uuid)
 	if err != nil {
-		us.logger.Error("failed to get user", zap.Error(err))
+		us.logger.Error("failed to get user", slog.String("message", err.Error()))
 		return false, err
 	}
 
@@ -152,7 +152,7 @@ func (us *UserService) GetUserRole(id uuid.UUID) userEntity.Role {
 func (us *UserService) GetTokens(id uuid.UUID, role userEntity.Role) (jwtmanager.ReturnTokenType, error) {
 	tokens, err := us.jwtManager.Generate(id, role)
 	if err != nil {
-		us.logger.Error("failed to generate tokens", zap.Error(err))
+		us.logger.Error("failed to generate tokens", slog.String("message", err.Error()))
 		return jwtmanager.ReturnTokenType{}, err
 	}
 	return tokens, nil

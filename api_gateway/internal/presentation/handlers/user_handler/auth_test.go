@@ -3,24 +3,21 @@ package userhandler
 import (
 	"bytes"
 	"encoding/json"
+	"io"
+	"log/slog"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"testing"
 
 	"github.com/ciscapello/api_gateway/internal/common/mocks"
 	"github.com/ciscapello/api_gateway/internal/presentation/response"
 	"github.com/google/uuid"
 	"go.uber.org/mock/gomock"
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 )
 
 type reqBody struct {
 	Email string `json:"email"`
-}
-
-type resBody struct {
-	ID string `json:"id"`
 }
 
 type testCase struct {
@@ -74,9 +71,8 @@ func TestAuth(t *testing.T) {
 			service := mocks.NewMockIUserService(ctrl)
 			service.EXPECT().Authentication(gomock.Any()).Return(uuid.New(), nil).AnyTimes()
 			jwtMan := mocks.NewMockIJwtManager(ctrl)
-			logger := zap.New(zapcore.NewCore(zapcore.NewConsoleEncoder(zapcore.EncoderConfig{}), zap.CombineWriteSyncers(), zap.DebugLevel))
 			responder := response.Responder{}
-
+			logger := slog.New(slog.NewJSONHandler(io.Writer(os.Stdout), nil))
 			handler := New(service, logger, jwtMan, responder)
 
 			request := httptest.NewRequest(http.MethodPost, "/users/auth", bytes.NewBuffer(b))

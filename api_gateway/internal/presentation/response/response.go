@@ -3,8 +3,6 @@ package response
 import (
 	"encoding/json"
 	"net/http"
-
-	"go.uber.org/zap"
 )
 
 // Response is generic response structure
@@ -15,7 +13,6 @@ type Response struct {
 }
 
 type Responder struct {
-	logger *zap.Logger
 }
 
 func sendJson(w http.ResponseWriter, statusCode int, payload interface{}) {

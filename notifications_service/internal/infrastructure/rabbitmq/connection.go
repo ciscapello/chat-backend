@@ -2,24 +2,24 @@ package rabbitmq
 
 import (
 	"log"
+	"log/slog"
 
 	"github.com/ciscapello/notification_service/application/config"
 	emailservice "github.com/ciscapello/notification_service/internal/domain/service/emailService"
 	"github.com/ciscapello/notification_service/internal/infrastructure/telegram"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"go.uber.org/zap"
 )
 
 type Consumer struct {
 	Channel         *amqp.Channel
 	Connection      *amqp.Connection
-	logger          *zap.Logger
+	logger          *slog.Logger
 	emailservice    emailservice.EmailService
 	telegramManager *telegram.TelegramManager
 }
 
 func NewConsumer(config *config.Config,
-	logger *zap.Logger,
+	logger *slog.Logger,
 	emailService *emailservice.EmailService,
 	telegramManager *telegram.TelegramManager) *Consumer {
 	conn, err := amqp.Dial(config.RmqConnStr)

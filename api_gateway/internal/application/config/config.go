@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
-	"go.uber.org/zap"
 )
 
 const (
@@ -46,12 +45,12 @@ func New() *Config {
 	accessTokenExpTimeStr := os.Getenv("ACCESS_TOKEN_EXPIRES_IN")
 	accessTokenExpTime, err := time.ParseDuration(accessTokenExpTimeStr)
 	if err != nil {
-		zap.Error(errors.New("invalid `access token expires in` time"))
+		slog.Error(errors.New("invalid `access token expires in` time").Error())
 	}
 	refreshTokenExpTimeStr := os.Getenv("REFRESH_TOKEN_EXPIRES_IN")
 	refreshTokenExpTime, err := time.ParseDuration(refreshTokenExpTimeStr)
 	if err != nil {
-		zap.Error(errors.New("invalid `refresh token expires in` time"))
+		slog.Error(errors.New("invalid `refresh token expires in` time").Error())
 	}
 	fmt.Println(accessTokenExpTime)
 

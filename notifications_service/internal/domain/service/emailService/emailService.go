@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"html/template"
 	"log"
+	"log/slog"
 	"os"
 	"path/filepath"
 
 	"github.com/ciscapello/notification_service/application/config"
-	"go.uber.org/zap"
 	"gopkg.in/gomail.v2"
 )
 
@@ -19,12 +19,12 @@ type EmailConfig struct {
 }
 
 type EmailService struct {
-	logger *zap.Logger
+	logger *slog.Logger
 	config EmailConfig
 	dialer *gomail.Dialer
 }
 
-func New(config config.Config, logger *zap.Logger) *EmailService {
+func New(config config.Config, logger *slog.Logger) *EmailService {
 	d := gomail.NewDialer("smtp.gmail.com", 587, config.EmailAddress, config.EmailPassword)
 
 	return &EmailService{
@@ -64,14 +64,14 @@ func (e *EmailService) SendCodeToUser(code string, email string) {
 
 	htmlBody, err := template.ParseFiles(templatePath)
 	if err != nil {
-		e.logger.Error("failed to parse html body", zap.Error(err))
+		e.logger.Error("failed to parse html body", slog.String("message", err.Error()))
 	}
 
 	fmt.Println(htmlBody)
 
 	var body bytes.Buffer
 	if err := htmlBody.Execute(&body, data); err != nil {
-		e.logger.Error("failed to execute html template", zap.Error(err))
+		e.logger.Error("failed to execute html template", slog.String("message", err.Error()))
 	}
 
 	fmt.Println(body)

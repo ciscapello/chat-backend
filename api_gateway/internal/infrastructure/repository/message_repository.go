@@ -3,20 +3,20 @@ package repository
 import (
 	"database/sql"
 	"fmt"
+	"log/slog"
 	"time"
 
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type MessageRepository struct {
-	logger *zap.Logger
+	logger *slog.Logger
 	db     *sql.DB
 }
 
 func NewMessagesRepository(
 	db *sql.DB,
-	logger *zap.Logger,
+	logger *slog.Logger,
 ) *MessageRepository {
 	return &MessageRepository{
 		logger: logger,

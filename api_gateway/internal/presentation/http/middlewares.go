@@ -1,13 +1,12 @@
 package http
 
 import (
+	"log/slog"
 	"net/http"
 	"time"
-
-	"go.uber.org/zap"
 )
 
-func LoggingMiddleware(logger *zap.Logger) func(http.Handler) http.Handler {
+func LoggingMiddleware(logger *slog.Logger) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			start := time.Now()
@@ -17,10 +16,10 @@ func LoggingMiddleware(logger *zap.Logger) func(http.Handler) http.Handler {
 
 			duration := time.Since(start)
 			logger.Info("[HTTP]",
-				zap.String("method", r.Method),
-				zap.String("url", r.URL.String()),
-				zap.Int("status", rw.status),
-				zap.Duration("duration", duration),
+				slog.String("method", r.Method),
+				slog.String("url", r.URL.String()),
+				slog.Int("status", rw.status),
+				slog.Duration("duration", duration),
 			)
 		})
 	}

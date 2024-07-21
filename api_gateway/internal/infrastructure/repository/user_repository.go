@@ -4,11 +4,11 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"log/slog"
 	"time"
 
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 var (
@@ -16,13 +16,13 @@ var (
 )
 
 type UserRepository struct {
-	logger *zap.Logger
+	logger *slog.Logger
 	db     *sql.DB
 }
 
 func NewUserRepository(
 	db *sql.DB,
-	logger *zap.Logger,
+	logger *slog.Logger,
 ) *UserRepository {
 	return &UserRepository{
 		logger: logger,
@@ -84,10 +84,10 @@ func (ur *UserRepository) GetUserById(id uuid.UUID) (userEntity.User, error) {
 	}
 
 	if err == sql.ErrNoRows {
-		ur.logger.Error("User not found", zap.String("id", id.String()))
+		ur.logger.Error("User not found", slog.String("id", id.String()))
 		return us, ErrUserNotFound
 	} else if err != nil {
-		ur.logger.Error(err.Error(), zap.String("id", id.String()))
+		ur.logger.Error(err.Error(), slog.String("id", id.String()))
 		return us, err
 	}
 	return us, nil
@@ -105,10 +105,10 @@ func (ur *UserRepository) GetUserByEmail(email string) (userEntity.User, error) 
 
 	err := row.Scan(&us.ID, &username, &us.Enabled, &roleString, &createdAt, &updatedAt, &us.Code, &us.Email, &us.LastCodeUpdate)
 	if err == sql.ErrNoRows {
-		ur.logger.Error("User not found", zap.String("email", email))
+		ur.logger.Error("User not found", slog.String("email", email))
 		return us, ErrUserNotFound
 	} else if err != nil {
-		ur.logger.Error(err.Error(), zap.String("email", email))
+		ur.logger.Error(err.Error(), slog.String("email", email))
 		return us, err
 	}
 	if username.Valid {

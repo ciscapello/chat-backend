@@ -3,6 +3,7 @@ package http
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"net/http"
 	"strings"
 	"time"
@@ -15,7 +16,6 @@ import (
 	userhandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/user_handler"
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
-	"go.uber.org/zap"
 )
 
 type Handlers struct {
@@ -27,11 +27,11 @@ type Handlers struct {
 
 type Server struct {
 	httpServer *http.Server
-	logger     *zap.Logger
+	logger     *slog.Logger
 	handlers   *Handlers
 }
 
-func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
+func New(cfg *config.Config, handlers *Handlers, logger *slog.Logger) *Server {
 	router := mux.NewRouter()
 	routerWithPrefix := router.PathPrefix("/api").Subrouter()
 
@@ -83,7 +83,7 @@ func New(cfg *config.Config, handlers *Handlers, logger *zap.Logger) *Server {
 }
 
 func (s *Server) Run() error {
-	s.logger.Info("Server is running", zap.String("port", s.httpServer.Addr))
+	s.logger.Info("Server is running", slog.String("port", s.httpServer.Addr))
 	return s.httpServer.ListenAndServe()
 }
 

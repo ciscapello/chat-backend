@@ -46,7 +46,6 @@ func run() {
 	config := config.New()
 
 	logger := logger.GetLogger(config)
-	defer logger.Sync()
 
 	db := db.New()
 	database := db.Start(config)

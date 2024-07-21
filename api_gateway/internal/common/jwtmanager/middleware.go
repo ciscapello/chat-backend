@@ -4,16 +4,16 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log/slog"
 	"net/http"
 
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type AuthMiddleware struct {
-	logger     *zap.Logger
+	logger     *slog.Logger
 	jwtManager *JwtManager
 }
 
@@ -26,7 +26,7 @@ const (
 	userRoleCtx contextKey = "userRole"
 )
 
-func NewAuthMiddleware(logger *zap.Logger, j *JwtManager) *AuthMiddleware {
+func NewAuthMiddleware(logger *slog.Logger, j *JwtManager) *AuthMiddleware {
 	return &AuthMiddleware{
 		logger:     logger,
 		jwtManager: j,
@@ -49,11 +49,11 @@ func (am *AuthMiddleware) Middleware(next http.Handler) http.Handler {
 		claims, err := am.jwtManager.verifyToken(authHeader)
 		if err != nil {
 			if errors.Is(err, jwt.ErrTokenExpired) {
-				am.logger.Error("Token expired", zap.Error(err))
+				am.logger.Error(fmt.Sprintf("Token expired, %s", err.Error()))
 				http.Error(w, "Token expired", http.StatusUnauthorized)
 				return
 			} else {
-				am.logger.Error("Invalid token", zap.Error(err))
+				am.logger.Error("Invalid token", slog.String("message", err.Error()))
 				http.Error(w, "Invalid token", http.StatusUnauthorized)
 				return
 			}

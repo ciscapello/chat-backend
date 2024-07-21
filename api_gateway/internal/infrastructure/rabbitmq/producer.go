@@ -3,15 +3,15 @@ package rabbitmq
 import (
 	"encoding/json"
 	"log"
+	"log/slog"
 
 	amqp "github.com/rabbitmq/amqp091-go"
-	"go.uber.org/zap"
 )
 
 func (p *Producer) Publish(topic string, msg interface{}) error {
 	body, err := json.Marshal(msg)
 	if err != nil {
-		p.logger.Error("failed to marshal message", zap.Error(err))
+		p.logger.Error("failed to marshal message", slog.String("message", err.Error()))
 	}
 
 	q, err := p.Channel.QueueDeclare(

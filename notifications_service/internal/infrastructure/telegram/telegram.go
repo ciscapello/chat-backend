@@ -2,22 +2,22 @@ package telegram
 
 import (
 	"fmt"
+	"log/slog"
 	"net/http"
 	"net/url"
 	"time"
 
 	"github.com/ciscapello/notification_service/application/config"
-	"go.uber.org/zap"
 )
 
 type TelegramManager struct {
-	logger   *zap.Logger
+	logger   *slog.Logger
 	client   http.Client
 	botToken string
 	chatId   string
 }
 
-func New(logger *zap.Logger, config config.Config) *TelegramManager {
+func New(logger *slog.Logger, config config.Config) *TelegramManager {
 	client := http.Client{Timeout: 10 * time.Second}
 
 	return &TelegramManager{

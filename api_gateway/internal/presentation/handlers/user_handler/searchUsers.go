@@ -1,10 +1,10 @@
 package userhandler
 
 import (
+	"log/slog"
 	"net/http"
 
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 // @Summary Search users
@@ -42,7 +42,7 @@ func (uh *UserHandler) SearchUsers(w http.ResponseWriter, r *http.Request) {
 	users, err := uh.userService.FindUsersByUsername(username, uid)
 	if err != nil {
 		uh.responder.SendError(w, http.StatusBadRequest, "cannot get users")
-		uh.logger.Error("cannot get users", zap.Error(err))
+		uh.logger.Error("cannot get users", slog.String("message", err.Error()))
 		return
 	}
 

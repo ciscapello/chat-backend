@@ -3,14 +3,14 @@ package repository
 import (
 	"database/sql"
 	"fmt"
+	"log/slog"
 	"time"
 
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type ConversationRepository struct {
-	logger *zap.Logger
+	logger *slog.Logger
 	db     *sql.DB
 }
 
@@ -24,7 +24,7 @@ type ConversationsWithUser struct {
 	LastMessageSenderId  string
 }
 
-func NewConversationRepository(db *sql.DB, logger *zap.Logger) *ConversationRepository {
+func NewConversationRepository(db *sql.DB, logger *slog.Logger) *ConversationRepository {
 	return &ConversationRepository{
 		logger: logger,
 		db:     db,

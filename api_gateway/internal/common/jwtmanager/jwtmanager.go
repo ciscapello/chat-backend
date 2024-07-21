@@ -3,13 +3,13 @@ package jwtmanager
 import (
 	"errors"
 	"fmt"
+	"log/slog"
 	"time"
 
 	"github.com/ciscapello/api_gateway/internal/application/config"
 	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 var (
@@ -23,10 +23,10 @@ type JwtManager struct {
 	accsTokenSecret     string
 	refreshTokenSecret  string
 
-	logger *zap.Logger
+	logger *slog.Logger
 }
 
-func NewJwtManager(config *config.Config, logger *zap.Logger) *JwtManager {
+func NewJwtManager(config *config.Config, logger *slog.Logger) *JwtManager {
 	fmt.Println("accs", config.AccessTokenExpTime)
 
 	return &JwtManager{
@@ -43,13 +43,13 @@ func (j *JwtManager) Generate(uid uuid.UUID, role userEntity.Role) (ReturnTokenT
 
 	accessToken, err := j.genAccessToken(uid.String(), role)
 	if err != nil {
-		j.logger.Error("failed to generate access token", zap.Error(err))
+		j.logger.Error(fmt.Sprintf("failed to generate access token, %s", err.Error()))
 		return ReturnTokenType{}, err
 	}
 
 	refreshToken, err := j.genRefreshToken(uid.String())
 	if err != nil {
-		j.logger.Error("failed to generate refresh token", zap.Error(err))
+		j.logger.Error(fmt.Sprintf("failed to generate refresh token, %s", err.Error()))
 		return ReturnTokenType{}, err
 	}
 

@@ -3,6 +3,7 @@ package messageservice
 import (
 	"errors"
 	"fmt"
+	"log/slog"
 
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
 	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
@@ -10,7 +11,6 @@ import (
 	"github.com/ciscapello/api_gateway/pkg/dto"
 	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
-	"go.uber.org/zap"
 )
 
 type MessagesStorer interface {
@@ -29,12 +29,12 @@ type MessageBroker interface {
 type MessagesService struct {
 	messagesStorer     MessagesStorer
 	conversationStorer ConversationStorer
-	logger             *zap.Logger
+	logger             *slog.Logger
 	jwtManager         *jwtmanager.JwtManager
 	ws                 *wsClient.WsClient
 }
 
-func New(messagesStorer MessagesStorer, wsClient *wsClient.WsClient, conversationStorer ConversationStorer, logger *zap.Logger, jwtManager *jwtmanager.JwtManager) *MessagesService {
+func New(messagesStorer MessagesStorer, wsClient *wsClient.WsClient, conversationStorer ConversationStorer, logger *slog.Logger, jwtManager *jwtmanager.JwtManager) *MessagesService {
 	return &MessagesService{
 		messagesStorer:     messagesStorer,
 		conversationStorer: conversationStorer,

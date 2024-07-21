@@ -53,26 +53,22 @@ jobs:
           echo "${KUBECONFIG_DATA}" | base64 --decode > $HOME/.kube/config
           kubectl config set-context --current --namespace=ecom-namespace
 
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f ./k8s/api-gateway-deployment.yaml
+          kubectl apply -f ./k8s/socket-service-deployment.yaml
+          kubectl apply -f ./k8s/notifications-service-deployment.yaml
+
       - name: Send Telegram message
         uses: metalpoch/telegram-alerts-action@v1
-        if: success() # Отправлять уведомление только в случае успешного выполнения
+        if: success()
         with:
           bot-token-id: ${{ secrets.TELEGRAM_TOKEN_ID }}
           chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
           text: "<b>✅ Deployment Successful</b>
             Repository: ${{ github.repository }}
             Branch: ${{ github.ref_name }}
-            Commit SHA: ${{ github.sha }}
-            Workflow: ${{ github.workflow }}
-            Run ID: ${{ github.run_id }}
-            Run Number: ${{ github.run_number }}
             <a href='${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'>View Details</a>"
           parse-mode: HTML
           disable-notification: false
           disable-web-page-preview: false
-
-      - name: Apply Kubernetes manifests
-        run: |
-          kubectl apply -f ./k8s/api-gateway-deployment.yaml
-          kubectl apply -f ./k8s/socket-service-deployment.yaml
-          kubectl apply -f ./k8s/notifications-service-deployment.yaml

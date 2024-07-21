@@ -1,11 +1,10 @@
 package messagehandler
 
 import (
+	"log/slog"
 	"net/http"
-
-	"go.uber.org/zap"
 )
 
 func (ch *MessagesHandler) logErrorInRequest(r *http.Request, msg string) {
-	ch.logger.Error(msg, zap.String("url", r.URL.String()), zap.String("method", r.Method))
+	ch.logger.Error(msg, slog.String("url", r.URL.String()), slog.String("method", r.Method))
 }

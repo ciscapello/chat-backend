@@ -2,21 +2,20 @@ package logger
 
 import (
 	"io"
+	"log/slog"
 	"os"
 	"sync"
-	"time"
 
 	"github.com/ciscapello/notification_service/application/config"
-	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
 
 var (
-	logger *zap.Logger
+	logger *slog.Logger
 	once   sync.Once
 )
 
-func GetLogger(config *config.Config) *zap.Logger {
+func GetLogger(config *config.Config) *slog.Logger {
 	once.Do(func() {
 		logger = InitLogger(config.LogPath)
 	})
@@ -43,23 +42,13 @@ func getLogWriter(logPath string) zapcore.WriteSyncer {
 	return zapcore.AddSync(multiwriter)
 }
 
-func getEncoder() zapcore.Encoder {
-	encoderConfig := zap.NewDevelopmentEncoderConfig()
-	encoderConfig.EncodeTime = customTimeEncoder
-	encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
-	return zapcore.NewConsoleEncoder(encoderConfig)
-}
-
-func customTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(t.Format("2006/01/02 15:04:05.000"))
-}
-
-func InitLogger(logPath string) *zap.Logger {
+func InitLogger(logPath string) *slog.Logger {
 	createLogDirectoryIfNotExists(logPath)
 	writer := getLogWriter(logPath)
-	encoder := getEncoder()
-	core := zapcore.NewCore(encoder, writer, zapcore.DebugLevel)
-	logger := zap.New(core)
+	handler := slog.NewJSONHandler(writer, &slog.HandlerOptions{
+		Level: slog.LevelDebug,
+	})
+	logger := slog.New(handler)
 
 	return logger
 }

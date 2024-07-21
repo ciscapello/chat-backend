@@ -1,11 +1,11 @@
 package userhandler
 
 import (
+	"log/slog"
 	"net/http"
 
 	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
 	userservice "github.com/ciscapello/api_gateway/internal/domain/service/user_service"
-	"go.uber.org/zap"
 )
 
 type Responder interface {
@@ -15,12 +15,12 @@ type Responder interface {
 
 type UserHandler struct {
 	userService userservice.IUserService
-	logger      *zap.Logger
+	logger      *slog.Logger
 	jwtManager  jwtmanager.IJwtManager
 	responder   Responder
 }
 
-func New(userService userservice.IUserService, logger *zap.Logger, jwtManager jwtmanager.IJwtManager, responder Responder) *UserHandler {
+func New(userService userservice.IUserService, logger *slog.Logger, jwtManager jwtmanager.IJwtManager, responder Responder) *UserHandler {
 	return &UserHandler{
 		userService: userService,
 		logger:      logger,
