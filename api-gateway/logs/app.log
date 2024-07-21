@@ -10586,3 +10586,38 @@
 2024/07/16 22:42:03.619	[34mINFO[0m	[HTTP]	{"method": "GET", "url": "/api/v1/conversations", "status": 200, "duration": "3.498833ms"}
 2024/07/18 18:12:31.708	[34mINFO[0m	Server is running	{"port": "0.0.0.0:3000"}
 {"time":"2024-07-21T10:23:51.679093+03:00","level":"INFO","msg":"Server is running","port":"0.0.0.0:3000"}
+{"time":"2024-07-21T10:35:16.104379+03:00","level":"ERROR","msg":"Token expired, token has invalid claims: token is expired"}
+{"time":"2024-07-21T10:35:16.105119+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":10532041}
+{"time":"2024-07-21T10:35:16.188039+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/users/refresh","status":200,"duration":75508333}
+{"time":"2024-07-21T10:37:31.023117+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/users/auth","status":200,"duration":12670959}
+{"time":"2024-07-21T10:37:37.600968+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/users/check-code","status":200,"duration":13682417}
+{"time":"2024-07-21T10:37:37.699049+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":37259500}
+{"time":"2024-07-21T10:37:47.83208+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C","status":200,"duration":7802250}
+{"time":"2024-07-21T10:37:47.959019+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C%D0%B4","status":200,"duration":3115750}
+{"time":"2024-07-21T10:37:48.426538+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C","status":200,"duration":8067209}
+{"time":"2024-07-21T10:37:48.86583+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C","status":200,"duration":4483667}
+{"time":"2024-07-21T10:37:48.974282+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C%D0%B4","status":200,"duration":8686333}
+{"time":"2024-07-21T10:37:49.517091+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=%D0%9C","status":200,"duration":22010333}
+{"time":"2024-07-21T10:37:50.260919+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/search?username=V","status":200,"duration":4001375}
+{"time":"2024-07-21T10:37:51.782131+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/f263bb44-8168-4abb-8efc-57f9432f18c4","status":200,"duration":4927458}
+{"time":"2024-07-21T10:37:52.485247+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/conversations","status":200,"duration":8438791}
+{"time":"2024-07-21T10:37:54.424964+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/bccb4606-9659-4b41-9422-f479e19fa619","status":200,"duration":6419083}
+{"time":"2024-07-21T10:37:55.066776+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/conversations","status":200,"duration":12067791}
+{"time":"2024-07-21T10:37:56.350158+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/2042e811-9913-488b-8e5e-b19156396a01","status":200,"duration":16207959}
+{"time":"2024-07-21T10:37:57.15183+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/conversations","status":200,"duration":11954292}
+{"time":"2024-07-21T10:37:59.109306+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/users/f81b4c2a-d172-4a99-925f-24a477ab8724","status":200,"duration":3165583}
+{"time":"2024-07-21T10:38:05.320856+03:00","level":"INFO","msg":"[HTTP]","method":"PUT","url":"/api/v1/users","status":200,"duration":7013416}
+{"time":"2024-07-21T10:38:07.819512+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":12903875}
+{"time":"2024-07-21T10:38:08.543222+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/messages/64","status":200,"duration":3410292}
+{"time":"2024-07-21T10:38:10.404421+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":8983792}
+{"time":"2024-07-21T10:38:12.354871+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/messages","status":200,"duration":5120166}
+{"time":"2024-07-21T10:38:12.359852+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":2864667}
+{"time":"2024-07-21T10:38:14.972507+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/messages","status":200,"duration":10923584}
+{"time":"2024-07-21T10:38:14.977904+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":3016583}
+{"time":"2024-07-21T10:39:24.388672+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/messages","status":200,"duration":10866208}
+{"time":"2024-07-21T10:39:24.403922+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":8443958}
+{"time":"2024-07-21T10:39:49.276642+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/messages","status":200,"duration":7038917}
+{"time":"2024-07-21T10:39:49.284743+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/conversations","status":200,"duration":4080416}
+{"time":"2024-07-21T18:27:31.484374+03:00","level":"ERROR","msg":"Token expired, token has invalid claims: token is expired"}
+{"time":"2024-07-21T18:27:31.488394+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/messages/63","status":200,"duration":8743541}
+{"time":"2024-07-21T18:27:31.499853+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/users/refresh","status":200,"duration":4783625}

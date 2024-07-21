@@ -26,17 +26,17 @@ jobs:
 
       - name: Build and push api-gateway image
         run: |
-          docker build -t $DOCKER_USERNAME/chat-api-gateway:latest ./api_gateway
+          docker build -t $DOCKER_USERNAME/chat-api-gateway:latest ./api-gateway
           docker push $DOCKER_USERNAME/chat-api-gateway:latest
 
       - name: Build and push socket-service image
         run: |
-          docker build -t $DOCKER_USERNAME/chat-socket-service:latest ./socket_service
+          docker build -t $DOCKER_USERNAME/chat-socket-service:latest ./socket-service
           docker push $DOCKER_USERNAME/chat-socket-service:latest
 
       - name: Build and push notifications-service image
         run: |
-          docker build -t $DOCKER_USERNAME/chat-notifications-service:latest ./notifications_service
+          docker build -t $DOCKER_USERNAME/chat-notifications-service:latest ./notifications-service
           docker push $DOCKER_USERNAME/chat-notifications-service:latest
 
       - name: Setup kubectl
