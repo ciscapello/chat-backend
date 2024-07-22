@@ -66,8 +66,8 @@ jobs:
           bot-token-id: ${{ secrets.TELEGRAM_TOKEN_ID }}
           chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
           text: "<b>✅ Deployment Successful</b>
-            Repository: ${{ github.repository }}
-            Branch: ${{ github.ref_name }}
+            Repository: ${{ github.repository }}.
+            Branch: ${{ github.ref_name }}.
             <a href='${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'>View Details</a>"
           parse-mode: HTML
           disable-notification: false
