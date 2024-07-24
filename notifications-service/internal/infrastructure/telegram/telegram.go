@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/ciscapello/notification_service/application/config"
+	"github.com/ciscapello/notification-service/application/config"
 )
 
 type TelegramManager struct {

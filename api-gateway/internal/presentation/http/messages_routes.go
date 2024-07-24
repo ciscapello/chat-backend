@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	messagehandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/message_handler"
+	messagehandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/message_handler"
 	"github.com/gorilla/mux"
 )
 

@@ -1,8 +1,8 @@
 package userservice
 
 import (
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/google/uuid"
 )
 

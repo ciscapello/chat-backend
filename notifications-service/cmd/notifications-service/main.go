@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/ciscapello/chat-lib/contracts"
-	"github.com/ciscapello/notification_service/application/config"
-	"github.com/ciscapello/notification_service/common/logger"
-	emailservice "github.com/ciscapello/notification_service/internal/domain/service/emailService"
-	"github.com/ciscapello/notification_service/internal/infrastructure/rabbitmq"
-	"github.com/ciscapello/notification_service/internal/infrastructure/telegram"
+	"github.com/ciscapello/notification-service/application/config"
+	"github.com/ciscapello/notification-service/common/logger"
+	emailservice "github.com/ciscapello/notification-service/internal/domain/service/emailService"
+	"github.com/ciscapello/notification-service/internal/infrastructure/rabbitmq"
+	"github.com/ciscapello/notification-service/internal/infrastructure/telegram"
 )
 
 func main() {

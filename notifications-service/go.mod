@@ -1,4 +1,4 @@
-module github.com/ciscapello/notification_service
+module github.com/ciscapello/notification-service
 
 go 1.22.3
 

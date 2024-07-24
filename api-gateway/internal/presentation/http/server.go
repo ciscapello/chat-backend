@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ciscapello/api_gateway/internal/application/config"
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	conversationhandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/conversation_handler"
-	defaulthandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/default_handler"
-	messagehandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/message_handler"
-	userhandler "github.com/ciscapello/api_gateway/internal/presentation/handlers/user_handler"
+	"github.com/ciscapello/api-gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	conversationhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/conversation_handler"
+	defaulthandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/default_handler"
+	messagehandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/message_handler"
+	userhandler "github.com/ciscapello/api-gateway/internal/presentation/handlers/user_handler"
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
 )

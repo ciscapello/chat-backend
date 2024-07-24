@@ -10621,3 +10621,4 @@
 {"time":"2024-07-21T18:27:31.484374+03:00","level":"ERROR","msg":"Token expired, token has invalid claims: token is expired"}
 {"time":"2024-07-21T18:27:31.488394+03:00","level":"INFO","msg":"[HTTP]","method":"GET","url":"/api/v1/messages/63","status":200,"duration":8743541}
 {"time":"2024-07-21T18:27:31.499853+03:00","level":"INFO","msg":"[HTTP]","method":"POST","url":"/api/v1/users/refresh","status":200,"duration":4783625}
+{"time":"2024-07-24T18:52:10.138927+03:00","level":"INFO","msg":"Server is running","port":"0.0.0.0:3000"}

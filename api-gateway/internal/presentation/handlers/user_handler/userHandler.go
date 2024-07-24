@@ -4,8 +4,8 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	userservice "github.com/ciscapello/api_gateway/internal/domain/service/user_service"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	userservice "github.com/ciscapello/api-gateway/internal/domain/service/user_service"
 )
 
 type Responder interface {

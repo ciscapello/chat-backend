@@ -12,7 +12,7 @@ package mocks
 import (
 	reflect "reflect"
 
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	uuid "github.com/google/uuid"
 	gomock "go.uber.org/mock/gomock"
 )

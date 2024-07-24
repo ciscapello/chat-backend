@@ -4,7 +4,7 @@ import (
 	"log"
 	"log/slog"
 
-	"github.com/ciscapello/api_gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/application/config"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

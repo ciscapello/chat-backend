@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
-	"github.com/ciscapello/api_gateway/internal/infrastructure/wsClient"
-	"github.com/ciscapello/api_gateway/pkg/dto"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
+	"github.com/ciscapello/api-gateway/internal/infrastructure/wsClient"
+	"github.com/ciscapello/api-gateway/pkg/dto"
 	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
 )

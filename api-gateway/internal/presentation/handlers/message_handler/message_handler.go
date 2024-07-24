@@ -3,9 +3,9 @@ package messagehandler
 import (
 	"log/slog"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	messageservice "github.com/ciscapello/api_gateway/internal/domain/service/message_service"
-	"github.com/ciscapello/api_gateway/internal/presentation/response"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	messageservice "github.com/ciscapello/api-gateway/internal/domain/service/message_service"
+	"github.com/ciscapello/api-gateway/internal/presentation/response"
 )
 
 type MessagesHandler struct {

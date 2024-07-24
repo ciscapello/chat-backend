@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ciscapello/api_gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/application/config"
 	"github.com/ciscapello/chat-lib/contracts"
 
 	"github.com/gorilla/websocket"

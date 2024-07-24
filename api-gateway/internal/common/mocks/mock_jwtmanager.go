@@ -13,8 +13,8 @@ import (
 	context "context"
 	reflect "reflect"
 
-	jwtmanager "github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	jwtmanager "github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	uuid "github.com/google/uuid"
 	gomock "go.uber.org/mock/gomock"
 )

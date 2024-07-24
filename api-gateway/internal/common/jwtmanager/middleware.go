@@ -7,7 +7,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )

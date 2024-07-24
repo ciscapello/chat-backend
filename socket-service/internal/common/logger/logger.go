@@ -6,7 +6,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/ciscapello/socket_service/internal/application/config"
+	"github.com/ciscapello/socket-service/internal/application/config"
 	"go.uber.org/zap/zapcore"
 )
 

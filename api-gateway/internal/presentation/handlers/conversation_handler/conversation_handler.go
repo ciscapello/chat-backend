@@ -3,9 +3,9 @@ package conversationhandler
 import (
 	"log/slog"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	conversationservice "github.com/ciscapello/api_gateway/internal/domain/service/conversation_service"
-	"github.com/ciscapello/api_gateway/internal/presentation/response"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	conversationservice "github.com/ciscapello/api-gateway/internal/domain/service/conversation_service"
+	"github.com/ciscapello/api-gateway/internal/presentation/response"
 )
 
 type ConversationHandler struct {

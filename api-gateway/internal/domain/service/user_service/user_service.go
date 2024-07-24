@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	"github.com/ciscapello/api_gateway/internal/common/utils"
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	"github.com/ciscapello/api-gateway/internal/common/utils"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/ciscapello/chat-lib/contracts"
 	"github.com/google/uuid"
 )

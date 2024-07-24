@@ -4,9 +4,9 @@ import (
 	"log"
 	"log/slog"
 
-	"github.com/ciscapello/notification_service/application/config"
-	emailservice "github.com/ciscapello/notification_service/internal/domain/service/emailService"
-	"github.com/ciscapello/notification_service/internal/infrastructure/telegram"
+	"github.com/ciscapello/notification-service/application/config"
+	emailservice "github.com/ciscapello/notification-service/internal/domain/service/emailService"
+	"github.com/ciscapello/notification-service/internal/infrastructure/telegram"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

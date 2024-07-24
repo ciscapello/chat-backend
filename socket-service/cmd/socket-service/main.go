@@ -4,8 +4,8 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/ciscapello/socket_service/internal/application/config"
-	"github.com/ciscapello/socket_service/internal/infrastructure/broadcast"
+	"github.com/ciscapello/socket-service/internal/application/config"
+	"github.com/ciscapello/socket-service/internal/infrastructure/broadcast"
 )
 
 func main() {

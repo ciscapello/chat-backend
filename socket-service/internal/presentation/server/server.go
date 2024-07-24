@@ -3,7 +3,7 @@ package server
 import (
 	"net/http"
 
-	"github.com/ciscapello/socket_service/internal/infrastructure/broadcast"
+	"github.com/ciscapello/socket-service/internal/infrastructure/broadcast"
 )
 
 func StartWebsocketServer() {

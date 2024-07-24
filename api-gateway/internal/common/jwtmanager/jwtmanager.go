@@ -6,8 +6,8 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/ciscapello/api_gateway/internal/application/config"
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	"github.com/ciscapello/api-gateway/internal/application/config"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )

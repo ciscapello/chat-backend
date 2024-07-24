@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/ciscapello/api_gateway/internal/common/jwtmanager"
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
-	"github.com/ciscapello/api_gateway/internal/infrastructure/repository"
-	"github.com/ciscapello/api_gateway/pkg/dto"
+	"github.com/ciscapello/api-gateway/internal/common/jwtmanager"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
+	"github.com/ciscapello/api-gateway/internal/infrastructure/repository"
+	"github.com/ciscapello/api-gateway/pkg/dto"
 	"github.com/google/uuid"
 )
 

@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ciscapello/notification_service/application/config"
+	"github.com/ciscapello/notification-service/application/config"
 	"gopkg.in/gomail.v2"
 )
 

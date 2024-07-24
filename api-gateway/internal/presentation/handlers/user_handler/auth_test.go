@@ -10,8 +10,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ciscapello/api_gateway/internal/common/mocks"
-	"github.com/ciscapello/api_gateway/internal/presentation/response"
+	"github.com/ciscapello/api-gateway/internal/common/mocks"
+	"github.com/ciscapello/api-gateway/internal/presentation/response"
 	"github.com/google/uuid"
 	"go.uber.org/mock/gomock"
 )

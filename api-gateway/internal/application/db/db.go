@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ciscapello/api_gateway/internal/application/config"
+	"github.com/ciscapello/api-gateway/internal/application/config"
 	_ "github.com/lib/pq"
 )
 

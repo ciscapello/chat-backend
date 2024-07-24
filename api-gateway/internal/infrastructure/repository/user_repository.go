@@ -7,7 +7,7 @@ import (
 	"log/slog"
 	"time"
 
-	userEntity "github.com/ciscapello/api_gateway/internal/domain/entity/user_entity"
+	userEntity "github.com/ciscapello/api-gateway/internal/domain/entity/user_entity"
 	"github.com/google/uuid"
 )
 
