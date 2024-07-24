@@ -28,9 +28,8 @@ build:
 
 deploy:
   stage: deploy
-  image: bitnami/kubectl:latest
+  image: lachlanevenson/k8s-kubectl:latest
   before_script:
-    - apk add --no-cache bash
     - mkdir -p ~/.kube
     - echo $KUBECONFIG_DATA | base64 -d > ~/.kube/config
     - kubectl config set-context --current --namespace=ecom-namespace
