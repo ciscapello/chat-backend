@@ -13,7 +13,7 @@ RUN go mod download
 COPY . .
 
 # Компилируем приложение
-RUN go build -o notifications-service ./cmd/notifications-service/main.go
+RUN GOARCH=amd64 GOOS=linux go build -o notifications-service ./cmd/notifications-service/main.go
 
 # Указываем команду для запуска приложения
 CMD ["./notifications-service"]

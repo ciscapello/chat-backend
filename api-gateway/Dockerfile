@@ -13,7 +13,7 @@ RUN go mod download
 COPY . .
 
 # Компилируем приложение
-RUN go build -o api-gateway ./cmd/api-gateway/main.go
+RUN GOARCH=amd64 GOOS=linux go build -o api-gateway ./cmd/api-gateway/main.go
 
 # Открываем порт, который будет использоваться приложением
 EXPOSE 3000
