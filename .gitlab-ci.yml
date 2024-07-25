@@ -1,6 +1,6 @@
 stages:
   - build
-  - deploy
+  # - deploy
 
 variables:
   DOCKER_USERNAME: $DOCKER_USERNAME
@@ -10,32 +10,29 @@ variables:
   TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
 
 build:
+  image: docker
   stage: build
-  image: docker:stable
   services:
     - docker:dind
-  before_script:
-    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   script:
-    - docker build -t $DOCKER_USERNAME/chat-api-gateway:latest ./api-gateway
-    - docker push $DOCKER_USERNAME/chat-api-gateway:latest
-    - docker build -t $DOCKER_USERNAME/chat-socket-service:latest ./socket-service
-    - docker push $DOCKER_USERNAME/chat-socket-service:latest
-    - docker build -t $DOCKER_USERNAME/chat-notifications-service:latest ./notifications-service
-    - docker push $DOCKER_USERNAME/chat-notifications-service:latest
-  only:
-    - main
-
-deploy:
-  stage: deploy
-  image: lachlanevenson/k8s-kubectl:latest
-  before_script:
-    - mkdir -p ~/.kube
-    - echo $KUBECONFIG_DATA | base64 -d > ~/.kube/config
-    - kubectl config set-context --current --namespace=ecom-namespace
-  script:
-    - kubectl apply -f ./k8s/api-gateway-deployment.yaml
-    - kubectl apply -f ./k8s/socket-service-deployment.yaml
-    - kubectl apply -f ./k8s/notifications-service-deployment.yaml
-  only:
-    - main
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/chat-backend/api-gateway:latest .
+    - docker push $CI_REGISTRY/chat-backend/api-gateway:latest
+    - docker build -t $CI_REGISTRY/chat-backend/notifications-service:latest .
+    - docker push $CI_REGISTRY/chat-backend/notifications-service:latest
+    - docker build -t $CI_REGISTRY/chat-backend/socket-service:latest .
+    - docker push $CI_REGISTRY/chat-backend/socket-service:latest
+    - echo "image built"
+# deploy:
+#   stage: deploy
+#   image: lachlanevenson/k8s-kubectl:latest
+#   before_script:
+#     - mkdir -p ~/.kube
+#     - echo $KUBECONFIG_DATA | base64 -d > ~/.kube/config
+#     - kubectl config set-context --current --namespace=ecom-namespace
+#   script:
+#     - kubectl apply -f ./k8s/api-gateway-deployment.yaml
+#     - kubectl apply -f ./k8s/socket-service-deployment.yaml
+#     - kubectl apply -f ./k8s/notifications-service-deployment.yaml
+#   only:
+#     - main
